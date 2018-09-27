@@ -109,6 +109,14 @@ public class User {
         return isHost;
     }
 
+    public boolean matchPassword(String newPassword){
+        if(password.equals(newPassword)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "User{" +

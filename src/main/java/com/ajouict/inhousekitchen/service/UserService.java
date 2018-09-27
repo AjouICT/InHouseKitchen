@@ -33,5 +33,10 @@ public class UserService {
         return result;
     }
 
+    public User findById(String userId){
+        User user=userRepository.findByUserId(userId);
+        return user;
+    }
+
 
 }
