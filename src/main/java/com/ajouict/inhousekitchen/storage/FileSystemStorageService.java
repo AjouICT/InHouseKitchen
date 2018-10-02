@@ -1,5 +1,7 @@
 package com.ajouict.inhousekitchen.storage;
 
+import com.ajouict.inhousekitchen.controller.HttpSessionUtils;
+import com.ajouict.inhousekitchen.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -10,6 +12,8 @@ import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resources;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
