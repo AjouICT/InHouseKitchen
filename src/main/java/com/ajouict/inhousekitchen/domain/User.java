@@ -21,21 +21,23 @@ public class User {
     @Lob
     private String intro;
     private Boolean isHost=Boolean.FALSE;
+    private String profilePhoto;
+
 
     public User() {
     }
 
-    public User(String userId, String name, String password, String nationality, String phoneNum, String email, String intro, Boolean isHost) {
+    public User(String userId, String password, String name, String nationality, String phoneNum, String email, String intro, Boolean isHost, String profilePhoto) {
         this.userId = userId;
-        this.name = name;
         this.password = password;
+        this.name = name;
         this.nationality = nationality;
         this.phoneNum = phoneNum;
         this.email = email;
         this.intro = intro;
         this.isHost = isHost;
+        this.profilePhoto = profilePhoto;
     }
-
 
     public void setId(Long id) {
         this.id = id;
@@ -45,12 +47,12 @@ public class User {
         this.userId = userId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setNationality(String nationality) {
@@ -73,6 +75,10 @@ public class User {
         isHost = host;
     }
 
+    public void setProfilePhoto(String profilePhoto) {
+        this.profilePhoto = profilePhoto;
+    }
+
     public Long getId() {
         return id;
     }
@@ -81,12 +87,12 @@ public class User {
         return userId;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public String getPassword() {
         return password;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getNationality() {
@@ -109,12 +115,25 @@ public class User {
         return isHost;
     }
 
-    public boolean matchPassword(String newPassword){
-        if(password.equals(newPassword)){
-            return true;
-        }else{
+    public String getProfilePhoto() {
+        return profilePhoto;
+    }
+
+    public boolean matchId(Long newId){
+        if(newId==null){
             return false;
         }
+
+        return newId.equals(userId);
+    }
+
+    public boolean matchPassword(String newPassword){
+        if(newPassword==null){
+            return false;
+        }
+
+        return newPassword.equals(password);
+
     }
 
     @Override
@@ -122,13 +141,14 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", userId='" + userId + '\'' +
-                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
                 ", nationality='" + nationality + '\'' +
                 ", phoneNum='" + phoneNum + '\'' +
                 ", email='" + email + '\'' +
                 ", intro='" + intro + '\'' +
                 ", isHost=" + isHost +
+                ", profilePhoto='" + profilePhoto + '\'' +
                 '}';
     }
 }
