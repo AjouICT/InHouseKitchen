@@ -6,10 +6,11 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@Column(name="mem_idx")
     private Long id;
 
-    @Column(nullable=false, length=20, unique=true)
+    @Column(nullable=false,unique=true)
     private String userId;
     @Column(nullable=false)
     private String password;
