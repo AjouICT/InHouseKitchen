@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lister</title>
+        <link rel="shortcut icon" href="dist/images/favicon.ico">
+        <!--Plugin CSS-->
+        <link href="dist/css/plugins.min.css" rel="stylesheet">
+        <!--main Css-->
+        <link href="dist/css/main.min.css" rel="stylesheet"> 
+    </head>
+
+    <body>
+        <!-- header -->
+        <div id="header-fix" class="header fixed-top">
+            <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
+                <a class="navbar-brand mr-4 mr-md-5" href="index.html"><img src="dist/images/logo-v1.png" alt=""></a>
+                <div id="dl-menu" class="dl-menuwrapper d-block d-lg-none float-right">
+                    <button>Open Menu</button>
+                    <ul class="dl-menu">
+
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li><a href="index.html">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li><a href="listing-explore-place-profile.html">Explore Place</a></li>
+                                <li><a href="listing-explore-event-profile.html">Explore Event</a></li>
+                                <li><a href="listing-explore-property-profile.html">Explore Property</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Listing</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing By Categories</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="listing-categories-style1.html">Category 1</a></li>
+                                        <li><a href="listing-categories-style2.html">Category 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing No Map</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="listing-no-map-sidebar.html">With Sidebar</a></li>
+                                        <li><a href="listing-no-map-fullwidth.html">Full Width</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Half Screen Map</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="half-screen-search-sidebar-place.html">With Search Place</a></li>
+                                        <li><a href="half-screen-search-sidebar-event.html">With Search Event</a></li>
+                                        <li><a href="half-screen-search-sidebar-property.html">With Search Property</a></li>
+                                        <li><a href="half-screen-with-categories-sidebar.html">With Categories Sidebar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                        <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                        <li><a href="blog-single.html"> Single Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"> Contact</a></li>
+                                <li><a href="user-profile.html"> User Profile</a></li>
+                                <li><a href="faq.html"> Faq</a></li>
+                                <li><a href="pricing.html"> Pricing Table</a></li>
+                                <li><a href="coming-soon.html"> Coming Soon</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                        <li><a href="error-light.html"> 404 Error Light</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li> <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a></li>
+
+                        <li> <a href="add-listing.html" ><i class="fa fa-plus pr-1"></i> Add Listing</a></li>
+
+
+
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Home <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="listing-explore-place-profile.html">Explore Place</a></li>
+                                <li><a href="listing-explore-event-profile.html">Explore Event</a></li>
+                                <li><a href="listing-explore-property-profile.html">Explore Property</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Listing <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing By Categories</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="listing-categories-style1.html">Category 1</a></li>
+                                        <li><a href="listing-categories-style2.html">Category 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing No Map</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="listing-no-map-sidebar.html">With Sidebar</a></li>
+                                        <li><a href="listing-no-map-fullwidth.html">Full Width</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Half Screen Map</a>
+                                     <ul class="dropdown-menu">
+                                        <li><a href="half-screen-search-sidebar-place.html">With Search Place</a></li>
+                                        <li><a href="half-screen-search-sidebar-event.html">With Search Event</a></li>
+                                        <li><a href="half-screen-search-sidebar-property.html">With Search Property</a></li>
+                                        <li><a href="half-screen-with-categories-sidebar.html">With Categories Sidebar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                        <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                        <li><a href="blog-single.html"> Single Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"> Contact</a></li>
+                                <li><a href="user-profile.html"> User Profile</a></li>
+                                <li><a href="faq.html"> Faq</a></li>
+                                <li><a href="pricing.html"> Pricing Table</a></li>
+                                <li><a href="coming-soon.html"> Coming Soon</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                        <li><a href="error-light.html"> 404 Error Light</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled my-2 my-lg-0">
+                        <li>
+                            <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a>
+                        </li>
+                    </ul> <a href="add-listing.html" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a> </div>
+            </nav>
+        </div>
+        <!--End header -->
+        <!-- Sidebar -->
+        <section class="pb-0" style="padding-top: 94px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-3 py-5 order-lg-1 order-2 left-sidebar z-index-99">
+                        <div class="lis-relative">
+                            <h5 class="mb-2">What are you looking for?</h5>
+                            <p>Search by Category</p>
+                            <div class="mb-4">
+                                <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                                    <a href="#">
+                                        <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="dist/images/slide1.jpg" alt="" class="img-fluid rounded" /> </div>
+                                        <div class="lis-absolute lis-left-20 lis-top-20 lis-bg4 lis-icon lis-rounded-circle-50 text-center">
+                                            <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-fast-food"></i></div>
+                                        </div>
+                                    </a>
+                                    <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                                        <h6 class="text-white mb-0">Restaurant</h6> <span class="lis-font-roboto">13 listing</span> </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                                    <a href="#">
+                                        <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="dist/images/slide2.jpg" alt="" class="img-fluid rounded" /> </div>
+                                        <div class="lis-absolute lis-left-20 lis-top-20 lis-bg2 lis-icon lis-rounded-circle-50 text-center">
+                                            <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-beer"></i></div>
+                                        </div>
+                                    </a>
+                                    <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                                        <h6 class="text-white mb-0">Bar & Club</h6> <span class="lis-font-roboto">15 listing</span> </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                                    <a href="#">
+                                        <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="dist/images/bg1.jpg" alt="" class="img-fluid rounded" /> </div>
+                                        <div class="lis-absolute lis-left-20 lis-top-20 lis-bg5 lis-icon lis-rounded-circle-50 text-center">
+                                            <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-travelling"></i></div>
+                                        </div>
+                                    </a>
+                                    <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                                        <h6 class="text-white mb-0">Tour & Travels</h6> <span class="lis-font-roboto">10 listing</span> </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                                    <a href="#">
+                                        <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="dist/images/slide3.jpg" alt="" class="img-fluid rounded" /> </div>
+                                        <div class="lis-absolute lis-left-20 lis-top-20 lis-bg3 lis-icon lis-rounded-circle-50 text-center">
+                                            <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-radio-mic"></i></div>
+                                        </div>
+                                    </a>
+                                    <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                                        <h6 class="text-white mb-0">Entertainment</h6> <span class="lis-font-roboto">18 listing</span> </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                                    <a href="#">
+                                        <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="dist/images/slide4.jpg" alt="" class="img-fluid rounded" /> </div>
+                                        <div class="lis-absolute lis-left-20 lis-top-20 lis-bg1 lis-icon lis-rounded-circle-50 text-center">
+                                            <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-hotel-alt"></i></div>
+                                        </div>
+                                    </a>
+                                    <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                                        <h6 class="text-white mb-0">Hotel</h6> <span class="lis-font-roboto">13 listing</span> </div>
+                                </div>
+                            </div>
+                            <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                                <a href="#">
+                                    <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="dist/images/slide5.jpg" alt="" class="img-fluid rounded" /> </div>
+                                    <div class="lis-absolute lis-left-20 lis-top-20 lis-bg6 lis-icon lis-rounded-circle-50 text-center">
+                                        <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-medical-sign-alt"></i></div>
+                                    </div>
+                                </a>
+                                <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                                    <h6 class="text-white mb-0">Medical</h6> <span class="lis-font-roboto">18 listing</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9 order-lg-2 order-1 px-0">
+                        <div id="map" class="w-100 h-100 map-fixed"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Sidebar -->
+        <!-- Top To Bottom-->
+        <a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50">
+            <div class="text-white mb-0 lis-line-height-1_7 h3"><i class="icofont icofont-long-arrow-up"></i></div>
+        </a>
+        <!-- End Top To Bottom-->
+        <!-- Login /Register Form-->
+
+        <div class="container">
+
+
+
+
+
+            <div id="modal" class="popupContainer" style="display: none;">
+
+                <header class="popupHeader">
+
+                    <span class="header_title">Login</span>
+
+                    <span class="modal_close"><i class="fa fa-times"></i></span>
+
+                </header>
+
+
+
+                <div class="popupBody">
+
+                    <!-- Social Login -->						
+
+
+
+                    <!-- Username & Password Login form -->
+
+                    <div class="user_login">
+
+                        <form>
+
+
+
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="username or email address" />
+
+                            <br />
+
+
+
+
+
+                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
+
+                            <br />
+
+
+
+                            <div class="checkbox">
+
+                                <input id="remember" type="checkbox" />
+
+                                <label for="remember">Remember me on this computer</label>
+
+                            </div>
+
+
+
+                            <div class="action_btns">
+
+
+
+                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Login</a>
+
+                            </div>
+
+                        </form>
+
+                        <br/>
+
+                        Sign in with your social network<br/>
+
+                        <ul class="list-inline my-0">
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+
+                        </ul>
+
+                        <hr/>
+
+                        Don't have an account <a href="#" class="register_form">Sign Up</a>
+
+                    </div>
+
+
+
+                    <!-- Register Form -->
+
+                    <div class="user_register">
+
+                        <form>
+
+
+
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Username" />
+
+                            <br />
+
+
+
+
+
+                            <input type="email" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Email Address" />
+
+                            <br />
+
+
+
+
+
+                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Password" />
+
+                            <br />
+
+
+
+                            <div class="checkbox">
+
+                                <input id="send_updates" type="checkbox" />
+
+                                <label for="send_updates">Send me occasional email updates</label>
+
+                            </div>
+
+
+
+                            <div class="action_btns">
+
+                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Register</a>
+
+                            </div>
+
+                        </form>
+
+                        <br/>
+
+                        Register with your social network<br/>
+
+                        <ul class="list-inline my-0">
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+
+                        </ul>
+
+                        <hr/>
+
+                        Already have an account <a href="#" class="login_form">Sign In</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- End Login /Register Form-->
+        <!-- jQuery -->
+        <script src="dist/js/plugins.min.js"></script>
+        <script src="dist/js/common.js"></script>
+        <script src="dist/js/data.json"></script>
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&callback=initialize"></script>
+        <script src="dist/js/map.js"></script>
+    </body>
+
+</html>

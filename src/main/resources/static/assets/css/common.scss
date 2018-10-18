@@ -1,0 +1,368 @@
+body{
+    background: $white;
+    margin: 0px;
+    padding: 0px;
+    color: $body-color;
+    font-family: $body-font;
+    font-size: 1em;
+    line-height: $body-line-height;
+    word-wrap: break-word;
+}
+a{
+    text-decoration: none;
+    &:hover, &:focus{
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+    }
+}
+/*======================== Font style Css ===============================*/
+h1,h2,h3,h4,h5,h6{
+    color: $dark;
+    margin: 0 0 15px;
+    font-family: $primary-font;
+    line-height: $body-line-height;
+}
+h1{ font-size: 2.5rem; }
+h2{ font-size: 2rem; }
+h3{ font-size: 1.75rem;}
+h4{ font-size: 1.5rem; }
+h5{ font-size: 1.25rem; }
+h6{ font-size: 1.125rem; }
+.lis-f-14{ font-size: 0.875em;}
+.lis-f-20{ font-size: 1.250em;}
+/*======================== Font-weight Css ===============================*/
+.lis-font-weight-100{ font-weight: 100;}
+.lis-font-weight-200{ font-weight: 200;}
+.lis-font-weight-300{ font-weight: 300;}
+.lis-font-weight-400{ font-weight: 400;}
+.lis-font-weight-500{ font-weight: 500;}
+.lis-font-weight-600{ font-weight: 600;}
+.lis-font-weight-700{ font-weight: 700;}
+.lis-font-weight-800{ font-weight: 800;}
+.lis-font-weight-900{ font-weight: 900;}
+
+/*======================== Font-Color Css ===============================*/
+.lis-primary{ color: $primary !important;}
+
+.lis-dark{ color: $dark;}
+
+.lis-light{ color: $body-color;}
+
+.lis-light-gold{ color: $light-gold;}
+
+.lis-light-green{ color: $light-green;}
+
+/*======================== Font-Family Css ===============================*/
+.lis-font-roboto{ font-family: $body-font;}
+
+.lis-font-poppins{ font-family: $primary-font;}
+
+/*======================== Position Css ===============================*/
+.lis-relative{ position: relative;}
+
+.lis-absolute{ position: absolute;} 
+
+.lis-left-0{ left: 0 !important;}
+
+.lis-right-0{ right: 0 !important;}
+
+.lis-top-0{ top: 0 !important;}
+
+.lis-bottom-0{ bottom:  0 !important;}
+
+.lis-left-10{ left: 10px !important;}
+
+.lis-right-10{ right: 10px !important;}
+
+.lis-top-10{ top: 10px !important;}
+
+.lis-bottom-10{ bottom: 10px !important;}
+
+.lis-left-20{ left: 20px;}
+
+.lis-right-20{ right: 20px;}
+
+.lis-top-20{ top: 20px;}
+
+.lis-bottom-20{ bottom:  20px;}
+
+.lis-left-auto{ left: auto !important;}
+
+.lis-right-auto{ right: auto !important;}
+
+/*======================== background Color Css ===============================*/
+.lis-bg-primary{ background-color: $primary;}
+
+.lis-bg-light{ background-color: $secondry-light;}
+
+.lis-bg-dark{ background-color: $dark;}
+
+.lis-green-light{ background-color: $light-green;}
+
+.lis-bg1{ background-color: $orchid ;}
+
+.lis-bg2{ background-color: $dark-orange;}
+
+.lis-bg3{ background-color: $dark-blue;}
+
+.lis-bg4{ background-color: $light-orange;}
+
+.lis-bg5{ background-color: $moderate;}
+
+.lis-bg6{ background-color: $redical-red;}
+
+.lis-bg7{ background-color: $sky-blue;}
+
+.lis-bg8{ background-color: $sky-red;}
+
+.lis-bg9{ background-color: $yellow-orange;}
+
+.lis-bg10{ background-color: $clasic-dark;}
+
+.lis-bg11{ background-color: $bg-cyan;}
+
+.lis-bg12{ background-color: $palegreen;}
+
+/*======================== Gradient Css ===============================*/
+.lis-grediant{
+    &:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+.grediant-tb{
+    &:before{
+        background: linear-gradient( to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(17, 17, 17, 0.2) 100%);
+    }
+}
+
+.grediant-bt{
+    &:before{
+        background: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.6) 100%);
+    }
+}
+
+.grediant-full{
+    &:before{
+        background: linear-gradient( 90deg, rgba(0, 0, 0, 0.7) 0%, rgba(17, 17, 17, 0.70) 66%);
+    }
+}
+.grediant-tb-white{
+    &:before{
+        background: linear-gradient( to bottom, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+    }
+}
+.grediant-tb-light{
+    &:before{
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(17, 17, 17, 0.1) 100%);
+    }
+}
+.grediant-tb-light2{
+    &:before{
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.10) 0%, rgba(17, 17, 17, 0.70) 100%);
+    }
+}
+.grediant-bt-dark{
+    &:before{
+        background: linear-gradient( -90deg, rgba(0, 0, 0, 0.7) 0%, rgba(17, 17, 17, 0.5) 100%);
+    }
+}
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+.overlay{ background: rgba(17, 17, 17, 0.60);}
+
+/*======================== Opacity Css ===============================*/
+.lis-opacity-90{ opacity: .90;}
+.lis-opacity-80{ opacity: .80;}
+.lis-opacity-70{ opacity: .70;}
+.lis-opacity-60{ opacity: .60;}
+.lis-opacity-50{ opacity: .50;}
+.lis-opacity-40{ opacity: .40;}
+.lis-opacity-30{ opacity: .30;}
+.lis-opacity-20{ opacity: .20;}
+.lis-opacity-10{ opacity: .10;}
+/*======================== background-image-maker Css ===============================*/
+.background-image-maker {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: $dark;
+    z-index: -1;
+}
+/*======================== Border Rounded-Circle Css===============================*/
+.lis-rounded-circle-50{ border-radius: 50px;}
+
+.lis-rounded-bottom{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.lis-rounded-top{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.lis-devider{ border-bottom: solid 1px $brd-light;}
+
+.lis-brd-right{ border-right: solid 1px;}
+
+.lis-brd-left{ border-left: solid 1px;}
+
+.lis-brd-top{ border-top: solid 1px;}
+
+.lis-brd-bottom{ border-top: solid 1px;}
+
+/*======================== Border Size Css===============================*/
+.lis-border-width-2 { border-width: 2px !important; }
+
+.lis-border-width-4 { border-width: 4px !important; }
+
+.lis-border-width-6 { border-width: 6px !important; }
+
+.lis-border-width-8 { border-width: 8px !important; }
+
+.lis-border-width-10 { border-width: 10px !important; }
+/*======================== Border Color Css===============================*/
+.lis-brd-light{ border-color: $brd-light !important;}
+
+.lis-brd-primary{ border-color: $brd-primary; }
+
+/*======================== Margin Minus Css===============================*/
+.lis-mt-minus-5{ margin-top: -5px;}
+
+.lis-mt-minus-10{ margin-top: -10px;}
+
+.lis-mt-minus-15{ margin-top: -15px;}
+
+.lis-mt-minus-20{ margin-top: -20px;}
+
+.lis-mt-minus-25{ margin-top: -25px;}
+
+.lis-mt-minus-30{ margin-top: -30px;}
+
+.lis-mt-minus-35{ margin-top: -35px;}
+
+.lis-mt-minus-40{ margin-top: -40px;}
+
+.lis-mt-minus-45{ margin-top: -45px;}
+
+.lis-mt-minus-50{ margin-top: -50px;}
+
+.lis-mt-minus-55{ margin-top: -55px;}
+
+.lis-mt-minus-60{ margin-top: -60px;}
+
+.lis-mt-minus-65{ margin-top: -65px;}
+
+.lis-mt-minus-70{ margin-top: -70px;}
+
+.lis-mt-minus-75{ margin-top: -75px;}
+
+.lis-mt-minus-80{ margin-top: -80px;}
+
+.lis-mt-minus-85{ margin-top: -85px;}
+
+.lis-mt-minus-90{ margin-top: -90px;}
+
+.lis-mt-minus-95{ margin-top: -95px;}
+
+.lis-mt-minus-100{ margin-top: -100px;}
+
+/*======================== line-height Css===============================*/
+.lis-line-height-0_7{ line-height: .7 !important; }
+
+.lis-line-height-0_8{ line-height: .8 !important; }
+
+.lis-line-height-0_9{ line-height: .9 !important; }
+
+.lis-line-height-1{ line-height: 1 !important; }
+
+.lis-line-height-1_5{ line-height: 1.5 !important; }
+
+.lis-line-height-1_7{ line-height: 1.7 !important; }
+
+.lis-line-height-2{ line-height: 2 !important; }
+
+.lis-line-height-2_3{ line-height: 2.4 !important; }
+
+.lis-line-height-2_5{ line-height: 2.5 !important; }
+
+.lis-line-height-2_7{ line-height: 2.7 !important; }
+
+.lis-line-height-3{ line-height: 3 !important; }
+
+.lis-line-height-3{ line-height: 3 !important; }
+
+.lis-line-height-3_5{ line-height: 3.5 !important; }
+
+.lis-line-height-4{ line-height: 4 !important; }
+/*======================== Letter Spacing Css===============================*/
+.lis-latter-spacing-2{ letter-spacing: 2px;}
+
+.lis-latter-spacing-4{ letter-spacing: 4px;}
+
+.lis-latter-spacing-6{ letter-spacing: 6px;}
+
+.lis-latter-spacing-8{ letter-spacing: 8px;}
+
+.lis-latter-spacing-10{ letter-spacing: 10px;}
+
+/*======================== Z-index Css===============================*/
+.z-index-99{ z-index: 99;}
+
+/*======================== Image Hover Effect Zoom Css===============================*/
+.card{
+    .modImage {
+        overflow: hidden;
+        background-color: #242429;
+        img{
+            transition: all 0.55s;
+        }
+        &:hover img{    
+            transform: scale(1.07);
+            background: linear-gradient( to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(17, 17, 17, 0.1) 100%);
+        }
+    }
+    .grediant-tb-light2:before, .grediant-tb-light:before{ z-index: 1;}
+    .card-body, .lis-icon, .hover-text{ z-index: 999;}
+    .lis-post-meta{ z-index: 999; position: relative;}
+}
+/*======================== Shadow Css Css===============================*/
+.shadow-1{
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.12);
+}
+
+/*======================== Page Custom Css Css===============================*/
+.image-bg:not(.light-bg)
+{   
+    .heading h1, .heading h2, .heading h3, .heading h4, .heading h5, h5.footer-head, .error h1, .error h2, .footer-social a
+    {
+        color: $white;
+    }
+    .lis-features-box{
+        background-color: rgba(0, 0, 0, 0.5);
+        border-color: #ececec;
+        color: #c9c9c9;
+        h1, h2, h3, h4, h5, h6, i{ color: $white;}
+    }
+    .coming-soon{
+        .form-control, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+            background-color: transparent;
+            color: $white;
+        }
+    }
+}
