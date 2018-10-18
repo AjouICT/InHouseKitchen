@@ -157,7 +157,13 @@
                 </li>
             </ul>
             <ul class="list-unstyled my-2 my-lg-0">
+                {{^sessionedUser}}
                 <li class="text-white"><i class="fa fa-sign-in pr-2"></i> <a href="#modal" class="text-white login_form">Sign In | Register</a></li>
+                {{/sessionedUser}}
+                {{#sessionedUser}}
+                    <b>{{name}}</b>님 환영합니다.
+                <li class="text-white"><i class="fa fa-sign-in pr-2"></i> <a href="/users/logout" class="text-white login_form">logout</a></li>
+                {{/sessionedUser}}
             </ul>
             <a href="add-listing.html" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a>
         </div>
