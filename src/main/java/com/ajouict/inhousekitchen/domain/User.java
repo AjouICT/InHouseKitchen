@@ -10,7 +10,7 @@ public class User {
     //@Column(name="mem_idx")
     private Long id;
 
-    @Column(nullable=false,unique=true)
+    @Column(nullable=false)
     private String userId;
     @Column(nullable=false)
     private String password;
@@ -24,6 +24,10 @@ public class User {
     private Boolean isHost=Boolean.FALSE;
     private String profilePhoto;
 
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "myself")
+    private Host host;
 
     public User() {
     }
