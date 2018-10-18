@@ -90,12 +90,12 @@ public class UserController {
         User user=userService.findById(userId);
         if(user==null){
             log.info("Login fail - no member exist");
-            return "redirect:/users/loginForm";
+            return "redirect:/";
         }
 
         if(!user.matchPassword(password)){
             log.info("Login fail - not correct password");
-            return "redirect:/users/loginForm";
+            return "redirect:/";
         }
 
         log.info("Login Success");

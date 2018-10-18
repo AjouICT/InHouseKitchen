@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+</script>
     <head>
         {{> include/header}}
     </head>
@@ -939,13 +944,13 @@
 
                     <!-- Username & Password Login form -->
                     <div class="user_login">
-                        <form>
+                        <form action="/users/login" method="post" id="loginForm">
 
-                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="username or email address" />
+                            <input type="text" name="userId" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 "  placeholder="username or email address" />
                             <br />
 
 
-                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
+                            <input type="password" name="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
                             <br />
 
                             <div class="checkbox">
@@ -955,7 +960,7 @@
 
                             <div class="action_btns">
 
-                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Login</a>
+                                <a href="#" onclick="document.getElementById('loginForm').submit();" class="btn btn-primary btn-default mt-3 w-100">Login</a>
                             </div>
                         </form>
                         <br/>
