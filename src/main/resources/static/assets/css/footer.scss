@@ -1,0 +1,23 @@
+.footer
+{
+    p{ color: #aaaaaa;}
+   .footer-links, .footer-social{
+       a{
+           color: #aaaaaa;
+           transition: all .4s ease;
+           &:hover{
+               color: $primary;
+           }
+       }
+   }
+   .footer-bottom{
+         border-top: solid 1px rgba(277, 277, 277, 0.7);
+         span{
+             a{
+                 &:hover{
+                     color: $primary;
+                 }
+             }
+         }
+   }
+} 

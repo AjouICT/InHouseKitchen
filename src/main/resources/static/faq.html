@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lister</title>
+        <link rel="shortcut icon" href="dist/images/favicon.ico">
+        <!--Plugin CSS-->
+        <link href="dist/css/plugins.min.css" rel="stylesheet">
+        <!--main Css-->
+        <link href="dist/css/main.min.css" rel="stylesheet"> 
+    </head>
+
+    <body>
+        <!-- header -->
+        <div id="header-fix" class="header fixed-top">
+            <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
+                <a class="navbar-brand mr-4 mr-md-5" href="index.html"><img src="dist/images/logo-v1.png" alt=""></a>
+                <div id="dl-menu" class="dl-menuwrapper d-block d-lg-none float-right">
+                    <button>Open Menu</button>
+                    <ul class="dl-menu">
+
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li><a href="index.html">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li><a href="listing-explore-place-profile.html">Explore Place</a></li>
+                                <li><a href="listing-explore-event-profile.html">Explore Event</a></li>
+                                <li><a href="listing-explore-property-profile.html">Explore Property</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Listing</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing By Categories</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="listing-categories-style1.html">Category 1</a></li>
+                                        <li><a href="listing-categories-style2.html">Category 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing No Map</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="listing-no-map-sidebar.html">With Sidebar</a></li>
+                                        <li><a href="listing-no-map-fullwidth.html">Full Width</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Half Screen Map</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="half-screen-search-sidebar-place.html">With Search Place</a></li>
+                                        <li><a href="half-screen-search-sidebar-event.html">With Search Event</a></li>
+                                        <li><a href="half-screen-search-sidebar-property.html">With Search Property</a></li>
+                                        <li><a href="half-screen-with-categories-sidebar.html">With Categories Sidebar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                        <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                        <li><a href="blog-single.html"> Single Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"> Contact</a></li>
+                                <li><a href="user-profile.html"> User Profile</a></li>
+                                <li><a href="faq.html"> Faq</a></li>
+                                <li><a href="pricing.html"> Pricing Table</a></li>
+                                <li><a href="coming-soon.html"> Coming Soon</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                        <li><a href="error-light.html"> 404 Error Light</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li> <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a></li>
+
+                        <li> <a href="add-listing.html" ><i class="fa fa-plus pr-1"></i> Add Listing</a></li>
+
+
+
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Home <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="listing-explore-place-profile.html">Explore Place</a></li>
+                                <li><a href="listing-explore-event-profile.html">Explore Event</a></li>
+                                <li><a href="listing-explore-property-profile.html">Explore Property</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Listing <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing By Categories</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="listing-categories-style1.html">Category 1</a></li>
+                                        <li><a href="listing-categories-style2.html">Category 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing No Map</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="listing-no-map-sidebar.html">With Sidebar</a></li>
+                                        <li><a href="listing-no-map-fullwidth.html">Full Width</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Half Screen Map</a>
+                                     <ul class="dropdown-menu">
+                                        <li><a href="half-screen-search-sidebar-place.html">With Search Place</a></li>
+                                        <li><a href="half-screen-search-sidebar-event.html">With Search Event</a></li>
+                                        <li><a href="half-screen-search-sidebar-property.html">With Search Property</a></li>
+                                        <li><a href="half-screen-with-categories-sidebar.html">With Categories Sidebar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                        <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                        <li><a href="blog-single.html"> Single Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"> Contact</a></li>
+                                <li><a href="user-profile.html"> User Profile</a></li>
+                                <li><a href="faq.html"> Faq</a></li>
+                                <li><a href="pricing.html"> Pricing Table</a></li>
+                                <li><a href="coming-soon.html"> Coming Soon</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                        <li><a href="error-light.html"> 404 Error Light</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled my-2 my-lg-0">
+                        <li>
+                             <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a>
+                        </li>
+                    </ul> <a href="add-listing.html" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a> </div>
+            </nav>
+        </div>
+        <!--End header -->
+        <!-- Page Inner -->
+        <section class="lis-bg-light pb-5">
+            <div class="container pt-5">
+                <div class="row wow fadeInUp">
+                    <div class="col-12 col-sm-6">
+                        <div class="page-title">
+                            <h2>FAQ</h2>
+                            <p class="mb-0">Lorem ipsum dolor sit amet, ut latine</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 text-left text-sm-right">
+                        <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                            <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Home</a></li>
+                            <li class="breadcrumb-item d-inline-block float-none active">FAQ</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Page Inner -->
+        <!-- FAQ -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 mb-5 mb-lg-0 wow fadeInLeft">
+                        <div class="list-group lis-line-height-2_7" id="myTab" role="tablist"> <a class="list-group-item list-group-item-action lis-brd-light" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-expanded="true"><i class="fa fa-caret-right pr-1"></i> General FAQ</a> <a class="list-group-item list-group-item-action lis-brd-light" data-toggle="tab" href="#category" role="tab" aria-controls="category"><i class="fa fa-caret-right pr-1"></i> Category</a> <a class="list-group-item list-group-item-action lis-brd-light active" data-toggle="tab" href="#support" role="tab" aria-controls="support"><i class="fa fa-caret-right pr-1"></i> Listing Support</a> <a class="list-group-item list-group-item-action lis-brd-light" data-toggle="tab" href="#services" role="tab" aria-controls="services"><i class="fa fa-caret-right pr-1"></i> Services</a> <a class="list-group-item list-group-item-action lis-brd-light" data-toggle="tab" href="#customize" role="tab" aria-controls="customize"><i class="fa fa-caret-right pr-1"></i> Customize Options</a> <a class="list-group-item list-group-item-action lis-brd-light" data-toggle="tab" href="#bookmark" role="tab" aria-controls="bookmark"><i class="fa fa-caret-right pr-1"></i> Bookmark</a> <a class="list-group-item list-group-item-action lis-brd-light" data-toggle="tab" href="#billing" role="tab" aria-controls="billing"><i class="fa fa-caret-right pr-1"></i> Billing & Account</a> <a class="list-group-item list-group-item-action lis-brd-light" data-toggle="tab" href="#email" role="tab" aria-controls="email"><i class="fa fa-caret-right pr-1"></i> Email Support</a> </div>
+                    </div>
+                    <div class="col-12 col-md-8 wow fadeInRight">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade" id="general" role="tabpanel" aria-labelledby="general">
+                                <h2 class="mb-2"> General FAQ</h2>
+                                <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                                    <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Faq </a></li>
+                                    <li class="breadcrumb-item d-inline-block float-none">General FAQ</li>
+                                </ol>
+                                <div class="lis-devider my-4"></div>
+                                <div id="accordion8" class="faq" role="tablist">
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading27"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse27" aria-expanded="false" aria-controls="collapse27">                                                A step-by-step guide to the upload process?                                            </a> </div>
+                                        <div id="collapse27" class="collapse" role="tabpanel" aria-labelledby="heading27" data-parent="#accordion8">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading28"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse28" aria-expanded="true" aria-controls="collapse28">                                                Rating or Review Removal Policy?                                             </a> </div>
+                                        <div id="collapse28" class="collapse show" role="tabpanel" aria-labelledby="heading28" data-parent="#accordion8">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading29"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse29" aria-expanded="false" aria-controls="collapse29">                                                Envato Hosted: Pointing your Domain Name?                                            </a> </div>
+                                        <div id="collapse29" class="collapse" role="tabpanel" aria-labelledby="heading29" data-parent="#accordion8">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="category" role="tabpanel" aria-labelledby="category">
+                                <h2 class="mb-2"> Category</h2>
+                                <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                                    <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Faq </a></li>
+                                    <li class="breadcrumb-item d-inline-block float-none"> Category</li>
+                                </ol>
+                                <div class="lis-devider my-4"></div>
+                                <div id="accordion7" class="faq" role="tablist">
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading25"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse25" aria-expanded="true" aria-controls="collapse25">                                                Introducing the Envato Studio Affiliate Program?                                            </a> </div>
+                                        <div id="collapse25" class="collapse show" role="tabpanel" aria-labelledby="heading25" data-parent="#accordion7">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading26"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse26" aria-expanded="false" aria-controls="collapse26">                                                Tips for Increasing Your Affiliate Income?                                            </a> </div>
+                                        <div id="collapse26" class="collapse" role="tabpanel" aria-labelledby="heading26" data-parent="#accordion7">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show active" id="support" role="tabpanel" aria-labelledby="support">
+                                <h2 class="mb-2">Listing Support</h2>
+                                <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                                    <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Faq </a></li>
+                                    <li class="breadcrumb-item d-inline-block float-none">Listing Support</li>
+                                </ol>
+                                <div class="lis-devider my-4"></div>
+                                <div id="accordion" class="faq" role="tablist">
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading1"> <a class="lis-light" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">                                                How do I purchase an item?                                            </a> </div>
+                                        <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading2"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">                                                An Author's step-by-step guide to the upload process?                                            </a> </div>
+                                        <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading3"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">                                                How Does The Envato Market Affiliate Program Work?                                            </a> </div>
+                                        <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading4"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse4" aria-expanded="false" aria-controls="collapse4">                                                Introducing the Envato Studio Affiliate Program?                                            </a> </div>
+                                        <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading5"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse5" aria-expanded="false" aria-controls="collapse5">                                                Tips for Increasing Your Affiliate Income?                                            </a> </div>
+                                        <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading6"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse6" aria-expanded="false" aria-controls="collapse6">                                                Theme is missing the style.css stylesheet error?                                            </a> </div>
+                                        <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="heading6" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading7"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse7" aria-expanded="false" aria-controls="collapse7">                                                A step-by-step guide to the upload process?                                            </a> </div>
+                                        <div id="collapse7" class="collapse" role="tabpanel" aria-labelledby="heading7" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading8"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse8" aria-expanded="false" aria-controls="collapse8">                                                Rating or Review Removal Policy?                                             </a> </div>
+                                        <div id="collapse8" class="collapse" role="tabpanel" aria-labelledby="heading8" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading9"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse9" aria-expanded="false" aria-controls="collapse9">                                                Envato Hosted: Pointing your Domain Name?                                            </a> </div>
+                                        <div id="collapse9" class="collapse" role="tabpanel" aria-labelledby="heading9" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading10"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse10" aria-expanded="false" aria-controls="collapse10">                                                Extending and Renewing Item Support?                                            </a> </div>
+                                        <div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="heading10" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading11"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse11" aria-expanded="false" aria-controls="collapse11">                                                Purchasing Supported and Unsupported Items?                                             </a> </div>
+                                        <div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="heading11" data-parent="#accordion">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services">
+                                <h2 class="mb-2"> Services</h2>
+                                <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                                    <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Faq </a></li>
+                                    <li class="breadcrumb-item d-inline-block float-none"> Services</li>
+                                </ol>
+                                <div class="lis-devider my-4"></div>
+                                <div id="accordion2" class="faq" role="tablist">
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading12"> <a class="lis-light" data-toggle="collapse" href="#collapse12" aria-expanded="false" aria-controls="collapse12">                                                How do I purchase an item?                                            </a> </div>
+                                        <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12" data-parent="#accordion2">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading13"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse13" aria-expanded="true" aria-controls="collapse13">                                                An Author's step-by-step guide to the upload process?                                            </a> </div>
+                                        <div id="collapse13" class="collapse show" role="tabpanel" aria-labelledby="heading13" data-parent="#accordion2">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading14"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse14" aria-expanded="false" aria-controls="collapse14">                                                How Does The Envato Market Affiliate Program Work?                                            </a> </div>
+                                        <div id="collapse14" class="collapse" role="tabpanel" aria-labelledby="heading14" data-parent="#accordion2">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="customize" role="tabpanel" aria-labelledby="customize">
+                                <h2 class="mb-2"> Customize Options</h2>
+                                <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                                    <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Faq </a></li>
+                                    <li class="breadcrumb-item d-inline-block float-none"> Customize Options</li>
+                                </ol>
+                                <div class="lis-devider my-4"></div>
+                                <div id="accordion3" class="faq" role="tablist">
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading15"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse15" aria-expanded="false" aria-controls="collapse15">                                                Envato Hosted: Pointing your Domain Name?                                            </a> </div>
+                                        <div id="collapse15" class="collapse" role="tabpanel" aria-labelledby="heading15" data-parent="#accordion3">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading16"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse16" aria-expanded="false" aria-controls="collapse16">                                                Extending and Renewing Item Support?                                            </a> </div>
+                                        <div id="collapse16" class="collapse" role="tabpanel" aria-labelledby="heading16" data-parent="#accordion3">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading17"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse17" aria-expanded="true" aria-controls="collapse17">                                                Purchasing Supported and Unsupported Items?                                             </a> </div>
+                                        <div id="collapse17" class="collapse show" role="tabpanel" aria-labelledby="heading17" data-parent="#accordion3">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="bookmark" role="tabpanel" aria-labelledby="bookmark">
+                                <h2 class="mb-2"> Bookmark</h2>
+                                <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                                    <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Faq </a></li>
+                                    <li class="breadcrumb-item d-inline-block float-none"> Bookmark</li>
+                                </ol>
+                                <div class="lis-devider my-4"></div>
+                                <div id="accordion4" class="faq" role="tablist">
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading18"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse18" aria-expanded="true" aria-controls="collapse18">                                                Tips for Increasing Your Affiliate Income?                                            </a> </div>
+                                        <div id="collapse18" class="collapse show" role="tabpanel" aria-labelledby="heading18" data-parent="#accordion4">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading19"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse19" aria-expanded="false" aria-controls="collapse19">                                                Theme is missing the style.css stylesheet error?                                            </a> </div>
+                                        <div id="collapse19" class="collapse" role="tabpanel" aria-labelledby="heading19" data-parent="#accordion4">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="billing" role="tabpanel" aria-labelledby="billing">
+                                <h2 class="mb-2"> Billing & Account</h2>
+                                <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                                    <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Faq </a></li>
+                                    <li class="breadcrumb-item d-inline-block float-none"> Billing & Account</li>
+                                </ol>
+                                <div class="lis-devider my-4"></div>
+                                <div id="accordion5" class="faq" role="tablist">
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading20"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse20" aria-expanded="false" aria-controls="collapse20">                                                A step-by-step guide to the upload process?                                            </a> </div>
+                                        <div id="collapse20" class="collapse" role="tabpanel" aria-labelledby="heading20" data-parent="#accordion5">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading21"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse21" aria-expanded="true" aria-controls="collapse21">                                                Rating or Review Removal Policy?                                             </a> </div>
+                                        <div id="collapse21" class="collapse show" role="tabpanel" aria-labelledby="heading21" data-parent="#accordion5">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading22"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse22" aria-expanded="false" aria-controls="collapse22">                                                How Does The Envato Market Affiliate Program Work?                                            </a> </div>
+                                        <div id="collapse22" class="collapse" role="tabpanel" aria-labelledby="heading22" data-parent="#accordion5">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="email" role="tabpanel" aria-labelledby="email">
+                                <h2 class="mb-2"> Email Support</h2>
+                                <ol class="breadcrumb mb-0 pl-0 bg-transparent pb-0">
+                                    <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Faq </a></li>
+                                    <li class="breadcrumb-item d-inline-block float-none"> Email Support</li>
+                                </ol>
+                                <div class="lis-devider my-4"></div>
+                                <div id="accordion6" class="faq" role="tablist">
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading23"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse23" aria-expanded="false" aria-controls="collapse23">                                                Purchasing Supported and Unsupported Items?                                             </a> </div>
+                                        <div id="collapse23" class="collapse" role="tabpanel" aria-labelledby="heading23" data-parent="#accordion6">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 lis-brd-light">
+                                        <div class="card-header bg-transparent border-0 lis-relative" role="tab" id="heading24"> <a class="collapsed lis-light" data-toggle="collapse" href="#collapse24" aria-expanded="true" aria-controls="collapse24">                                                Rating or Review Removal Policy?                                             </a> </div>
+                                        <div id="collapse24" class="collapse show" role="tabpanel" aria-labelledby="heading24" data-parent="#accordion6">
+                                            <div class="card-body"> Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Maecenas nec odio et ante tincidunt tempus. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End FAQ -->
+        <!-- Footer-->
+        <section class="image-bg footer lis-grediant grediant-bt pb-0">
+            <div class="background-image-maker"></div>
+            <div class="holder-image"> <img src="dist/images/bg3.jpg" alt="" class="img-fluid d-none"> </div>
+            <div class="container">
+                <div class="row pb-5">
+                    <div class="col-12 col-md-8">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                                <h5 class="footer-head">Useful Links</h5>
+                                <ul class="list-unstyled footer-links lis-line-height-2_5">
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Add Listing</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Sign In</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Register</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Pricing</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Contact Us</A>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                                <h5 class="footer-head">My Account</h5>
+                                <ul class="list-unstyled footer-links lis-line-height-2_5">
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Dashboard</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Profile</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> My Listing</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Favorites</A>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-md-0">
+                                <h5 class="footer-head">Pages</h5>
+                                <ul class="list-unstyled footer-links lis-line-height-2_5">
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Blog</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Our Partners</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> How It Work</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Privacy Policy</A>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <h5 class="footer-head">Help</h5>
+                                <ul class="list-unstyled footer-links lis-line-height-2_5">
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Add Listing</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Sign In</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Register</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Pricing</A>
+                                    </li>
+                                    <li>
+                                        <A href="#"><i class="fa fa-angle-right pr-1"></i> Contact Us</A>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="footer-logo">
+                            <a href="#"><img src="dist/images/logo-v1.png" alt="" class="img-fluid" /></a>
+                        </div>
+                        <p class="my-4">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu in felis eu pede mollis enim.</p> <a href="#" class="text-white"><u>App Download</u></a>
+                        <ul class="list-inline mb-0 mt-2">
+                            <li class="list-inline-item">
+                                <A href="#"><img src="dist/images/play-store.png" alt="" class="img-fluid" /></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <A href="#"><img src="dist/images/google-play.png" alt="" class="img-fluid" /></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <A href="#"><img src="dist/images/windows.png" alt="" class="img-fluid" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5 py-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6 text-center text-md-left mb-3 mb-md-0"> <span> &copy; 2017 Lister. Powered by <a href="#" class="lis-primary">PSD2allconversion.</a></span> </div>
+                        <div class="col-12 col-md-6 text-center text-md-right">
+                            <ul class="list-inline footer-social mb-0">
+                                <li class="list-inline-item pr-3">
+                                    <A href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item pr-3">
+                                    <A href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li class="list-inline-item pr-3">
+                                    <A href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                                <li class="list-inline-item pr-3">
+                                    <A href="#"><i class="fa fa-tumblr"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <A href="#"><i class="fa fa-pinterest-p"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End  Footer-->
+        <!-- Top To Bottom-->
+        <a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50">
+            <div class="text-white mb-0 lis-line-height-1_7 h3"><i class="icofont icofont-long-arrow-up"></i></div>
+        </a>
+        <!-- End Top To Bottom-->
+        <!-- Login /Register Form-->
+        <div class="container">
+
+
+            <div id="modal" class="popupContainer" style="display: none;">
+                <header class="popupHeader">
+                    <span class="header_title">Login</span>
+                    <span class="modal_close"><i class="fa fa-times"></i></span>
+                </header>
+
+                <div class="popupBody">
+                    <!-- Social Login -->						
+
+                    <!-- Username & Password Login form -->
+                    <div class="user_login">
+                        <form>
+
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="username or email address" />
+                            <br />
+
+
+                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
+                            <br />
+
+                            <div class="checkbox">
+                                <input id="remember" type="checkbox" />
+                                <label for="remember">Remember me on this computer</label>
+                            </div>
+
+                            <div class="action_btns">
+
+                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Login</a>
+                            </div>
+                        </form>
+                        <br/>
+                        Sign in with your social network<br/>
+                        <ul class="list-inline my-0">
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+                        </ul>
+                        <hr/>
+                        Don't have an account <a href="#" class="register_form">Sign Up</a>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="user_register">
+                        <form>
+
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Username" />
+                            <br />
+
+
+                            <input type="email" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Email Address" />
+                            <br />
+
+
+                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Password" />
+                            <br />
+
+                            <div class="checkbox">
+                                <input id="send_updates" type="checkbox" />
+                                <label for="send_updates">Send me occasional email updates</label>
+                            </div>
+
+                            <div class="action_btns">
+                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Register</a>
+                            </div>
+                        </form>
+                        <br/>
+                        Register with your social network<br/>
+                        <ul class="list-inline my-0">
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+                        </ul>
+                        <hr/>
+                        Already have an account <a href="#" class="login_form">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Login /Register Form-->
+        <!-- jQuery -->
+        <script src="dist/js/plugins.min.js"></script>
+        <script src="dist/js/common.js"></script>
+    </body>
+
+</html>

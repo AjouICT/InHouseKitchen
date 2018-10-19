@@ -1,0 +1,110 @@
+@media (min-width: 1200px)
+{
+    .container {
+        max-width: 1280px;
+    }
+}
+@media(max-width:1199px){
+    body{
+        font-size: 0.875em;
+    }
+    .profile-header{
+        .nav-pills{justify-content: center!important;}
+    }
+    .lis-countdown-box{
+        .lis-timer{
+            div{
+               &:after{
+                    display: none;
+                } 
+            }
+        }
+    }
+    .error{
+        h1{
+            font-size: 100px;
+        }
+    }
+}
+@media(max-width:991px){
+    .map-fixed{
+        position: relative !important;
+        height: 520px !important;
+    }    
+    .container {
+        max-width: 100%;
+    }
+    .box-line{
+        &:before{
+            display: none;
+        }
+    }
+    .header nav.navbar-toggleable-md.navbar-light {
+        .navbar-nav {
+            .nav-link{
+                padding: 1em 0em;
+            }
+        }
+    }
+    nav .navbar-nav li.dropdown > .dropdown-menu
+    {
+        display: none !important;
+        visibility: hidden;
+        &.show{
+            display: block !important; 
+            visibility: visible;
+        }
+    } 
+    .transperant {
+        .collapse.show{ 
+            background: $dark;
+            padding: 20px;
+        }
+    }
+    .slick-prev{ left: 45%;}
+    .slick-next{ right: 45%;}
+}
+@media (max-width: 767px) {
+    .slick-prev{ left: 40%;}
+    .slick-next{ right: 40%;}
+    .price-table.active{
+        transform:  scale(1);
+       -webkit-transform: scale(1);
+    }
+}    
+@media (max-width: 576px) {
+    .slick-prev{ left: 35%;}
+    .slick-next{ right: 35%;}
+    .card .hover-text.lis-bottom-20{
+         bottom: 10px !important;
+    }
+    .nav-pills{
+        .nav-item{
+            .nav-link{
+                &:before{
+                    display: none;
+                }
+            }
+        }
+        .nav-link.active{
+            &:after{
+                bottom: -1px;
+            }        
+        }
+    }
+    .lis-property-meta{
+        .lis-brd-right{ border: 0;}
+        .lis-meta-block{
+            width: 100%;
+        }
+    }
+    #clockdiv{
+        .lis-timer{
+            div{
+               &:after{
+                    display: none;
+                } 
+            }
+        }
+    }
+}

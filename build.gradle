@@ -21,6 +21,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.spring.io/libs-milestone'}
 }
 
 
@@ -29,6 +30,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
+    compile "org.springframework.boot:spring-boot-configuration-processor"
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.18'
     runtime('net.rakugakibox.spring.boot:logback-access-spring-boot-starter:2.7.1')
     testCompile('org.assertj:assertj-core:3.9.0')
     testCompile('io.rest-assured:rest-assured:3.0.3')
@@ -36,4 +39,10 @@ dependencies {
     runtime('com.h2database:h2')
     compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-aws:2.0.0.RC2'
+    }
 }

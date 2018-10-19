@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lister</title>
+        <link rel="shortcut icon" href="dist/images/favicon.ico">
+        <!--Plugin CSS-->
+        <link href="dist/css/plugins.min.css" rel="stylesheet">
+
+        <!--main Css-->
+        <link href="dist/css/main.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- header -->
+        <div id="header-fix" class="header fixed-top">
+            <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
+                <a class="navbar-brand mr-4 mr-md-5" href="index.html"><img src="dist/images/logo-v1.png" alt=""></a> 
+                <div id="dl-menu" class="dl-menuwrapper d-block d-lg-none float-right">
+                    <button>Open Menu</button>
+                    <ul class="dl-menu">
+
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li><a href="index.html">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li><a href="listing-explore-place-profile.html">Explore Place</a></li>
+                                <li><a href="listing-explore-event-profile.html">Explore Event</a></li>
+                                <li><a href="listing-explore-property-profile.html">Explore Property</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Listing</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing By Categories</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="listing-categories-style1.html">Category 1</a></li>
+                                        <li><a href="listing-categories-style2.html">Category 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing No Map</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="listing-no-map-sidebar.html">With Sidebar</a></li>
+                                        <li><a href="listing-no-map-fullwidth.html">Full Width</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Half Screen Map</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="half-screen-search-sidebar-place.html">With Search Place</a></li>
+                                        <li><a href="half-screen-search-sidebar-event.html">With Search Event</a></li>
+                                        <li><a href="half-screen-search-sidebar-property.html">With Search Property</a></li>
+                                        <li><a href="half-screen-with-categories-sidebar.html">With Categories Sidebar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                        <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                        <li><a href="blog-single.html"> Single Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"> Contact</a></li>
+                                <li><a href="user-profile.html"> User Profile</a></li>
+                                <li><a href="faq.html"> Faq</a></li>
+                                <li><a href="pricing.html"> Pricing Table</a></li>
+                                <li><a href="coming-soon.html"> Coming Soon</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                        <li><a href="error-light.html"> 404 Error Light</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li> <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a></li>
+
+                        <li> <a href="add-listing.html" ><i class="fa fa-plus pr-1"></i> Add Listing</a></li>
+
+
+
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Home <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="listing-explore-place-profile.html">Explore Place</a></li>
+                                <li><a href="listing-explore-event-profile.html">Explore Event</a></li>
+                                <li><a href="listing-explore-property-profile.html">Explore Property</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Listing <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing By Categories</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="listing-categories-style1.html">Category 1</a></li>
+                                        <li><a href="listing-categories-style2.html">Category 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing No Map</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="listing-no-map-sidebar.html">With Sidebar</a></li>
+                                        <li><a href="listing-no-map-fullwidth.html">Full Width</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Half Screen Map</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="half-screen-search-sidebar-place.html">With Search Place</a></li>
+                                        <li><a href="half-screen-search-sidebar-event.html">With Search Event</a></li>
+                                        <li><a href="half-screen-search-sidebar-property.html">With Search Property</a></li>
+                                        <li><a href="half-screen-with-categories-sidebar.html">With Categories Sidebar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                        <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                        <li><a href="blog-single.html"> Single Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"> Contact</a></li>
+                                <li><a href="user-profile.html"> User Profile</a></li>
+                                <li><a href="faq.html"> Faq</a></li>
+                                <li><a href="pricing.html"> Pricing Table</a></li>
+                                <li><a href="coming-soon.html"> Coming Soon</a></li>
+                                <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                        <li><a href="error-light.html"> 404 Error Light</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled my-2 my-lg-0">
+                        <li> <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a></li>
+                    </ul>
+                    <a href="add-listing.html" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a>
+                </div>
+            </nav>                    
+        </div>
+        <!--End header -->
+
+        <!-- Sidebar -->
+        <section class="pb-0" style="padding-top: 94px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-6 py-5 order-lg-1 order-2 left-sidebar z-index-99">
+                        <div class="lis-relative">
+                            <h5 class="mb-2">What are you looking for?</h5>
+                            <p>Search by Keywords, Location, Category or Filters</p>
+                            <div class="py-2">
+                                <label class="custom-control custom-radio lis-dark lis-font-poppins">
+                                    <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                                    <span class="custom-control-indicator bg-transparent"></span>
+                                    <span class="custom-control-description">Places</span>
+                                </label>
+                                <label class="custom-control custom-radio lis-dark lis-font-poppins">
+                                    <input id="radio2" name="radio" type="radio" class="custom-control-input">
+                                    <span class="custom-control-indicator bg-transparent"></span>
+                                    <span class="custom-control-description">Events</span>
+                                </label>
+                                <label class="custom-control custom-radio lis-dark lis-font-poppins">
+                                    <input id="radio3" name="radio" type="radio" class="custom-control-input">
+                                    <span class="custom-control-indicator bg-transparent"></span>
+                                    <span class="custom-control-description">Property</span>
+                                </label>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group lis-relative">
+                                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?">
+                                        <div class="lis-search">
+                                            <i class="fa fa-search lis-primary lis-left-0"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group lis-relative">
+                                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location">
+                                        <div class="lis-search">
+                                            <i class="fa fa-map-o lis-primary lis-left-0"></i>
+                                        </div>
+                                        <div class="lis-search">
+                                            <a href="#" class="lis-light"><i class="fa fa-crosshairs lis-left-auto lis-right-0"></i></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group lis-relative">
+                                        <select class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                            <option> All Categories</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <div class="lis-search">
+                                            <i class="fa fa-tags lis-primary lis-left-0"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <p class="pt-2 mb-2">Radius <span id="ex6CurrentSliderValLabel"> <span id="ex6SliderVal">530 </span></span></p>
+                                    <input id="ex6" type="text" data-slider-min="300" data-slider-max="1000" data-slider-step="1" data-slider-value="3"/>
+                                </div>
+                                <div class="col-12 col-md-4 lis-relative">
+                                    <p class="pt-2 mb-2 pl-4">Area <span id="ex7CurrentSliderValLabel"> <span id="ex7SliderVal" class="float-right">5824 </span></span></p>
+                                    <div class="lis-search">
+                                        <i class="fa fa-object-group lis-primary"></i>
+                                    </div>
+                                    <input id="ex7" type="text" data-slider-min="5824" data-slider-max="10000" data-slider-step="1" data-slider-value="3"/>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group lis-relative">
+                                        <select class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                            <option> Bedrooms</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <div class="lis-search">
+                                            <i class="fa fa-bed lis-primary lis-left-0"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group lis-relative">
+                                        <select class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                            <option> Bathrooms</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <div class="lis-search">
+                                            <i class="fa fa-bath lis-primary lis-left-0"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-12 col-md-4 lis-relative">
+                                    <p class="pt-2 mb-2 pl-4">Price <span id="ex8CurrentSliderValLabel"> <span id="ex8SliderVal" class="float-right">5824 </span></span></p>
+                                    <div class="lis-search">
+                                        <i class="fa fa-money lis-primary"></i>
+                                    </div>
+                                    <input id="ex8" type="text" data-slider-min="5824" data-slider-max="10000" data-slider-step="1" data-slider-value="3"/>
+                                </div>
+                               
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12 col-md-12">
+                                    <p class="lis-dark">More Filters</p>
+                                </div>
+                                <div class="col-12 col-xl-3 col-lg-6">
+                                    <label id="checkbox1" class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><small>Care Parking</small></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-xl-3 col-lg-6">
+                                    <label id="checkbox2" class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><small>Smoking Allowed</small></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-xl-3 col-lg-6">
+                                    <label id="checkbox3" class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><small>Wireless Internet</small></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-xl-3 col-lg-6">
+                                    <label id="checkbox4" class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><small>Elevator Building</small></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-12 col-xl-3 col-lg-6">
+                                    <label id="checkbox5" class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><small>Events</small></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-xl-3 col-lg-6">
+                                    <label id="checkbox6" class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><small>Accepted Bank </small></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-xl-3 col-lg-6">
+                                    <label id="checkbox7" class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><small>Friendly Space</small></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-xl-3 col-lg-6">
+                                    <label id="checkbox8" class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><small>Street Parking</small></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-12 pt-4">
+                                    <a href="#" class="btn btn-primary btn-default"><i class="fa fa-search pr-2"></i> Search property</a>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-12 col-xl-6 mb-xl-0 mb-5">
+                                    <div class="card lis-brd-light">
+                                        <a href="#">
+                                            <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded-top">
+                                                <img src="dist/images/img9.jpg" alt="" class="img-fluid rounded-top w-100">
+                                            </div>
+                                            <div class="lis-absolute lis-right-20 lis-top-20">
+                                                <div class="lis-post-meta border border-white text-white rounded lis-f-14">For Sale</div>
+                                            </div>
+                                        </a>    
+                                        <div class="card-body">
+                                            <h6 class="lis-font-weight-600 mb-2"><A href="#" class="lis-dark">Villa in Melbourne City</A></h6>
+                                            <ul class="list-unstyled mt-0">
+                                                <li><i class="fa fa-map-o pr-2"></i>1903 Hollywood, NJ 85624, USA</li>
+                                            </ul>
+                                            <div class="media pt-2">
+                                                <div class="d-flex">
+                                                    <h5 class="lis-primary mb-0"><span class="lis-f-14 lis-dark">Price:</span> $13,80,000 </h5>
+                                                </div>
+                                                <div class="media-body align-self-center text-right">
+                                                    <a href="#" class="lis-light lis-f-14" tabindex="0"><i class="fa fa-heart-o lis-id-info  lis-rounded-circle-50 text-center"></i></a>
+                                                </div>                                    
+                                            </div>
+                                        </div>
+                                        <div class="lis-devider"></div>
+                                        <ul class="list-inline mb-0 text-center lis-property-meta">
+                                            <li class="list-inline-item lis-brd-right lis-brd-light lis-meta-block float-left"><i class="fa fa-object-group pr-1"></i> 5842 m2</li>
+                                            <li class="list-inline-item lis-brd-right lis-brd-light lis-meta-block float-left"><i class="fa fa-bed pr-1"></i> 4 Bed</li>
+                                            <li class="list-inline-item lis-meta-block float-left"><i class="fa fa-bath pr-1"></i> 3 Bath</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-6">
+                                    <div class="card lis-brd-light">
+                                        <a href="#">
+                                            <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded-top">
+                                                <img src="dist/images/img10.jpg" alt="" class="img-fluid rounded-top w-100">
+                                            </div>
+                                            <div class="lis-absolute lis-right-20 lis-top-20">
+                                                <div class="lis-post-meta border border-white text-white rounded lis-f-14">For Rent</div>
+                                            </div>
+                                        </a>    
+                                        <div class="card-body">
+                                            <h6 class="lis-font-weight-600 mb-2"><A href="#" class="lis-dark">Family House in Omaha</A></h6>
+                                            <ul class="list-unstyled mt-0">
+                                                <li><i class="fa fa-map-o pr-2"></i>15421 Southwest, NJ 32568, USA</li>
+                                            </ul>
+                                            <div class="media pt-2">
+                                                <div class="d-flex">
+                                                    <h5 class="lis-primary mb-0"><span class="lis-f-14 lis-dark">Price:</span> $2,500 <small class="lis-light">/month</small> </h5>
+                                                </div>
+                                                <div class="media-body align-self-center text-right">
+                                                    <a href="#" class="lis-light lis-f-14" tabindex="0"><i class="fa fa-heart-o lis-id-info  lis-rounded-circle-50 text-center"></i></a>
+                                                </div>                                    
+                                            </div>
+                                        </div>
+                                        <div class="lis-devider"></div>
+                                        <ul class="list-inline mb-0 text-center lis-property-meta">
+                                            <li class="list-inline-item lis-brd-right lis-brd-light lis-meta-block float-left"><i class="fa fa-object-group pr-1"></i> 2018 m2</li>
+                                            <li class="list-inline-item lis-brd-right lis-brd-light lis-meta-block float-left"><i class="fa fa-bed pr-1"></i> 2 Bed</li>
+                                            <li class="list-inline-item lis-meta-block float-left"><i class="fa fa-bath pr-1"></i> 1 Bath</li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 order-lg-2 order-1 px-0">
+                        <div id="map" class="w-100 h-100 map-fixed"></div>
+                    </div>
+                </div>
+            </div> 
+        </section> 
+        <!--End Sidebar -->
+
+        <!-- Top To Bottom-->
+        <a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50"> 
+            <h3 class="text-white mb-0 lis-line-height-1_7"><i class="icofont icofont-long-arrow-up"></i></h3>
+        </a>
+        <!-- End Top To Bottom-->
+<!-- Login /Register Form-->
+
+        <div class="container">
+
+
+
+
+
+            <div id="modal" class="popupContainer" style="display: none;">
+
+                <header class="popupHeader">
+
+                    <span class="header_title">Login</span>
+
+                    <span class="modal_close"><i class="fa fa-times"></i></span>
+
+                </header>
+
+
+
+                <div class="popupBody">
+
+                    <!-- Social Login -->						
+
+
+
+                    <!-- Username & Password Login form -->
+
+                    <div class="user_login">
+
+                        <form>
+
+
+
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="username or email address" />
+
+                            <br />
+
+
+
+
+
+                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
+
+                            <br />
+
+
+
+                            <div class="checkbox">
+
+                                <input id="remember" type="checkbox" />
+
+                                <label for="remember">Remember me on this computer</label>
+
+                            </div>
+
+
+
+                            <div class="action_btns">
+
+
+
+                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Login</a>
+
+                            </div>
+
+                        </form>
+
+                        <br/>
+
+                        Sign in with your social network<br/>
+
+                        <ul class="list-inline my-0">
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+
+                        </ul>
+
+                        <hr/>
+
+                        Don't have an account <a href="#" class="register_form">Sign Up</a>
+
+                    </div>
+
+
+
+                    <!-- Register Form -->
+
+                    <div class="user_register">
+
+                        <form>
+
+
+
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Username" />
+
+                            <br />
+
+
+
+
+
+                            <input type="email" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Email Address" />
+
+                            <br />
+
+
+
+
+
+                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Password" />
+
+                            <br />
+
+
+
+                            <div class="checkbox">
+
+                                <input id="send_updates" type="checkbox" />
+
+                                <label for="send_updates">Send me occasional email updates</label>
+
+                            </div>
+
+
+
+                            <div class="action_btns">
+
+                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Register</a>
+
+                            </div>
+
+                        </form>
+
+                        <br/>
+
+                        Register with your social network<br/>
+
+                        <ul class="list-inline my-0">
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+
+                        </ul>
+
+                        <hr/>
+
+                        Already have an account <a href="#" class="login_form">Sign In</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- End Login /Register Form-->
+        <!-- jQuery -->
+        <script src="dist/js/plugins.min.js"></script>
+        <script src="dist/js/common.js"></script>
+        <script src="dist/js/data.json"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false"></script>
+        <script src="dist/js/map.js"></script>
+    </body>
+</html>

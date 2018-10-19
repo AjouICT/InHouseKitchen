@@ -1,0 +1,928 @@
+/*===
+    1. Section & Selection Css 
+    2. Pagination  Css
+    3. Form Css
+    4. Buttons Css
+    5. Buttons Size Cs
+    6. Page Inner Tabs Css
+    7. Form-Icon Css  
+    8. Categories Css
+    9. Visited Places Css 
+    10. Icon-box Css
+    11. Price Table Css
+    12. Categories Css 
+    13.  Masonry Css 
+    14. Back To Top Button 
+    15. Checkbox Css
+    16. Google Map
+    17. Calendar
+    18. Breadcrumb
+    19. Accordian
+===*/
+
+/*======================== Section & Selection Css ===============================*/
+section {
+    padding-top: 6.25em;
+    padding-bottom: 6.25em;
+    position: relative;
+}
+::selection {
+    background-color: $primary;
+    color: $white;
+}
+/*======================== Pagination  Css ===============================*/
+.pagination {
+    .page-link{
+        &:hover, &:focus{
+            color: $body-color;
+            background-color: #f0f0f0;
+        }
+    }
+    .page-item.active .page-link{
+        color: $body-color;
+        background-color: #f0f0f0;
+        border-color: $brd-light;
+    }
+}
+/*======================== Form Css ===============================*/
+.form-control {
+    height: 51px;
+    border-radius: 0px;
+    border-color: $brd-light;
+    color: $body-color;
+    transition: .2s ease-out; 
+    &:focus{
+        border-color: $brd-light;
+    }
+}
+ 
+select.form-control:not([size]):not([multiple]){
+    height: 51px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    background: url(../images/arrow.png) no-repeat 96%;
+    cursor: pointer;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  transition: all 0.3s ease; }
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  opacity: 0; }
+
+textarea.form-control{ 
+    height: 115px !important;
+    resize: none;
+}
+/*======================== Buttons Css ===============================*/
+.btn{
+    color: $white;
+    padding: .5rem 1.3rem;
+    font-size: 1rem;
+    word-wrap: break-word;
+    &:focus{
+        box-shadow: none;
+        color: $white;
+    }
+}
+.btn-outline-light{
+    border-color: $white;
+    &:hover, &:active{ 
+        background-color: transparent;
+    }
+}
+.btn-primary{
+    background-color: $primary;
+    border-color: $brd-primary;
+    &:hover, &:focus{
+        background-color: $primary;
+        border-color: $brd-primary;
+    }
+}
+.btn-primary-outline{
+    background-color: transparent;
+    color: $primary;
+    border-color: $brd-primary;
+    &:hover, &:focus{
+        background-color: $primary;
+        border-color: $brd-primary;
+        color: $white;
+    }
+}
+.btn-success{
+    background-color: $light-green;
+    border-color: $light-green;
+     &:hover{
+        color: $white;
+        background-color: $light-green;
+        border-color: $light-green;
+    }
+}
+.btn-white{
+    background-color: $white;
+    color: $primary;
+    &:hover, &:focus{
+        color: $primary;
+    }
+}
+/*======================== Buttons Size Css===============================*/
+.btn-xs{     
+    padding: 0rem 1rem;
+    line-height: 2rem;
+}
+
+.btn-sm{ 
+    padding: 0rem 1.5rem;
+    line-height: 2.5rem;
+}
+
+.btn-default {
+    padding: 0rem 2rem;
+    line-height: 2.5rem;
+}
+
+.btn-md {
+    line-height: 3rem;
+    padding: 0rem 2rem;
+}
+
+.btn-lg{ 
+    padding: 0rem 2.5rem;
+    line-height: 3.5rem;
+}
+
+/*======================== Page Inner Tabs Css===============================*/
+.nav-tabs{
+    border: 0px;
+    .nav-link{
+        color: $body-color;
+        background-color: #e5e5e5;
+        &:hover, &:focus
+        { border-color: transparent; }
+    }
+    .nav-link.active{
+        color: $dark;
+        border-color: $white;
+        font-weight: 600;
+        i{ color: $primary;}
+    }
+}
+
+
+/*======================== Form-Icon Css ===============================*/
+.lis-search{
+    i{
+        position: absolute;
+        top: 19px;
+        left: 15px;
+    }
+    i.fa.fa-crosshairs:hover{color: $primary;}
+}
+/*======================== Categories Css ===============================*/
+.lis-categories{
+    -webkit-transition: 0.4s;
+    cursor: pointer;
+    &:hover{ 
+        -webkit-transform: scale(1.06);
+        -moz-transform: scale(1.1);
+        box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.18);
+    }
+    .categories-listing{
+        font-size: 14px;
+        bottom: -100%;
+        transition: all 0.4s;
+    }
+    &:hover .categories-listing{
+        bottom: 0;
+        visibility: visible !important;
+    }
+}
+
+/*======================== Visited Places Css ===============================*/
+.lis-id-info{
+    background-color: #f0f0f0;
+    width: 36px;
+    height: 36px;
+    line-height: 38px;
+    &:hover{
+        color: $white;
+        background-color: $primary;
+    }
+}
+.slick-slide {
+    margin: 0px 15px;
+    outline: none;
+}
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .5;
+}
+
+.slick-active {
+  opacity: 1;
+}
+
+.slick-current {
+  opacity: 1;
+}
+.lis-property-meta{
+    .lis-meta-block{
+        padding: 15px 0px;
+        width: 32%;
+    }
+}
+.lis-post-meta {
+    padding: .7em 1.2em;
+    line-height: 15px;
+}
+/*======================== Icon-box Css ===============================*/
+.icon-box{
+    &:hover{
+        background: url(../images/hover.png) center top no-repeat;
+    }
+}
+.box-line{
+    &:before{
+        content: "";
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        height: 36px;
+        top: 0;
+    }
+}
+.box-line-dotted1{
+    &:before{
+        background: url(../images/border-dotted-1.png) center top no-repeat;
+    }
+}
+.box-line-dotted2{
+    &:before{
+        background: url(../images/border-dotted-2.png) center bottom no-repeat;
+        top: 30px;
+    }
+}
+/*======================== Price Table Css ===============================*/
+.price-table{
+   -webkit-transition: 0.3s ease;
+    sup, small{
+        font-size: 1.25rem;
+    }
+    sup{top: -1.5em;}
+}
+.price-table.active{
+     transform:  scale(1.045);
+    -webkit-transform: scale(1.045);
+}
+
+/*======================== Home Page 2 Css ===============================*/
+
+/*======================== Categories Css ===============================*/
+.lis-icon{
+    width: 60px;
+    height: 60px;
+}
+.lis-info{
+    &:hover{
+        background: -webkit-linear-gradient(90deg, rgba( 0, 0, 0, 0.80) 0%, rgba( 17, 17, 17, 0.80) 100%); 
+    }
+}
+/*======================== Masonry Css ===============================*/
+.lis-masonry{
+    transition: all 0.35s;
+    &:hover{
+        opacity: .9;
+    }
+}
+
+#testimonial{
+    .quote{
+        img{ top: 38px; }
+    }
+}
+/*=============== Back To Top Button =======================*/
+.scrollup {
+    width: 46px;
+    height: 46px;
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    display: none;
+    z-index: 999;
+    &:hover{
+        color: $white;
+        background-color: $primary;
+    }
+}
+/*=============== Half Screen Page Css=======================*/
+
+/*=============== Left Sidebar =======================*/
+.custom-control-indicator{
+    border: solid 2px #dadada;
+}
+.custom-control{
+    margin-right: .4rem;
+}
+.custom-control-input:focus~.custom-control-indicator {
+    box-shadow: none;
+}
+.custom-radio .custom-control-input:checked~.custom-control-indicator{
+    border-color: $brd-primary;
+    background: #ff214f !important;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #ff214f;
+        transition: .28s ease;
+}
+#ex1Slider .slider-selection, #ex7Slider .slider-selection  {
+    background: #bababa;
+}
+#ex6SliderVal{
+    &:after{
+        content: "mi";
+        padding-left: 1px;
+    }
+}
+#ex7SliderVal{
+    &:after{
+        content: "m2";
+        padding-left: 1px;
+    }
+}
+.custom-checkbox {
+    .custom-control-indicator {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+    }
+    .custom-control-description {
+        padding-left: 5px;
+    }
+}
+.custom-control-input:checked~.custom-control-indicator
+{
+    background-color: #ff214f;
+    border-color: $brd-primary;
+}
+
+/*=============== Google Map =======================*/
+.map-fixed{
+    position: fixed !important;
+    top: 0;
+}
+.left-sidebar{
+    box-shadow: 0px 0px 54px 0px rgba(0, 0, 0, 0.17);
+}
+#ex8SliderVal{
+    &:after{
+        content: "k";
+    }
+}
+.dual-range .slider .hide, .dual-range .slider input, .dual-range .slider 
+{ display: block !important;}
+
+.dual-range{
+    .ui-widget.ui-widget-content{
+        border: 0px;
+        padding: 0px;
+        background: #dadada;
+        height: 3px;
+        border-radius: 0px;
+    }
+    .ui-slider-handle{
+        width: 9px;
+        height: 9px;
+        background: #ff214f;
+        border-radius: 50px;
+        top: -.2em;
+        margin: 0px;
+        border-color: $brd-primary;
+    }
+    
+    .ui-widget-header{ background: #ff214f;}
+}
+/*=============== Listing Shorting =======================*/
+.shorting{
+    .form-group{width: 160px;}
+}
+.filter-btn, .text-btn{ 
+    &:focus{
+        outline: 0;
+    }
+    &.collapsed:after{
+        content: "\f055";
+        padding-left: 3px;
+    }
+    &:after{   
+       font-family: 'FontAwesome';
+       content: "\f056";
+       padding-left: 3px;
+    }
+}
+.text-btn{ 
+    &.collapsed:after{
+        content: "\f107";
+    }
+    &:after{   
+       font-family: 'FontAwesome';
+       content: "\f106";
+       float: right;
+    }
+}
+.form-wrapper{    
+    box-shadow: 0 0.1rem 1rem rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+}
+/*=============== Listing-Explore-Place-Profile Css =======================*/
+.profile-inner{
+    padding-top: 267px;
+}
+.profile-header{
+    border-bottom: solid 1px $brd-light;
+}
+.nav-pills{
+    .nav-item{
+        .nav-link{
+            border-radius: 0;
+            padding: 0 23px;
+            transition: all .2s ease;
+            &:before{
+                content:"";
+                height:30px;
+                width:1px;
+                display:inline-block;
+                position:absolute;
+                right:-15px;
+                background-color: $brd-light;
+            }
+        }
+        &:last-child .nav-link:before{ display: none;}
+    }
+    .nav-link.active{
+        background-color: transparent;
+        color: $body-color;  
+        &:after{
+            content: "";
+            border-bottom: solid 3px #ff214f;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: -2px;
+        }        
+    }
+}
+.cover-btn{
+    a{
+        display: block;
+        padding: .5rem .75rem;
+        margin-left: -5px;
+        border: 1px solid $brd-light;
+    }
+}
+/*=============== Profile Page Css =======================*/
+.gallery {
+    overflow: hidden;
+    transition: all .4s ease;
+    .gallery-fade{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+    &:hover .gallery-fade {
+        opacity: 1;
+        background-color: rgba(17, 17, 17, 0.7);
+    }
+}
+.lis-social{
+    width: 36px;
+    height: 36px;
+    transition: .2s ease;
+     color: #aaaaaa;
+    &:hover {
+        background-color:  $primary;
+        border-color: $brd-primary !important;
+        color: $white;
+    }
+}
+/*=============== Reviews Page Css =======================*/
+.comment-info{
+    .list-inline-item{
+        a{ 
+            &:before{
+                content: "";
+                height: 13px;
+                width: 2px;
+                display: inline-block;
+                position: absolute;
+                right: -13px;
+                background-color: #707070;
+                top: 6px;
+            }
+        }
+        &:last-child a:before{ display: none;}
+    }
+}
+/*=============== Explore Event Page Css =======================*/
+.lis-countdown-box{
+    .lis-timer{
+        div{
+           &:after{
+                content: ":";
+                position: absolute;
+                right: -5px;
+                top: 14px;
+            } 
+        }
+        &:last-child div:after{ display: none;}
+    }
+}
+/*=============== Calendar =======================*/
+.ui-datepicker-next {
+    &:after{
+        content: "\f054";
+        font: normal normal normal 14px/1 FontAwesome;
+        margin-left: 8px;
+    }
+}
+.ui-datepicker-prev{
+    &:after{
+        content: "\f053";
+        font: normal normal normal 14px/1 FontAwesome;
+        margin-left: 8px;
+    }
+}
+.lis-product{
+    .item{
+        .thumb{
+            width: 25%;
+            cursor: pointer;
+            float: left;
+            img{
+                margin: 2px;
+            }
+        } 
+    }
+}
+/*===============Blog Page Css=======================*/
+
+/*===============Blog breadcrumb Css=======================*/
+.breadcrumb {
+    .breadcrumb-item.active, .breadcrumb-item+.breadcrumb-item::before{
+        color: $body-color;
+    }
+}
+/*=============== Blog Listing Page Css=======================*/
+.lis-categories-list, .lis-widget-content, .lis-page-social{
+    a{
+        transition: all 0.85s;
+        &:hover{ color: $primary;}
+    }
+}
+.lis-widget-content{
+    img{ height: 90px;}
+}
+
+/*=============== Blog Single Page Css=======================*/
+.blockquote {
+    border-left: solid 3px $brd-light !important;
+    padding-left: 37px;
+    .blockquote-footer{
+        color: $body-color;
+    }
+}
+.btn-reply{
+    padding: 7px 17px;
+    transition: all 0.85s;
+    &:hover{
+        color: $white;
+        background-color: $primary;
+        border-color: $brd-primary !important;
+    }
+}
+.bookmark{ 
+    background-color: $primary !important;
+    color: $white;
+}
+/*=============== Faq Page Css=======================*/
+.list-group{
+    .list-group-item{
+        &:first-child, &:last-child{ border-radius: 0px !important;}
+    }
+    .list-group-item.active{
+        background-color: transparent;
+        color: $dark;
+        font-weight: 500;
+    }
+    .list-group-item-action{
+        &:hover, &:focus{ background-color: transparent;}
+    }
+}
+.faq{
+    .card-header{
+        a{
+          &.collapsed:before{
+                content: "\f105";
+                font-family: 'FontAwesome';
+                padding-right: 10px;
+            }  
+        }
+        [aria-expanded="true"]{
+            &:after{
+                border-bottom: solid 1px $brd-light;
+                content: "";
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0
+            }
+            &:before{   
+               font-family: 'FontAwesome';
+               content: "\f107";
+               padding-right: 10px;
+            }
+        }
+    }
+    
+}
+/*=============== Error Page Css=======================*/
+.error{
+    h1{
+        font-size: 200px;
+    }
+}
+/*=============== Coming Soon Page Css=======================*/
+#clockdiv{
+    .lis-timer{
+        div{
+           &:after{
+                content: ":";
+                position: absolute;
+                right: -9px;
+                top: 28px;
+                font-size: 40px;
+            } 
+        }
+        &:last-child div:after{ display: none;}
+    }
+}
+
+
+/*============================= Login / Register ===================== */
+
+#lean_overlay {
+		position: fixed;
+		z-index: 1000;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		background: #000;
+		display: none;
+}
+
+.popupContainer {
+		position: absolute;
+		width: 330px;
+		height: auto;
+		left: 45%;
+		top: 60px;
+		background: #FFF;
+}
+
+#modal_trigger {
+		margin: 40px auto;
+		width: 200px;
+		display: block;
+		border: 1px solid #DDD;
+		border-radius: 4px;
+}
+
+
+/* Popup Styles*/
+
+.popupHeader {
+		font-size: 16px;
+		text-transform: uppercase;
+}
+
+.popupHeader {
+		background: #F4F4F2;
+		position: relative;
+		padding: 10px 20px;
+		border-bottom: 1px solid #DDD;
+		font-weight: bold;
+}
+
+.popupHeader .modal_close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 10px 15px;
+		background: #E4E4E2;
+		cursor: pointer;
+		color: #aaa;
+		font-size: 16px;
+}
+
+.popupBody {
+		padding: 20px;
+}
+
+/* User Login Form */
+
+.user_login {
+		display: none;
+}
+
+.user_login label {
+		display: block;
+		margin-bottom: 5px;
+                    line-height: 14px;
+}
+
+.user_login input[type="text"],
+.user_login input[type="email"],
+.user_login input[type="password"] {
+		display: block;
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #DDD;
+		color: #666;
+}
+
+.user_login input[type="checkbox"] {
+		float: left;
+		margin-right: 5px;
+}
+
+.user_login input[type="checkbox"]+label {
+		float: left;
+}
+
+.user_login .checkbox {
+		margin-bottom: 10px;
+		clear: both;
+		overflow: hidden;
+}
+
+.forgot_password {
+		display: block;
+		margin: 20px 0 10px;
+		clear: both;
+		overflow: hidden;
+		text-decoration: none;
+		color: #ED6347;
+}
+/* User Register Form */
+
+.user_register {
+		display: none;
+}
+
+.user_register label {
+		display: block;
+		margin-bottom: 5px;
+                line-height: 14px;
+}
+
+.user_register input[type="text"],
+.user_register input[type="email"],
+.user_register input[type="password"] {
+		display: block;
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #DDD;
+		color: #666;
+}
+
+.user_register input[type="checkbox"] {
+		float: left;
+		margin-right: 5px;
+}
+
+.user_register input[type="checkbox"]+label {
+		float: left;
+}
+
+.user_register .checkbox {
+		margin-bottom: 10px;
+		clear: both;
+		overflow: hidden;
+}
+
+
+/*==================================  Add Listing =========================*/
+.listingtab
+{
+        text-align: center;
+    display: block;
+    li
+    {
+            float: none;
+    display: inline-block;
+    }
+    &.nav-tabs .nav-item.show .nav-link, &.nav-tabs .nav-link.active
+    {
+            background-color: $primary;
+            border-color: $primary;
+            color:#fff;
+            i {
+                color:#fff;
+            }
+    }
+}
+/* Customize the label (the container) */
+.custom-checkbox {
+
+  position: relative;
+  padding-left: 35px;
+     line-height: 20px;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+    background-color: transparent;
+    border: 2px solid #eee;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked ~ .checkmark {
+  background: $primary;
+   border: 2px solid $primary;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after, .custom-checkbox input:checked ~ .radiobtn:after {
+  display: block;
+}
+
+.custom-checkbox  .radiobtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border:2px solid #eee;
+    border-radius: 50%;
+}
+.custom-checkbox input:checked ~ .radiobtn {
+
+   border: 2px solid $primary;
+}
+.custom-checkbox  .radiobtn:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.custom-checkbox .radiobtn:after {
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $primary;
+}
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+      left: 6px;
+    top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#us2
+{
+    height: 400px;
+}
+.ui-widget.ui-widget-content
+{
+    z-index: 1000 !important;
+}

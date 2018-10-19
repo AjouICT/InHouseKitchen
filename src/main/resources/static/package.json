@@ -1,0 +1,34 @@
+{
+  "name": "creative",
+  "version": "1.0.0",
+  "description": "A client-side library to make absolutely positioned elements attach to elements in the page efficiently.",
+  "authors": [
+    "codeflicks <info@codeflicks.com>"
+  ],
+  "maintainers": [
+    "Makhan Bishnoi <makhan.godara@gmail.com>"
+  ],
+  "scripts": {
+    "reinstall": "del node_modules && npm install",
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
+  "license": "MIT",
+  "main": "dist/js/plugins.js",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-partials-imported": "^1.0.5",
+    "gulp-uglify": "^3.0.0",
+    "uglify": "^0.1.5"
+  },
+  "dependencies": {
+    "del": "^3.0.0"
+  }
+}
