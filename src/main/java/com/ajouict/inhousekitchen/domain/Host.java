@@ -11,7 +11,7 @@ public class Host {
     private Long id;
 
     @OneToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "fk_host"))
+    @JoinColumn(foreignKey = @ForeignKey(name = "host_id"))
     private User host;
 
     @Lob
