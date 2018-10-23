@@ -34,10 +34,10 @@
     <!-- 사용자 목록들 보여주기 -->
         <div class="container">
         <div class="row">
+            {{#users}}
             <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5">
                 <div class="card border-0 lis-relative">
-                    {{#users}}
-                    <a href="#">
+                    <a href="/{{userId}}">
                         <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="{{profilePhoto}}" alt="" class="img-fluid rounded"> </div>
                         <!--
                        <div class="lis-absolute lis-right-20 lis-top-20">
@@ -46,11 +46,11 @@
                         -->
                     </a>
                     <div class="pt-4"> <span class="lis-light">16 October 2017</span> <a href="#" class="lis-dark"><h6 class="mt-2">{{name}}</h6></a>
-                        <p>{{userId}}, {{nationality}}, {{phoneNum}}</p>
+                        <p>{{nationality}}  {{phoneNum}}  {{email}}</p>
                     </div>
-                    {{/users}}
                 </div>
             </div>
+            {{/users}}
         </div>
     </div>
 </section>
