@@ -24,8 +24,11 @@ public class User {
     private Boolean isHost=Boolean.FALSE;
     private String profilePhoto;
 
+    @OneToOne(mappedBy = "host")
+    private Host host;
 
-    public User() {
+
+   public User() {
     }
 
     public User(String userId, String password, String name, String nationality, String phoneNum, String email, String intro, Boolean isHost, String profilePhoto) {

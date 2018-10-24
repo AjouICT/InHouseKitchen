@@ -360,7 +360,9 @@
                                             </div>
                                             <ul class="list-unstyled my-4 lis-line-height-2">
                                                 <li><i class="fa fa-phone pr-2"></i> {{hostContact}}</li>
-                                                <li><i class="fa fa-map-o pr-2"></i> First Street, New York, USA</li>
+                                                <li><i class="fa fa-map-o pr-2"></i> {{latitude}} , {{longitude}}</li>
+                                                <input type="hidden" value="{{latitude}}" id="latitude">
+                                                <input type="hidden" value="{{longitude}}" id="longitude">
                                             </ul>
                                             <div class="clearfix">
                                                 <div class="float-none float-lg-left mb-3 mb-lg-0 mt-1">
@@ -567,7 +569,8 @@
         <script src="../dist/js/plugins.min.js"></script>
         <script src="../dist/js/common.js"></script>
         <script src="../dist/js/data.json"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&callback=initialize"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKEig7O8kFDEdTgvsweI3TmoBAuwfTYvQ
+&sensor=false&callback=initialize" type="text/javascript"></script>
         <script src="../dist/js/map.js"></script>
     </body>
 

@@ -25,6 +25,12 @@ public class SearchController {
         return "/host/hostList";
     }
 
+    @GetMapping("/sample")
+    public String sampleGeo(Model model){
+
+        return "/host/sampleGeo";
+    }
+
 
 
 }
