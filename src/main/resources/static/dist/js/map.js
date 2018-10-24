@@ -51,7 +51,7 @@ var markerClusterer = null;
 
             function initialize() {
               map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 2,
+                zoom: 15,
                 center: new google.maps.LatLng(39.91, 116.38),
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 styles: [{
