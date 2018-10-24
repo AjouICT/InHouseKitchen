@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    {{> include/header}}
+    {{> include/header2}}
 </head>
 
 <body>
 <!-- header -->
-{{> include/navigation}}
+{{> include/navigation2}}
 <!--End header -->
 <!-- Page Inner -->
 <section class="lis-bg-light pb-5">
@@ -37,8 +37,8 @@
             {{#users}}
             <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5">
                 <div class="card border-0 lis-relative">
-                    <a href="/{{userId}}">
-                        <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="{{profilePhoto}}" alt="" class="img-fluid rounded"> </div>
+                    <a href="/review/{{userId}}">
+                        <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="../{{profilePhoto}}" alt="" class="img-fluid rounded"> </div>
                         <!--
                        <div class="lis-absolute lis-right-20 lis-top-20">
                           <div class="lis-post-meta border border-white text-white rounded lis-f-14">Bar &amp; Club</div>
@@ -46,7 +46,9 @@
                         -->
                     </a>
                     <div class="pt-4"> <span class="lis-light">16 October 2017</span> <a href="#" class="lis-dark"><h6 class="mt-2">{{name}}</h6></a>
-                        <p>{{nationality}}  {{phoneNum}}  {{email}}</p>
+                        <p>{{nationality}}</p>
+                        <p>{{phoneNum}}</p>
+                        <p>{{email}}</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +58,7 @@
 </section>
 <!--End Blog -->
 <!-- Footer-->
-{{> include/footer}}
+{{> include/footer2}}
 <!--End  Footer-->
 <!-- Top To Bottom-->
 <a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50">
