@@ -118,6 +118,7 @@
                 <ul class="nav nav-pills flex-column flex-sm-row lis-font-poppins" id="myTab" role="tablist">
                     <li class="nav-item ml-0"> <a class="nav-link lis-light py-4 lis-relative mr-3 active" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-expanded="true"> Profile</a> </li>
                     <li class="nav-item ml-0"> <a class="nav-link lis-light py-4 lis-relative mr-3" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"> Reviews</a> </li>
+                    <li class="nav-item ml-0"> <a class="nav-link lis-light py-4 lis-relative mr-3" data-toggle="tab" href="/review/list" role="tab" aria-controls="list"> List</a> </li>
                 </ul>
             </div>
         </div>
@@ -204,10 +205,11 @@
                     </div>
                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
                         <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Reviews</h6>
+                        {{#reviews}}
                         <div class="card lis-brd-light wow fadeInUp mb-2">
                             <div class="card-body p-4">
                                 <div class="media d-block d-sm-flex text-center text-sm-left">
-                                    <a href="#"><img src="../dist/images/author5.jpg" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60"></a>
+                                    <a href="#"><img src="../{{writer.profilePhoto}}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60"></a>
                                     <div class="media-body align-self-center">
                                         <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -216,25 +218,20 @@
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                         </ul>
-                                        <h6 class="mb-0"><a href="#" class="lis-dark">REVIEW NAME</a></h6>
-                                        <p>November 03, 2017</p>
-                                        <h6 class="lis-primary mb-2">TITLE</h6>
-                                        <p>CONTENTS</p>
+                                        <h6 class="mb-0"><a href="#" class="lis-dark">{{writer.name}}</a></h6>
+                                        <p>{{createDate}}</p>
+                                        <h6 class="lis-primary mb-2">{{title}}</h6>
+                                        <p>{{contents}}</p>
                                         <!-- 사진들 -->
-                                        <div class="review-image my-3">
-                                            <a href="../dist/images/review1.jpg" data-toggle="lightbox" data-gallery="example-gallery"><img src="../dist/images/review1.jpg" class="img-fluid rounded w-25 mr-2" alt=""></a>
-                                            <a href="../dist/images/review2.jpg" data-toggle="lightbox" data-gallery="example-gallery"><img src="../dist/images/review2.jpg" class="img-fluid rounded w-25 mr-2" alt=""></a>
-                                            <a href="../dist/images/review3.jpg" data-toggle="lightbox" data-gallery="example-gallery"><img src="../dist/images/review3.jpg" class="img-fluid rounded w-25 mr-2" alt=""></a>
-                                        </div>
-
                                         <ul class="list-inline mb-0 comment-info lis-f-14">
-                                            <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i>LIKE NUM</a></li>
-                                            <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i>Reply NUM</a></li>
+                                            <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i>LIKE</a></li>
+                                            <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i>REPLY</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {{/reviews}}
                         <!-- 페이징 하는 곳 -->
                         <ul class="pagination list-inline mb-0 text-center text-uppercase lis-f-14 justify-content-center my-4">
                             <li class="p-1 page-item"><a class="page-link lis-brd-light lis-light rounded" href="#"><i class="fa fa-angle-left pr-1"></i> Prev</a></li>
@@ -260,26 +257,12 @@
 
                                 <!-- value로 이름, 이메일 주소 불러와주기 -->
                                 {{#loginUser}}
-                                <div class="row">
-                                    <!-- 이름 -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="form-group lis-relative">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Your Name" value = {{loginUser.name}}>
-                                            <div class="lis-search"> <i class="fa fa-user lis-primary lis-left-0"></i> </div>
-                                        </div>
-                                    </div>
-                                    <!-- 이메일 -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="form-group lis-relative">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Email address", value = "{{loginUser.email}}">
-                                            <div class="lis-search"> <i class="fa fa-envelope lis-primary lis-left-0"></i> </div>
-                                        </div>
-                                    </div>
-
+                                <form class="review-write" method="post" action="/review/create/{{loginUser.userId}}">
+                                    <input type="hidden" name="_method" value="PUT">
                                     <!-- 제목 -->
                                     <div class="col-12 col-sm-12">
                                         <div class="form-group lis-relative">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Title of review">
+                                            <input type="text" name="title" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Title of review">
                                             <div class="lis-search"> <i class="fa fa-drivers-license-o lis-primary lis-left-0"></i> </div>
                                         </div>
                                     </div>
@@ -287,7 +270,7 @@
                                     <!-- 리뷰 본문 -->
                                     <div class="col-12 col-sm-12">
                                         <div class="form-group lis-relative">
-                                            <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Review"></textarea>
+                                            <textarea name="contents" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Review"></textarea>
                                             <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
                                         </div>
                                     </div>
@@ -296,13 +279,10 @@
                                     <div class="col-12 col-sm-12">
                                         <h6 class="lis-font-weight-500">  Add a photo</h6>
                                         <input type="file" class="d-block"> <small>Note: The image size should smaller than or equal to 20MB</small> </div>
-                                </div>
-                                {{/loginUser}}
                                 <!-- 제출하기 -->
-                                <form class = "review-create" action="/review/create" method="post">
-                                    <input type="hidden" name="_method" value="PUT">
                                 <button type = "submit" class="btn btn-primary btn-default mt-3"> Submit Review</button>
                                 </form>
+                                {{/loginUser}}
                             </div>
                         </div>
                     </div>
