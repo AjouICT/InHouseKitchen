@@ -2,8 +2,30 @@
 <html lang="en">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
+    /*if (!navigator.geolocation) {
+        alert("지오로케이션을 지원하지 않습니다!");
+        document.getElementById('latitude').value = "37.566824";
+        document.getElementById('longitude').value= "126.978522";
+        var gpsForm = document.getElementById("gpsForm");
+        gpsForm.submit();
+    }
+    function success(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
 
-
+        document.getElementById('latitude').value = latitude;
+        document.getElementById('longitude').value= longitude;
+        var gpsForm = document.getElementById("gpsForm");
+        gpsForm.submit();
+    };
+    function error() {
+        alert("사용자의 위치를 찾을 수 없습니다!");
+        document.getElementById('latitude').value = "37.566824";
+        document.getElementById('longitude').value= "126.978522";
+        var gpsForm = document.getElementById("gpsForm");
+        gpsForm.submit();
+    };
+    navigator.geolocation.getCurrentPosition(success, error);*/
 </script>
     <head>
         {{> include/header}}
@@ -19,6 +41,10 @@
             <div class="holder-image">
                 <img src="dist/images/bg1.jpg" alt="" class="img-fluid d-none">
             </div>
+            <!--<form method="post" action="/search/userLocation" id="gpsForm">
+                <input type = "hidden" id = "latitude" name = "latitude" value = "">
+                <input type = "hidden" id = "longitude" name = "longitude" value = "">
+            </form>-->
             <div class="container">
                 <div class="row justify-content-center pt-5">
                     <div class="col-12 col-md-10 text-center wow fadeInUp">

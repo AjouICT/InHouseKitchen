@@ -3,6 +3,7 @@ var markerClusterer = null;
             var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&' +
               'chco=FFFFFF,008CFF,000000&ext=.png';
 
+
             function refreshMap() {
               if (markerClusterer) {
                 markerClusterer.clearMarkers();
@@ -51,8 +52,8 @@ var markerClusterer = null;
 
             function initialize() {
               map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 2,
-                center: new google.maps.LatLng(39.91, 116.38),
+                zoom: 15,
+                center: new google.maps.LatLng(37.283048, 127.044928),
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 styles: [{
                     "elementType": "geometry",
