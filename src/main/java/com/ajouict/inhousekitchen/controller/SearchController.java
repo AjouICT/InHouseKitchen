@@ -5,8 +5,7 @@ import com.ajouict.inhousekitchen.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -26,9 +25,25 @@ public class SearchController {
     }
 
     @GetMapping("/sample")
-    public String sampleGeo(Model model){
+    public ModelAndView sampleGeo(){
+        ModelAndView mv=new ModelAndView("/host/sampleGeo2","hostList",searchService.hostList());
+        return mv;
+    }
 
-        return "/host/sampleGeo";
+    @GetMapping("/getHostList")
+    @ResponseBody
+    public List<Host> getHostList(){
+        List<Host> hostList=searchService.hostList();
+        System.out.println("/getHostList : "+hostList);
+        return hostList;
+    }
+
+    @PostMapping("/userLocation")
+    public String getUserLocation(@RequestParam(name="latitude") double latitude, @RequestParam(name="longitude") double longitude){
+        System.out.println("위도 : "+latitude);
+        System.out.println("경도 : "+longitude);
+
+        return "redirect:/";
     }
 
 
