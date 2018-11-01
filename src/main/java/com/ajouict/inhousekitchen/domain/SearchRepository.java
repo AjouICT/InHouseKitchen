@@ -5,5 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SearchRepository extends JpaRepository<Host, Long> {
-
+    Host findByHost(User user);
+    Host findByid(Long id);
 }

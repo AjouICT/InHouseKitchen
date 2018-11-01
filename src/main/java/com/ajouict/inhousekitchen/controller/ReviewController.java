@@ -1,9 +1,6 @@
 package com.ajouict.inhousekitchen.controller;
 
-import com.ajouict.inhousekitchen.domain.Review;
-import com.ajouict.inhousekitchen.domain.ReviewRepository;
-import com.ajouict.inhousekitchen.domain.User;
-import com.ajouict.inhousekitchen.domain.UserRepository;
+import com.ajouict.inhousekitchen.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,29 +10,37 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping("/review")
 public class ReviewController {
+
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
     private ReviewRepository reviewRepository;
 
-    @GetMapping("/{userId}")
-    public String create(@PathVariable String userId, Model model, HttpSession session) {
-        // 로그인하지 않았을 경우
-        if(!HttpSessionUtils.isLoginUser(session)){
+    @Autowired
+    private SearchRepository searchRepository;
 
-        }
+    @GetMapping("/{userId}")
+    public String show(@PathVariable String userId, Model model, HttpSession session) {
+        System.out.println("userId : " + userId);
+
+        User temp = userRepository.findByUserId(userId);
+
+        Host user = searchRepository.findByHost(temp);
+
         User loginUser = HttpSessionUtils.getUserFromSession(session);
-        User host = userRepository.findByUserId(userId);
+
+        System.out.println("host : " + user);
+        System.out.println("loginUser : " + loginUser);
 
         model.addAttribute("loginUser", loginUser);
-        model.addAttribute("user", userRepository.findByUserId(userId));
-        model.addAttribute("reviews", reviewRepository.findAll());
-
+        model.addAttribute("user", user);
+        //model.addAttribute("reviews", reviews);
         return "/review/add_review";
     }
 
@@ -45,13 +50,26 @@ public class ReviewController {
         return "/review/list_review";
     }
 
-    @PutMapping("/create/{userId}")
-    public String create(@PathVariable String userId, HttpSession session, String title, String contents){
+    @PutMapping("/create/{hostId}/{userId}")
+    public String create(@PathVariable Long hostId, @PathVariable String userId, HttpSession session, String title, String contents){
+
+        System.out.println("호스트 아이디 : " + hostId);
+        System.out.println("유저 아이디 : " + userId);
 
         User writer = HttpSessionUtils.getUserFromSession(session);
-        Review review = new Review(writer, title, contents);
+        Host host = searchRepository.findByid(hostId);
+        User tempHost = userRepository.getOne(hostId);
+
+        System.out.println("login : " + writer);
+        System.out.println("host : " + host);
+
+        if(host.IsSameHost(writer)){
+           return String.format("redirect:/review/%s", tempHost.getUserId());
+        }
+
+        Review review = new Review(writer, host, title, contents);
         reviewRepository.save(review);
 
-        return String.format("redirect:/review/%s", writer.getUserId());
+        return String.format("redirect:/review/%s", tempHost.getUserId());
     }
 }

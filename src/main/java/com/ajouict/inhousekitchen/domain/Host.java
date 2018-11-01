@@ -2,6 +2,7 @@ package com.ajouict.inhousekitchen.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Host {
@@ -49,6 +50,9 @@ public class Host {
     @Column(nullable=false)
     private String menuIntro;
 
+    @OneToMany(mappedBy = "host")
+    private List<Review> reviews;
+
     public Host(User host, String hostIntro, String hostContact, int maxGuest, LocalDateTime startDate, LocalDateTime endDate, double latitude, double longitude, int visitTwice, int visitTripple, float avgScore, int totalGuest, String menuName, String menuPrice, String menuIntro) {
         this.host = host;
         this.hostIntro = hostIntro;
@@ -68,6 +72,14 @@ public class Host {
     }
 
     public Host() {
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public Long getId() {
@@ -196,6 +208,13 @@ public class Host {
 
     public void setMenuIntro(String menuIntro) {
         this.menuIntro = menuIntro;
+    }
+
+    public boolean IsSameHost(User loginUser){
+        if(loginUser == null){
+            return false;
+        }
+        return this.id.equals(loginUser.getId());
     }
 
     @Override

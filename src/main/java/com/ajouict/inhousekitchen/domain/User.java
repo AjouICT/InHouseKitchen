@@ -1,6 +1,7 @@
 package com.ajouict.inhousekitchen.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -23,7 +24,6 @@ public class User {
     private String intro;
     private Boolean isHost=Boolean.FALSE;
     private String profilePhoto;
-
 
     public User() {
     }

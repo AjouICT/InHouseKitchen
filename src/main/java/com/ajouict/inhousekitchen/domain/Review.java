@@ -13,6 +13,10 @@ public class Review {
     public Long id;
 
     @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "fk_review_host"))
+    private Host host;
+
+    @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "fk_review_writer"))
     private User writer;
 
@@ -26,12 +30,24 @@ public class Review {
     @Column
     private LocalDateTime createDate;
 
-    public void setId(Long id) {
-        this.id = id;
+    public Host getHost() {
+        return host;
+    }
+
+    public void setHost(Host host) {
+        this.host = host;
+    }
+
+    public User getWriter() {
+        return writer;
     }
 
     public void setWriter(User writer) {
         this.writer = writer;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setTitle(String title) {
@@ -50,10 +66,6 @@ public class Review {
         return id;
     }
 
-    public User getWriter() {
-        return writer;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -66,10 +78,11 @@ public class Review {
         return createDate;
     }
 
-    public Review() {};
+    public Review() {}
 
-    public Review(User writer, String title, String contents){
+    public Review(User writer, Host host, String title, String contents){
         this.writer = writer;
+        this.host = host;
         this.title = title;
         this.contents = contents;
         this.createDate = LocalDateTime.now();
@@ -81,4 +94,5 @@ public class Review {
         }
         return this.writer.equals(loginUser);
     }
+
 }
