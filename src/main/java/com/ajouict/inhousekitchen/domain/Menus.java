@@ -8,12 +8,12 @@ public class Menus {
     private String name;
     private double price;
     @Lob
-    private String introduction;
+    private String description;
 
     public Menus(){}
-    public Menus(String name, double price, String introduction){
+    public Menus(String name, double price, String description){
         this.name = name;
         this.price = price;
-        this.introduction = introduction;
+        this.description = description;
     }
 }

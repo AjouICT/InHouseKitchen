@@ -1,6 +1,6 @@
 package com.ajouict.inhousekitchen.controller;
 
-import com.ajouict.inhousekitchen.domain.HostDto;
+import com.ajouict.inhousekitchen.domain.Host;
 import com.ajouict.inhousekitchen.service.HostService;
 import com.ajouict.inhousekitchen.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +22,23 @@ public class ApiHostController {
 
     @GetMapping("/registerForm")
     public String showRegisterPage(){
-        return null;
+        return "/user/regForm";
     }
 
-    @PostMapping("")
+    // TODO : 1. 로그인 상태여야 하고
+    // TODO : 2. 현재 로그인한 사용자의 정보를 얻어야 한다.
+
     @ResponseBody
-    public HostDto registerAsAHost(@ModelAttribute HostDto hostDto, @RequestParam("files") MultipartFile[] files){
+    @PostMapping("")
+    public Host registerAsAHost(@ModelAttribute Host host, @RequestParam("files") MultipartFile[] files){
         Arrays.stream(files).forEach(file -> storageService.store(file));
-        return hostService.register(hostDto._toHost())._toHostDto();
+        return hostService.register(host);
     }
 
+    @ResponseBody
     @GetMapping("/{id}")
-    public HostDto showHostInfo(@PathVariable Long id){
-        return hostService.findById(id)._toHostDto();
+    public Host showHostInfo(@PathVariable Long id){
+        return hostService.findById(id);
     }
 
 }

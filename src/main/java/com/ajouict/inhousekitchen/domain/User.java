@@ -5,9 +5,7 @@ import javax.persistence.*;
 @Entity
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    //@Column(name="mem_idx")
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable=false)
@@ -19,14 +17,13 @@ public class User {
     private String nationality;
     private String phoneNum;
     private String email;
+
     @Lob
     private String intro;
     private Boolean isHost=Boolean.FALSE;
     private String profilePhoto;
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,
-            mappedBy = "myself")
+    @OneToOne(mappedBy = "myself", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
     private Host host;
 
     public User() {

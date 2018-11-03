@@ -1,13 +1,18 @@
 package com.ajouict.inhousekitchen.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
+@Getter
+@Setter
 @Entity
 public class Host {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String introduction;
@@ -25,8 +30,8 @@ public class Host {
     @Embedded
     private Menus menus;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User myself;
 
     private boolean isAvailableNow;
@@ -35,25 +40,19 @@ public class Host {
 
     private int total_guest_number;
 
-    public Host(String introduction, @NotNull String contact_info,  Location location,  Menus menus, User myself, boolean isAvailableNow) {
+    public Host(String introduction, @NotNull String contact_info,  Location location,  Menus menus, boolean isAvailableNow) {
         this.introduction = introduction;
         this.contact_info = contact_info;
         this.location = location;
         this.menus = menus;
-        this.myself = myself;
         this.isAvailableNow = isAvailableNow;
     }
 
-    public Host(String introduction, String contact_info, Menus menus, User myself, boolean isAvailableNow) {
+    public Host(String introduction, String contact_info, Menus menus, boolean isAvailableNow) {
         this.introduction = introduction;
         this.contact_info = contact_info;
         this.menus = menus;
-        this.myself = myself;
         this.isAvailableNow = isAvailableNow;
-    }
-
-    public HostDto _toHostDto(){
-        return new HostDto(this.introduction, this.contact_info, this.menus, this.myself, this.isAvailableNow);
     }
 
     @Override
