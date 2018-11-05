@@ -41,6 +41,11 @@ public class User {
         this.profilePhoto = profilePhoto;
     }
 
+    public void registerHostInfo(Host host){
+        this.host = host;
+
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

@@ -2,6 +2,7 @@ package com.ajouict.inhousekitchen.service;
 
 import com.ajouict.inhousekitchen.domain.Host;
 import com.ajouict.inhousekitchen.domain.HostRepository;
+import com.ajouict.inhousekitchen.domain.User;
 import com.ajouict.inhousekitchen.exception.NoSuchHostException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,8 @@ public class HostService {
     @Autowired
     private HostRepository hostRepository;
 
-    public Host register(Host host) {
+    public Host register(Host host, User loginUser) {
+        host.registerUserInfo(loginUser);
         return hostRepository.save(host);
     }
 

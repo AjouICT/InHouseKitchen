@@ -10,6 +10,7 @@ public class Menus {
     @Lob
     private String description;
 
+
     public Menus(){}
     public Menus(String name, double price, String description){
         this.name = name;

@@ -1,8 +1,12 @@
 package com.ajouict.inhousekitchen.controller;
 
 import com.ajouict.inhousekitchen.domain.Host;
+import com.ajouict.inhousekitchen.domain.MenuImage;
+import com.ajouict.inhousekitchen.domain.User;
+import com.ajouict.inhousekitchen.exception.UnAuthorizedException;
 import com.ajouict.inhousekitchen.service.HostService;
 import com.ajouict.inhousekitchen.storage.StorageService;
+import com.ajouict.inhousekitchen.util.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,23 +25,33 @@ public class ApiHostController {
     private StorageService storageService;
 
     @GetMapping("/registerForm")
-    public String showRegisterPage(){
+    public String showRegisterPage(@LoginUser User loginUser){
+        if(loginUser == null){
+            throw new UnAuthorizedException("로그인 해야 합니다.");
+        }
+
         return "/user/regForm";
     }
 
-    // TODO : 1. 로그인 상태여야 하고
-    // TODO : 2. 현재 로그인한 사용자의 정보를 얻어야 한다.
-
     @ResponseBody
     @PostMapping("")
-    public Host registerAsAHost(@ModelAttribute Host host, @RequestParam("files") MultipartFile[] files){
-        Arrays.stream(files).forEach(file -> storageService.store(file));
-        return hostService.register(host);
+    public Host registerAsAHost(@LoginUser User loginUser, @ModelAttribute Host host, @RequestParam("files") MultipartFile[] files){
+        if(loginUser == null){
+            throw new UnAuthorizedException("로그인 해야 합니다.");
+        }
+        Arrays.stream(files).forEach(file -> {
+            storageService.store(file);
+            host.registerMenuImage(new MenuImage(file.getOriginalFilename()));
+        });
+        return hostService.register(host, loginUser);
     }
 
     @ResponseBody
     @GetMapping("/{id}")
-    public Host showHostInfo(@PathVariable Long id){
+    public Host showHostInfo(@LoginUser User loginUser, @PathVariable Long id){
+        if(loginUser == null){
+            throw new UnAuthorizedException("로그인 해야 합니다.");
+        }
         return hostService.findById(id);
     }
 

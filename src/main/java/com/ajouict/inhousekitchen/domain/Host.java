@@ -5,7 +5,10 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.awt.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -16,6 +19,7 @@ public class Host {
     private Long id;
 
     private String introduction;
+
     @NotNull
     private String contact_info;
 
@@ -34,25 +38,32 @@ public class Host {
     @JoinColumn(name = "user_id")
     private User myself;
 
-    private boolean isAvailableNow;
-
     private double avg_score;
 
     private int total_guest_number;
 
-    public Host(String introduction, @NotNull String contact_info,  Location location,  Menus menus, boolean isAvailableNow) {
+    @ElementCollection
+    @CollectionTable(
+            name = "MENU_IMAGE",
+            joinColumns = @JoinColumn(name = "HOST_ID")
+    )
+    private Set<MenuImage> menuImages = new HashSet<>();
+
+    public Host(String introduction, @NotNull String contact_info,  Location location, Menus menus) {
         this.introduction = introduction;
         this.contact_info = contact_info;
         this.location = location;
         this.menus = menus;
-        this.isAvailableNow = isAvailableNow;
     }
 
-    public Host(String introduction, String contact_info, Menus menus, boolean isAvailableNow) {
-        this.introduction = introduction;
-        this.contact_info = contact_info;
-        this.menus = menus;
-        this.isAvailableNow = isAvailableNow;
+    public void registerUserInfo(User myself){
+        this.myself = myself;
+        myself.registerHostInfo(this);
+    }
+
+    public Set<MenuImage> registerMenuImage(MenuImage menuImage){
+        this.menuImages.add(menuImage);
+        return menuImages;
     }
 
     @Override
@@ -67,4 +78,6 @@ public class Host {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
 }
