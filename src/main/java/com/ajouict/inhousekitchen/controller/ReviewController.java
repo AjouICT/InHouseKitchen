@@ -1,16 +1,15 @@
 package com.ajouict.inhousekitchen.controller;
 
 import com.ajouict.inhousekitchen.domain.*;
+import com.ajouict.inhousekitchen.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/review")
@@ -27,20 +26,17 @@ public class ReviewController {
 
     @GetMapping("/{userId}")
     public String show(@PathVariable String userId, Model model, HttpSession session) {
-        System.out.println("userId : " + userId);
 
         User temp = userRepository.findByUserId(userId);
-
+        // 호스트
         Host user = searchRepository.findByHost(temp);
 
         User loginUser = HttpSessionUtils.getUserFromSession(session);
-
-        System.out.println("host : " + user);
-        System.out.println("loginUser : " + loginUser);
+        
 
         model.addAttribute("loginUser", loginUser);
         model.addAttribute("user", user);
-        //model.addAttribute("reviews", reviews);
+
         return "/review/add_review";
     }
 
@@ -50,7 +46,7 @@ public class ReviewController {
         return "/review/list_review";
     }
 
-    @PutMapping("/create/{hostId}/{userId}")
+    @PostMapping("/create/{hostId}/{userId}")
     public String create(@PathVariable Long hostId, @PathVariable String userId, HttpSession session, String title, String contents){
 
         System.out.println("호스트 아이디 : " + hostId);
@@ -71,5 +67,46 @@ public class ReviewController {
         reviewRepository.save(review);
 
         return String.format("redirect:/review/%s", tempHost.getUserId());
+    }
+
+    @GetMapping("/update/{reviewId}")
+    public String update(@PathVariable Long reviewId, HttpSession session, Model model){
+        // 글쓴이
+        User writer = HttpSessionUtils.getUserFromSession(session);
+        // 리뷰
+        Review review = reviewRepository.findByid(reviewId);
+        User hostUser = review.getHost().getHost();
+
+        if(!review.IsSameWriter(writer)) {
+            return String.format("redirect:/review/%s", hostUser.getUserId());
+        }
+        model.addAttribute("review", review);
+        return "review/update_review";
+    }
+
+    @PutMapping("/{reviewId}")
+    public String update(@PathVariable Long reviewId, String title, String contents, HttpSession session){
+        Review review = reviewRepository.findByid(reviewId);
+
+        review.update(review, title, contents);
+        reviewRepository.save(review);
+
+        return String.format("redirect:/review/%s", review.getHost().getHost().getUserId());
+    }
+
+    @GetMapping("/delete/{reviewId}")
+    public String delete(@PathVariable Long reviewId, HttpSession session){
+        Review review = reviewRepository.findByid(reviewId);
+        User hostUser = review.getHost().getHost();
+        User writer = HttpSessionUtils.getUserFromSession(session);
+
+        // 작성자가 아닌 경우 리스트로 보냄
+        if(!review.IsSameWriter(writer)){
+            return String.format("redirect:/review/%s", hostUser.getUserId());
+        }
+
+        reviewRepository.delete(review);
+
+        return String.format("redirect:/review/%s", hostUser.getUserId());
     }
 }

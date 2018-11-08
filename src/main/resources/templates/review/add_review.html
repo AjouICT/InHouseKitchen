@@ -230,8 +230,8 @@
                                         <p>{{contents}}</p>
                                         <!-- 사진들 -->
                                         <ul class="list-inline mb-0 comment-info lis-f-14">
-                                            <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i>LIKE</a></li>
-                                            <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i>REPLY</a></li>
+                                            <li class="list-inline-item mr-4 lis-relative"><a href="/review/update/{{id}}" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i>Update</a></li>
+                                            <li class="list-inline-item  lis-relative"><a href="/review/delete/{{id}}" class="lis-light"><i class="fa fa-reply-all pr-1"></i>Delete</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -253,18 +253,17 @@
                             <!-- 별점 입력 -->
                             <div class="card-body p-4">
                                 <p class="mb-2">Your rating for this listing</p>
-                                <ul class="list-inline lis-light-gold font-weight-normal h5">
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                </ul>
-
+                                <div class="starrr" id=""star1>
+                                    <a href="#" class="fa-star fa"></a>
+                                    <a href="#" class="fa-star fa"></a>
+                                    <a href="#" class="fa-star fa"></a>
+                                    <a href="#" class="fa-star-o fa"></a>
+                                    <a href="#" class="fa-star-o fa"></a>
+                                </div>
                                 <!-- value로 이름, 이메일 주소 불러와주기 -->
                                 {{#loginUser}}
                                 <form class="review-write" method="post" action="/review/create/{{user.id}}/{{loginUser.userId}}">
-                                    <input type="hidden" name="_method" value="PUT">
+                                    <!--<input type="hidden" name="_method" value="PUT">-->
                                     <!-- 제목 -->
                                     <div class="col-12 col-sm-12">
                                         <div class="form-group lis-relative">
@@ -523,6 +522,8 @@
 <script src="../dist/js/common.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&callback=initialize"></script>
 <script src="../dist/js/single-map.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../dist/js/starrr.js"></script>
 
 </body>
 

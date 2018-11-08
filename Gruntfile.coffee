@@ -11,14 +11,14 @@ module.exports = (grunt) ->
     coffee:
       all:
         src: 'src/starrr.coffee'
-        dest: 'dist/starrr.js'
+        dest: 'src/main/resources/static/dist/js/starrr.js'
         options:
           bare: true
 
     sass:
       all:
         files:
-          'dist/starrr.css': 'src/starrr.scss'
+          'src/main/resources/static/dist/css/starrr.css': 'src/starrr.scss'
         options:
           sourcemap: 'none'
 

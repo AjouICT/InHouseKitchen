@@ -11,8 +11,8 @@
     "bower_components"
   ],
   "main": [
-    "dist/starrr.js",
-    "dist/starrr.css"
+    "src/main/resources/static/dist/js/starrr.js",
+    "src/main/resources/static/dist/css/starrr.css"
   ],
   "dependencies": {}
 }

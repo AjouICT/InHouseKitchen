@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lister</title>
+
+
+    <link rel="shortcut icon" href="../../dist/images/favicon.ico">
+    <!--Plugin CSS-->
+    <link href="../../dist/css/plugins.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <!--main Css-->
+    <link href="../../dist/css/main.min.css" rel="stylesheet">
 </head>
 <body>
-$END$
+
+<div class="container">
+<h6 class="lis-font-weight-500"><i class="fa fa-commenting pr-2 lis-f-14"></i>  Update Review</h6>
+{{#review}}
+<div class="card lis-brd-light wow fadeInUp">
+    <!-- 별점 입력 -->
+    <div class="card-body p-4">
+        <p class="mb-2">Your rating for this listing</p>
+        <div class="starrr" id=""star1>
+            <a href="#" class="fa-star fa"></a>
+            <a href="#" class="fa-star fa"></a>
+            <a href="#" class="fa-star fa"></a>
+            <a href="#" class="fa-star-o fa"></a>
+            <a href="#" class="fa-star-o fa"></a>
+        </div>
+        <!-- value로 이름, 이메일 주소 불러와주기 -->
+        <form class="review-write" method="post" action="/review/{{id}}">
+            <input type="hidden" name="_method" value="PUT">
+            <!-- 제목 -->
+            <div class="col-12 col-sm-12">
+                <div class="form-group lis-relative">
+                    <input type="text" name="title" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="{{title}}">
+                    <div class="lis-search"> <i class="fa fa-drivers-license-o lis-primary lis-left-0"></i> </div>
+                </div>
+            </div>
+
+            <!-- 리뷰 본문 -->
+            <div class="col-12 col-sm-12">
+                <div class="form-group lis-relative">
+                    <textarea name="contents" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="{{contents}}"></textarea>
+                    <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
+                </div>
+            </div>
+
+            <!-- 사진 업로드 -->
+            <div class="col-12 col-sm-12">
+                <h6 class="lis-font-weight-500">  Add a photo</h6>
+                <input type="file" class="d-block"> <small>Note: The image size should smaller than or equal to 20MB</small> </div>
+            <!-- 제출하기 -->
+            <button type = "submit" class="btn btn-primary btn-default mt-3"> Submit Review</button>
+        </form>
+    </div>
+</div>
+</div>
+{{/review}}
+<!-- JQuery -->
+<script src="../../dist/js/plugins.min.js"></script>
+<script src="../../dist/js/common.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&callback=initialize"></script>
+<script src="../../dist/js/single-map.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../../dist/js/starrr.js"></script>
 </body>
 </html>

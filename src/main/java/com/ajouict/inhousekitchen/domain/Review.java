@@ -92,7 +92,16 @@ public class Review {
         if(loginUser == null){
             return false;
         }
-        return this.writer.equals(loginUser);
+        System.out.println("writer : " + this.writer.getId());
+        System.out.println("login : " + loginUser.getId());
+
+        if(this.writer.getId() != loginUser.getId()) return false;
+
+        return true;
     }
 
+    public void update(Review review, String title, String contents){
+        review.title = title;
+        review.contents = contents;
+    }
 }
