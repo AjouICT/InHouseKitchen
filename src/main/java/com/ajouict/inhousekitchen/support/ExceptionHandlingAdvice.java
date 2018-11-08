@@ -13,6 +13,6 @@ public class ExceptionHandlingAdvice {
     @ExceptionHandler(UnAuthorizedException.class)
     public String unAuthorized(){
         log.debug("UnAuthorizedException is happened");
-        return "return:/users/loginForm";
+        return "redirect:/users/loginForm";
     }
 }

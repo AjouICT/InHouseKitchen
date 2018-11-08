@@ -38,7 +38,9 @@
                                     <a class="nav-link" href="/users/loginForm">Login</a>
                                 </li>
                                 {{/sessionedUser}}
-                                <li><a href="#" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Add Listing</a></li>
+                                {{#sessionedUser}}
+                                <li><a href="/hosts/registerForm" class="btn btn-outline-light top-btn"><span class="ti-plus"></span>호스트로 등록하기</a></li>
+                                {{/sessionedUser}}
                             </ul>
                         </div>
                     </nav>
