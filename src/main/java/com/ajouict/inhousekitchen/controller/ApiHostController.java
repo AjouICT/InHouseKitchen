@@ -3,6 +3,7 @@ package com.ajouict.inhousekitchen.controller;
 import com.ajouict.inhousekitchen.domain.Host;
 import com.ajouict.inhousekitchen.domain.MenuImage;
 import com.ajouict.inhousekitchen.domain.User;
+import com.ajouict.inhousekitchen.dto.HostDto;
 import com.ajouict.inhousekitchen.exception.UnAuthorizedException;
 import com.ajouict.inhousekitchen.service.HostService;
 import com.ajouict.inhousekitchen.storage.StorageService;
@@ -34,15 +35,11 @@ public class ApiHostController {
 
     @ResponseBody
     @PostMapping("")
-    public Host registerAsAHost(@LoginUser User loginUser, @ModelAttribute Host host, @RequestParam("files") MultipartFile[] files){
+    public HostDto registerAsAHost(@LoginUser User loginUser, @ModelAttribute HostDto hostDto, @RequestParam("files") MultipartFile[] files){
         if(loginUser == null){
             throw new UnAuthorizedException("로그인 해야 합니다.");
         }
-        Arrays.stream(files).forEach(file -> {
-            storageService.store(file);
-            host.registerMenuImage(new MenuImage(file.getOriginalFilename()));
-        });
-        return hostService.register(host, loginUser);
+        return hostService.register(loginUser, hostDto._toHost(), files)._toHostDto();
     }
 
     @ResponseBody

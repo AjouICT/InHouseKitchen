@@ -1,7 +1,12 @@
 package com.ajouict.inhousekitchen.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Embeddable;
 
+@Getter
+@Setter
 @Embeddable
 public class VisitRate {
     private double second;

@@ -1,19 +1,15 @@
 package com.ajouict.inhousekitchen.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import com.ajouict.inhousekitchen.dto.HostDto;
+import lombok.Builder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.awt.*;
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Getter
-@Setter
+@Builder
 @Entity
 public class Host {
 
@@ -21,7 +17,6 @@ public class Host {
     private Long id;
 
     @NotNull
-    @JsonProperty(value = "introduction")
     private String introduction;
 
     @NotNull
@@ -57,7 +52,7 @@ public class Host {
                     column=@Column(name="MENU_DESCRIPTION")
             )
     })
-    private Menus menus;
+    private MenusInfo menusInfo;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -69,28 +64,43 @@ public class Host {
 
     @ElementCollection
     @CollectionTable(
-            name = "MENU_IMAGE",
+            name = "MENU_IMAGES",
             joinColumns = @JoinColumn(name = "HOST_ID")
     )
     private Set<MenuImage> menuImages = new HashSet<>();
 
+    private String availablePeriod;
+
     public Host(){}
 
-    public Host(String introduction, @NotNull String contact_info,  Location location, Menus menus) {
+    public Host(String introduction, @NotNull String contact_info,  Location location, MenusInfo menusInfo) {
         this.introduction = introduction;
         this.contact_info = contact_info;
         this.location = location;
-        this.menus = menus;
+        this.menusInfo = menusInfo;
     }
 
-    public void registerUserInfo(User myself){
-        this.myself = myself;
-        myself.registerHostInfo(this);
+    public static Host registerUserInfo(User myself, Host host){
+        host.myself = myself;
+        myself.registerHostInfo(host);
+        return host;
     }
 
-    public Set<MenuImage> registerMenuImage(MenuImage menuImage){
+    public Set<MenuImage> recordMenuImageInfo(MenuImage menuImage){
         this.menuImages.add(menuImage);
         return menuImages;
+    }
+
+    public HostDto _toHostDto() {
+        return HostDto.builder()
+                .introduction(this.introduction)
+                .contact_info(this.contact_info)
+                .menu_name(this.menusInfo.getName())
+                .menu_price(this.menusInfo.getPrice())
+                .menu_description(this.menusInfo.getDescription())
+                .date_range(this.availablePeriod)
+                .location_latitude(this.location.getLatitude())
+                .location_longitude(this.location.getLongitude()).build();
     }
 
     @Override
@@ -105,6 +115,7 @@ public class Host {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 
 
 }

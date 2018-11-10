@@ -1,5 +1,7 @@
 package com.ajouict.inhousekitchen.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -22,6 +24,7 @@ public class User {
     private String intro;
     private String profilePhoto;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "myself", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
     private Host host;
 
