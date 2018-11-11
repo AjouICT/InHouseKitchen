@@ -2,6 +2,7 @@ package com.ajouict.inhousekitchen.domain;
 
 import com.ajouict.inhousekitchen.dto.HostDto;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,7 +10,6 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Builder
 @Entity
 public class Host {
 
@@ -73,6 +73,7 @@ public class Host {
 
     public Host(){}
 
+    @Builder
     public Host(String introduction, @NotNull String contact_info,  Location location, MenusInfo menusInfo) {
         this.introduction = introduction;
         this.contact_info = contact_info;

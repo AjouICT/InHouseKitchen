@@ -8,7 +8,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-@Builder
 @Getter
 @Setter
 public class HostDto {
@@ -22,6 +21,7 @@ public class HostDto {
     private double location_latitude;
     private double location_longitude;
 
+    @Builder
     public HostDto(String introduction, String contact_info, String menu_name, double menu_price, String menu_description, String date_range, double location_latitude, double location_longitude) {
         this.introduction = introduction;
         this.contact_info = contact_info;
