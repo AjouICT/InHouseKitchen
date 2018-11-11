@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=file] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=file]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+        .registerbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+
+        /* Add a blue text color to links */
+        a {
+            color: dodgerblue;
+        }
+
+        /* Set a grey background color and center the text of the "sign in" section */
+        .signin {
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+      /*var checkId=0;
+      var checkPassword=0;
+
+        $(document).ready(function(){
+
+
+            //registerForm onsubmit 함수
+            $("#registerForm").submit(function(){
+                if(checkId==0){
+                    alert("아이디를 체크하세요");
+                    return false;
+                }
+
+                if(checkPassword=="") {
+                    alert("비밀번호를 체크하세요");
+                    return false;
+                }
+
+            });
+
+
+            var userId="";
+            $(":input[name=userId]").keyup(function(){
+                userId=$(":input[name=userId]").val();
+                if(userId.length<4||userId.length>20){
+                    $(".result_id").html("<b>아이디의 길이는 4이상 20미만이어야합니다</b>");
+                    checkId="";
+                }
+
+                $.ajax({
+                    type:"POST",
+                    url:"/users/checkId",
+                    data:{"id":userId},
+                    success:function(data){
+                        if(data=="0"){
+                            $(".result_id").html("<b>사용가능한 아이디입니다</b>");
+                            checkId=userId;
+                        }else{
+                            $(".result_id").html("<b>이미 사용되고 있는 아이디입니다</b>");
+                            checkId="";
+                        }
+                    }
+
+                });
+            });
+
+
+
+            $(":input[name=repeatPassword]").keyup(function(){
+                var repeatPassword=$(this).val().trim();
+                var password=$(":input[name=password]").val().trim();
+                if(password!=repeatPassword){
+                    $(".result_psw_repeat").html("비밀번호가 일치하지않습니다");
+                    checkPassword="";
+                }
+                if(pwd==repeatPwd){
+                    $(".result_psw_repeat").html("비밀번호가 일치합니다");
+                    checkPassword=password;
+                }
+            });
+
+    });*/
+
+
+</script>
+<body>
+
+<form id="registerForm" method="post" action="/hosts" enctype="multipart/form-data">
+    <div class="container">
+        <h1>호스트 등록하기</h1>
+        <p>아래의 정보들을 입력해 호스트로 등록해주세요.</p>
+        <hr>
+
+        <label for="introduction"><b>소개</b></label>
+        <input type="text" placeholder="guest들을 위한 소개문구를 써주세요." name="introduction" required>
+
+        <label for="contact_info"><b>연락가능한 전화번호</b></label>
+        <input type="text" placeholder="연락가능한 전화번호를 적어주세요." name="contact_info" required>
+
+        <!--메뉴-->
+        <label for="menu_name"><b>메뉴 이름</b></label>
+        <input type="text" placeholder="메뉴 이름을 입력해주세요." name="menu_name" required>
+
+        <label for="menu_price"><b>메뉴 가격</b></label>
+        <input type="text" placeholder="메뉴 가격을 입력해주세요." name="menu_price" required>
+
+        <label for="menu_description"><b>메뉴 설명</b></label>
+        <input type="text" placeholder="guest에게 대접할 메뉴에 대해서 설명해주세요." name="menu_description" required>
+        <!--메뉴-->
+
+        <label for="files"><b>메뉴 사진들</b></label>
+        <input type="file" name="menu_images" multiple>
+        <!--date picker-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+        <label for="available-date"><b>예약 가능 날짜</b></label>
+        <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+
+        <script>
+            $(function() {
+                $('input[name="daterange"]').daterangepicker({
+                    opens: 'left'
+                }, function(start, end, label) {
+                    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                });
+            });
+        </script>
+        <!--date picker-->
+
+        <!--<hr>-->
+        <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
+
+        <button type="submit" class="registerbtn" name="registerbtn">호스트로 등록</button>
+    </div>
+
+    <div class="container signin">
+        <p> <a href="#"></a>.</p>
+    </div>
+</form>
+
+</body>
+</html>

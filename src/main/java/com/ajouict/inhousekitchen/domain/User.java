@@ -1,16 +1,16 @@
 package com.ajouict.inhousekitchen.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@Column(name="mem_idx")
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable=false,unique=true)
+    @Column(nullable=false)
     private String userId;
     @Column(nullable=false)
     private String password;
@@ -19,19 +19,20 @@ public class User {
     private String nationality;
     private String phoneNum;
     private String email;
+
     @Lob
     private String intro;
-    private Boolean isHost=Boolean.FALSE;
     private String profilePhoto;
 
-    @OneToOne(mappedBy = "host")
+    @JsonIgnore
+    @OneToOne(mappedBy = "myself", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
     private Host host;
 
 
    public User() {
     }
 
-    public User(String userId, String password, String name, String nationality, String phoneNum, String email, String intro, Boolean isHost, String profilePhoto) {
+    public User(String userId, String password, String name, String nationality, String phoneNum, String email, String intro, String profilePhoto) {
         this.userId = userId;
         this.password = password;
         this.name = name;
@@ -39,8 +40,11 @@ public class User {
         this.phoneNum = phoneNum;
         this.email = email;
         this.intro = intro;
-        this.isHost = isHost;
         this.profilePhoto = profilePhoto;
+    }
+
+    public void registerHostInfo(Host host){
+        this.host = host;
     }
 
     public void setId(Long id) {
@@ -73,10 +77,6 @@ public class User {
 
     public void setIntro(String intro) {
         this.intro = intro;
-    }
-
-    public void setHost(Boolean host) {
-        isHost = host;
     }
 
     public void setProfilePhoto(String profilePhoto) {
@@ -115,12 +115,12 @@ public class User {
         return intro;
     }
 
-    public Boolean getHost() {
-        return isHost;
-    }
-
     public String getProfilePhoto() {
         return profilePhoto;
+    }
+
+    public Host getHost() {
+        return host;
     }
 
     public boolean matchId(Long newId){
@@ -151,8 +151,8 @@ public class User {
                 ", phoneNum='" + phoneNum + '\'' +
                 ", email='" + email + '\'' +
                 ", intro='" + intro + '\'' +
-                ", isHost=" + isHost +
                 ", profilePhoto='" + profilePhoto + '\'' +
+                ", host=" + host +
                 '}';
     }
 }
