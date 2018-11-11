@@ -31,6 +31,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
     compile "org.springframework.boot:spring-boot-configuration-processor"
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.5.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.5.0'
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.18'
     runtime('net.rakugakibox.spring.boot:logback-access-spring-boot-starter:2.7.1')
     testCompile('org.assertj:assertj-core:3.9.0')
