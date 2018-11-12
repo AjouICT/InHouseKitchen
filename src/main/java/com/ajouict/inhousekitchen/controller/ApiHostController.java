@@ -30,7 +30,7 @@ public class ApiHostController {
         if(loginUser == null){
             throw new UnAuthorizedException("로그인 해야 합니다.");
         }
-        return "/host/regForm";
+        return "/host/registerForm";
     }
 
     @ResponseBody

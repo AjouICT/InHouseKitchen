@@ -117,6 +117,4 @@ public class Host {
         return Objects.hash(id);
     }
 
-
-
 }

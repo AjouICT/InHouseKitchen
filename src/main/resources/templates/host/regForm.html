@@ -66,6 +66,11 @@
             text-align: center;
         }
     </style>
+    <link rel="shortcut icon" href="dist/images/favicon.ico">
+    <!--Plugin CSS-->
+    <link href="dist/css/plugins.min.css" rel="stylesheet">
+    <!--main Css-->
+    <link href="dist/css/main.min.css" rel="stylesheet">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -181,6 +186,35 @@
 
         <!--<hr>-->
         <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
+        <div class="row p-4">
+            <div class="col-12 col-sm-12 mb-3">
+                <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i>  Location </h6>
+
+            </div>
+            <div class="col-12 col-sm-12">
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-12 col-md-2 col-form-label">Address</label>
+                    <div class="col-12 col-md-10">
+                        <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="e.g. 2438 Progress Way, Donnelly, MN, 56235" type="text" value=""  id="us2-address" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-12 col-md-2 col-form-label">Decimal degrees</label>
+                    <div class="col-12 col-md-5">
+                        <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Latitude" value="" id="us2-lat">
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Longitude" value="" id="us2-lon">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-12">
+                <div id="us2" class="w-100"></div>
+            </div>
+            <div class="col-12 col-sm-12"> <a href="#" class="btn btn-primary btn-default mt-3"> Save & Preview</a> </div>
+        </div>
+
 
         <button type="submit" class="registerbtn" name="registerbtn">호스트로 등록</button>
     </div>
@@ -189,6 +223,12 @@
         <p> <a href="#"></a>.</p>
     </div>
 </form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&libraries=places"></script>
+<script src="dist/js/plugins.min.js"></script>
+<script src="dist/js/common.js"></script>
+<script src="dist/js/jquery.locationpicker.js"></script>
+<script src="dist/js/add-listing.js"></script>
 
 </body>
 </html>

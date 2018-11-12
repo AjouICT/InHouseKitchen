@@ -165,7 +165,9 @@
                 <li class="text-white"><i class="fa fa-sign-in pr-2"></i> <a href="/users/logout" class="text-white login_form">logout</a></li>
                 {{/sessionedUser}}
             </ul>
-            <a href="add-listing.html" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a>
+            {{#sessionedUser}}
+            <a href="/hosts/registerForm" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a>
+            {{/sessionedUser}}
         </div>
     </nav>
 </div>
