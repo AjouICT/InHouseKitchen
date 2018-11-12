@@ -201,219 +201,196 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-9 mb-5 mb-lg-0">
+                        <form id="registerForm" method="post" action="/hosts" enctype="multipart/form-data">
 
-                        <div class="card lis-brd-light wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                            <div class="card-body p-0">
-                                <!--<div class="row p-4">-->
-                                    <!--<div class="col-12 col-md-3">-->
-                                        <!--<div class="form-group lis-relative">-->
-                                            <!--<h6 class="lis-font-weight-500">Have an account?</h6>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="col-12 col-md-9">-->
-                                        <!--<div class="form-group lis-relative">-->
-                                            <!--Sign in If you don’t have an account you can create one below by entering your email address/username. Your account details will be confirmed via email. <a href="#modal" class="login_form">Sign in</a>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<hr/>-->
-                                <!--<div class="row p-4">-->
-                                    <!--<div class="col-12 col-sm-12 mb-3">-->
-                                        <!--<h6 class="lis-font-weight-500"><i class="fa fa-tag pr-2 lis-f-14"></i>  Categories & Tags</h6>-->
+                            <div class="card lis-brd-light wow fadeInUp"
+                                 style="visibility: visible; animation-name: fadeInUp;">
+                                <div class="card-body p-0">
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i
+                                                    class="fa fa-align-left pr-2 lis-f-14"></i> Introduction </h6>
 
-                                    <!--</div>-->
-                                    <!--<div class="col-12 col-sm-12">-->
-                                        <!--<div class="form-group row">-->
-                                            <!--<label for="example-text-input" class="col-12 col-md-2 col-form-label">Categories</label>-->
-                                            <!--<div class="col-12 col-md-10">-->
-                                                <!--<select class="form-control border-top-0 border-left-0 border-right-0 rounded-0" id="inlineFormCustomSelect">-->
-                                                    <!--<option selected>Select Category</option>-->
-                                                    <!--<option value="1">One</option>-->
-                                                    <!--<option value="2">Two</option>-->
-                                                    <!--<option value="3">Three</option>-->
-                                                <!--</select>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="form-group row">-->
-                                            <!--<label for="example-text-input" class="col-12 col-md-2 col-form-label">Tags(optional)</label>-->
-                                            <!--<div class="col-12 col-md-10">-->
-                                                <!--<select class="form-control border-top-0 border-left-0 border-right-0 rounded-0" id="inlineFormCustomSelect">-->
-                                                    <!--<option selected>Add Tag</option>-->
-                                                    <!--<option value="1">One</option>-->
-                                                    <!--<option value="2">Two</option>-->
-                                                    <!--<option value="3">Three</option>-->
-                                                <!--</select>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-
-                                    <!--</div>-->
-
-                                <!--</div>-->
-                                <!--<hr/>-->
-
-                                <div class="row p-4">
-                                    <div class="col-12 col-sm-12 mb-3">
-                                        <h6 class="lis-font-weight-500"><i class="fa fa-align-left pr-2 lis-f-14"></i>  Introduction </h6>
-
-                                    </div>
-                                    <div class="col-12 col-sm-12">
-                                        <!--<div class="form-group row">-->
-                                            <!--<label for="example-text-input" class="col-12 col-md-2 col-form-label">Email</label>-->
-                                            <!--<div class="col-12 col-md-10">-->
-                                                <!--<input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Your email address" type="text" value="" id="example-text-input">-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="form-group row">-->
-                                            <!--<label for="example-text-input" class="col-12 col-md-2 col-form-label">Title</label>-->
-                                            <!--<div class="col-12 col-md-10">-->
-                                                <!--<input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Your listing name" value="" id="example-text-input">-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="form-group row">-->
-                                            <!--<label for="example-text-input" class="col-12 col-md-2 col-form-label">Tagline</label>-->
-                                            <!--<div class="col-12 col-md-10">-->
-                                                <!--<input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Say something catchy!" value="" id="example-text-input">-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <div class="form-group row">
-                                            <!--<label for="example-text-input" class="col-12 col-md-2 col-form-label">Description</label>-->
-                                            <div class="col-12 col-md-10">
-                                                <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="집에 방문할 guest들에게 본인을 소개해주세요."></textarea>
-                                            </div>
                                         </div>
-                                    </div>
-
-                                </div>
-
-                                <hr/>
-
-                                <div class="row p-4">
-                                    <div class="col-12 col-sm-12 mb-3">
-                                        <h6 class="lis-font-weight-500"><i class="fa fa-file-image-o pr-2 lis-f-14"></i> 메뉴 정보 입력 </h6>
-
-                                    </div>
-                                    <div class="col-12 col-sm-12">
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴 이름</label>
-                                            <div class="col-12 col-md-10">
-                                                <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="메뉴 이름을 입력해주세요." value="" id="example-text-input">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴 가격</label>
-                                            <div class="col-12 col-md-10">
-                                                <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="메뉴 가격을 입력해주세요." value="" id="example-text-input">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴 설명</label>
-                                            <div class="col-12 col-md-10">
-                                                <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="guest에게 대접할 메뉴에 대해서 설명해주세요." value="" id="example-text-input">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-3 col-form-label">메뉴 사진들 첨부 </label>
-                                            <div class="col-12 col-md-9">
-                                                <input class="form-control border-0" type="file" name="files" id="example-text-input" multiple>
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group row">
+                                                <div class="col-12 col-md-10">
+                                                    <textarea
+                                                            class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                            name="introduction"
+                                                            placeholder="집에 방문할 guest들에게 본인을 소개해주세요."></textarea>
+                                                </div>
                                             </div>
                                         </div>
 
                                     </div>
 
-                                </div>
-                                <hr/>
+                                    <hr/>
 
-                                <div class="row p-4">
-                                    <div class="col-12 col-sm-12 mb-3">
-                                        <h6 class="lis-font-weight-500"><i class="fa fa-info-circle pr-2 lis-f-14"></i>  Contact information </h6>
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i
+                                                    class="fa fa-file-image-o pr-2 lis-f-14"></i> 메뉴 정보 입력 </h6>
+
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴
+                                                    이름</label>
+                                                <div class="col-12 col-md-10">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           name="menu_name" type="text" placeholder="메뉴 이름을 입력해주세요."
+                                                           value="" id="example-text-input">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴
+                                                    가격</label>
+                                                <div class="col-12 col-md-10">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="menu_price" placeholder="메뉴 가격을 입력해주세요."
+                                                           value="" id="example-text-input">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴
+                                                    설명</label>
+                                                <div class="col-12 col-md-10">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="menu_description"
+                                                           placeholder="guest에게 대접할 메뉴에 대해서 설명해주세요." value=""
+                                                           id="example-text-input">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-3 col-form-label">메뉴
+                                                    사진들 첨부 </label>
+                                                <div class="col-12 col-md-9">
+                                                    <input class="form-control border-0" type="file" name="files"
+                                                           id="example-text-input" multiple>
+                                                </div>
+                                            </div>
+
+                                        </div>
 
                                     </div>
-                                    <div class="col-12 col-sm-12">
-                                        <!--<div class="form-group row">-->
+                                    <hr/>
+
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i
+                                                    class="fa fa-info-circle pr-2 lis-f-14"></i> Contact information
+                                            </h6>
+
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <!--<div class="form-group row">-->
                                             <!--<label for="example-text-input" class="col-12 col-md-3 col-form-label">Email</label>-->
                                             <!--<div class="col-12 col-md-9">-->
-                                                <!--<input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Your email address" type="text" value="" id="example-text-input">-->
+                                            <!--<input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Your email address" type="text" value="" id="example-text-input">-->
                                             <!--</div>-->
-                                        <!--</div>-->
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-3 col-form-label">Phone number</label>
-                                            <div class="col-12 col-md-9">
-                                                <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Your phone number" value="" id="example-text-input">
+                                            <!--</div>-->
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-3 col-form-label">Phone
+                                                    number</label>
+                                                <div class="col-12 col-md-9">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="contact_info"
+                                                           placeholder="Your phone number" value=""
+                                                           id="example-text-input">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                </div>
-
-                                <hr/>
-                                <div class="row p-4">
-                                    <div class="col-12 col-sm-12 mb-3">
-                                        <h6 class="lis-font-weight-500"><i class="fa fa-info-circle pr-2 lis-f-14"></i>  Contact information </h6>
 
                                     </div>
-                                    <div class="col-12 col-sm-12">
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-3 col-form-label">예약 가능 날짜</label>
-                                            <div class="col-12 col-md-9">
-                                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&libraries=places"></script>
-                                                <script src="/dist/js/plugins.min.js"></script>
-                                                <script src="/dist/js/common.js"></script>
-                                                <script src="/dist/js/jquery.locationpicker.js"></script>
-                                                <script src="/dist/js/add-listing.js"></script>
-                                                <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-                                                <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-                                                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-                                                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-                                                <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
-                                                <script>
-                                                    var newJquery = $.noConflict(true);
 
-                                                    $(function() {
-                                                        newJquery('input[name="daterange"]').daterangepicker({
-                                                            opens: 'left'
-                                                        }, function(start, end, label) {
-                                                            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                                    <hr/>
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i
+                                                    class="fa fa-info-circle pr-2 lis-f-14"></i> Contact information
+                                            </h6>
+
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-3 col-form-label">예약
+                                                    가능 날짜</label>
+                                                <div class="col-12 col-md-9">
+                                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&libraries=places"></script>
+                                                    <script src="/dist/js/plugins.min.js"></script>
+                                                    <script src="/dist/js/common.js"></script>
+                                                    <script src="/dist/js/jquery.locationpicker.js"></script>
+                                                    <script src="/dist/js/add-listing.js"></script>
+                                                    <script type="text/javascript"
+                                                            src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+                                                    <script type="text/javascript"
+                                                            src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+                                                    <script type="text/javascript"
+                                                            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+                                                    <link rel="stylesheet" type="text/css"
+                                                          href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+                                                    <input type="text" name="date_range"
+                                                           value="01/01/2018 - 01/15/2018"/>
+                                                    <script>
+                                                        var newJquery = $.noConflict(true);
+
+                                                        $(function () {
+                                                            newJquery('input[name="date_range"]').daterangepicker({
+                                                                opens: 'left'
+                                                            }, function (start, end, label) {
+                                                                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                                                            });
                                                         });
-                                                    });
-                                                </script>
+                                                    </script>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <hr/>
+                                    <hr/>
 
 
-                                <div class="row p-4">
-                                    <div class="col-12 col-sm-12 mb-3">
-                                        <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i>  Location </h6>
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i>
+                                                Location </h6>
 
-                                    </div>
-                                    <div class="col-12 col-sm-12">
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-2 col-form-label">Address</label>
-                                            <div class="col-12 col-md-10">
-                                                <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="e.g. 2438 Progress Way, Donnelly, MN, 56235" type="text" value=""  id="us2-address" >
-                                            </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-2 col-form-label">Decimal degrees</label>
-                                            <div class="col-12 col-md-5">
-                                                <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Latitude" value="" id="us2-lat">
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Address</label>
+                                                <div class="col-12 col-md-10">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           placeholder="e.g. 2438 Progress Way, Donnelly, MN, 56235"
+                                                           type="text" value="" id="us2-address">
+                                                </div>
                                             </div>
-                                            <div class="col-12 col-md-5">
-                                                <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Longitude" value="" id="us2-lon">
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Decimal
+                                                    degrees</label>
+                                                <div class="col-12 col-md-5">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="location_latitude" placeholder="Latitude"
+                                                           value="" id="us2-lat">
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="location_longitude" placeholder="Longitude"
+                                                           value="" id="us2-lon">
+                                                </div>
                                             </div>
+
                                         </div>
 
+                                        <div class="col-12 col-sm-12">
+                                            <div id="us2" class="w-100"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-12"><button type="submit" class="btn btn-primary btn-default mt-3" name="registerbtn">호스트로 등록</button></div>
                                     </div>
-                                    <div class="col-12 col-sm-12">
-                                        <div id="us2" class="w-100"></div>	
-                                    </div>
-                                    <div class="col-12 col-sm-12"> <a href="#" class="btn btn-primary btn-default mt-3"> Save & Preview</a> </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
 
                 </div>

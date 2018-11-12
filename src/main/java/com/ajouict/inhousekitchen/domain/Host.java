@@ -74,11 +74,12 @@ public class Host {
     public Host(){}
 
     @Builder
-    public Host(String introduction, @NotNull String contact_info,  Location location, MenusInfo menusInfo) {
+    public Host(String introduction, @NotNull String contact_info,  Location location, MenusInfo menusInfo, String availablePeriod) {
         this.introduction = introduction;
         this.contact_info = contact_info;
         this.location = location;
         this.menusInfo = menusInfo;
+        this.availablePeriod = availablePeriod;
     }
 
     public static Host registerUserInfo(User myself, Host host){
@@ -97,11 +98,11 @@ public class Host {
                 .introduction(this.introduction)
                 .contact_info(this.contact_info)
                 .menu_name(this.menusInfo.getName())
-                .menu_price(this.menusInfo.getPrice())
+                .menu_price(Double.toString(this.menusInfo.getPrice()))
                 .menu_description(this.menusInfo.getDescription())
                 .date_range(this.availablePeriod)
-                .location_latitude(this.location.getLatitude())
-                .location_longitude(this.location.getLongitude()).build();
+                .location_latitude(Double.toString(this.location.getLatitude()))
+                .location_longitude(Double.toString(this.location.getLongitude())).build();
     }
 
     @Override
