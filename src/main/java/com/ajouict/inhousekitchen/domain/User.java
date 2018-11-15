@@ -1,6 +1,7 @@
 package com.ajouict.inhousekitchen.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {

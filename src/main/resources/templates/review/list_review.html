@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> include/header2}}
+</head>
+
+<body>
+<!-- header -->
+{{> include/navigation2}}
+<!--End header -->
+<!-- Page Inner -->
+<section class="lis-bg-light pb-5">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 col-sm-6 wow fadeInLeft">
+                <div class="page-title">
+                    <h2>Blog Grid</h2>
+                    <p class="mb-0">Latest news posts from lister</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 text-left text-sm-right wow fadeInRight">
+                <ol class="breadcrumb mb-0 pl-0 bg-transparent">
+                    <li class="breadcrumb-item d-inline-block float-none"><a href="/" class="lis-light">Home</a></li>
+                    <li class="breadcrumb-item d-inline-block float-none active"><a href="/review">Blog Grid</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Page Inner -->
+<!-- Blog -->
+<section>
+    <!-- 사용자 목록들 보여주기 -->
+        <div class="container">
+        <div class="row">
+            {{#users}}
+            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5">
+                <div class="card border-0 lis-relative">
+                    <a href="/review/{{userId}}">
+                        <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="../{{profilePhoto}}" alt="" class="img-fluid rounded"> </div>
+                        <!--
+                       <div class="lis-absolute lis-right-20 lis-top-20">
+                          <div class="lis-post-meta border border-white text-white rounded lis-f-14">Bar &amp; Club</div>
+                        </div>
+                        -->
+                    </a>
+                    <div class="pt-4"> <span class="lis-light">16 October 2017</span> <a href="#" class="lis-dark"><h6 class="mt-2">{{name}}</h6></a>
+                        <p>{{nationality}}</p>
+                        <p>{{phoneNum}}</p>
+                        <p>{{email}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/users}}
+        </div>
+    </div>
+</section>
+<!--End Blog -->
+<!-- Footer-->
+{{> include/footer2}}
+<!--End  Footer-->
+<!-- Top To Bottom-->
+<a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50">
+    <div class="text-white mb-0 lis-line-height-1_7 h3"><i class="icofont icofont-long-arrow-up"></i></div>
+</a>
+<!-- End Top To Bottom-->
+<!-- Login /Register Form-->
+<div class="container">
+
+
+    <div id="modal" class="popupContainer" style="display: none;">
+        <header class="popupHeader">
+            <span class="header_title">Login</span>
+            <span class="modal_close"><i class="fa fa-times"></i></span>
+        </header>
+
+        <div class="popupBody">
+            <!-- Social Login -->
+
+            <!-- Username & Password Login form -->
+            <div class="user_login">
+                <form>
+
+                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="username or email address" />
+                    <br />
+
+
+                    <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
+                    <br />
+
+                    <div class="checkbox">
+                        <input id="remember" type="checkbox" />
+                        <label for="remember">Remember me on this computer</label>
+                    </div>
+
+                    <div class="action_btns">
+
+                        <a href="#" class="btn btn-primary btn-default mt-3 w-100">Login</a>
+                    </div>
+                </form>
+                <br/>
+                Sign in with your social network<br/>
+                <ul class="list-inline my-0">
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+                </ul>
+                <hr/>
+                Don't have an account <a href="#" class="register_form">Sign Up</a>
+            </div>
+
+            <!-- Register Form -->
+            <div class="user_register">
+                <form>
+
+                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Username" />
+                    <br />
+
+
+                    <input type="email" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Email Address" />
+                    <br />
+
+
+                    <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Password" />
+                    <br />
+
+                    <div class="checkbox">
+                        <input id="send_updates" type="checkbox" />
+                        <label for="send_updates">Send me occasional email updates</label>
+                    </div>
+
+                    <div class="action_btns">
+                        <a href="#" class="btn btn-primary btn-default mt-3 w-100">Register</a>
+                    </div>
+                </form>
+                <br/>
+                Register with your social network<br/>
+                <ul class="list-inline my-0">
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+                </ul>
+                <hr/>
+                Already have an account <a href="#" class="login_form">Sign In</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Login /Register Form-->
+<!-- jQuery -->
+<script src="../dist/js/plugins.min.js"></script>
+<script src="../dist/js/common.js"></script>
+</body>
+
+</html>
