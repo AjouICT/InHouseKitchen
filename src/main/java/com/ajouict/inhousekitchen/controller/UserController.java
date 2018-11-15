@@ -105,10 +105,14 @@ public class UserController {
         }
 
         log.info("Login Success");
+        user.setLatitude(Double.parseDouble(latitude));
+        user.setLongitude(Double.parseDouble(longitude));
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY,user);
 
         return "redirect:/";
     }
+
+
 
     @GetMapping("/logout")
     public String logout(HttpSession session){

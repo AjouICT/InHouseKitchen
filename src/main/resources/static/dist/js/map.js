@@ -2,6 +2,18 @@ var markerClusterer = null;
 var map = null;
 var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&' +
     'chco=FFFFFF,008CFF,000000&ext=.png';
+var hostList=null;
+var locations2=null;
+var array=null;
+$.ajax({
+    type:"get",
+    url:"/search/getHostList",
+    success:function(data){
+        alert(data[0].latitude);
+        hostList=data;
+    }
+
+});
 
 function refreshMap() {
     if (markerClusterer) {

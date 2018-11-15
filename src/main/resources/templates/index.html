@@ -1,48 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript">
 
-
-    function loginSubmit(){
-
-        alert("loginSubmit 함수 실행");
-
-        if (!navigator.geolocation) {
-            alert("지오로케이션을 지원하지 않습니다!");
-            document.getElementById('latitude').value = "37.566824";
-            document.getElementById('longitude').value= "126.978522";
-            /*var gpsForm = document.getElementById("gpsForm");*/
-        }
-        function success(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-
-            alert("위치 확인 성공 : "+latitude+"&&"+longitude);
-
-            document.getElementById('latitude').value = latitude;
-            document.getElementById('longitude').value= longitude;
-
-            var hiddenLatitude=$("#latitude").val();
-            var hiddenLogitude=$("#longitude").val();
-
-            alert(hiddenLatitude);
-            alert(hiddenLogitude);
-
-
-        };
-        function error() {
-            alert("사용자의 위치를 찾을 수 없습니다!");
-            document.getElementById('latitude').value = "37.566824";
-            document.getElementById('longitude').value= "126.978522";
-            /*var gpsForm = document.getElementById("gpsForm");*/
-
-        };
-        navigator.geolocation.getCurrentPosition(success, error);
-
-        $("#loginForm").submit();
-    }
-</script>
     <head>
         {{> include/header}}
     </head>
@@ -990,8 +949,8 @@
                             <input type="password" name="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
                             <br />
 
-                            <input type = "hidden" id = "latitude" name = "latitude" />
-                            <input type = "hidden" id = "longitude" name = "longitude"  />
+                            <input type = "hidden" id = "latitude" name = "latitude" value="123456" />
+                            <input type = "hidden" id = "longitude" name = "longitude" value="78589" />
                             <input type="hidden" name="testPara" value="testPara"/>
 
                             <div class="action_btns">
@@ -1053,7 +1012,48 @@
             </div>
         </div>
         <!-- End Login /Register Form-->
+        <script type="text/javascript">
+            function getLocation() {
+                if (navigator.geolocation) { // GPS를 지원하면
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        document.getElementById('latitude').value = position.coords.latitude;
+                        document.getElementById('longitude').value= position.coords.longitude;
+                    }, function(error) {
+                        console.error(error);
+                    }, {
+                        enableHighAccuracy: false,
+                        maximumAge: 0,
+                        timeout: Infinity
+                    });
+                } else {
+                    alert('GPS를 지원하지 않습니다');
+                }
+            }
+            getLocation();
 
+            function loginSubmit(){
+
+                if (!navigator.geolocation) {
+                    alert("지오로케이션을 지원하지 않습니다!");
+                    document.getElementById('latitude').value = "37.566824";
+                    document.getElementById('longitude').value= "126.978522";
+                    /*var gpsForm = document.getElementById("gpsForm");*/
+                }
+                function success(position) {
+                    alert("환영합니다");
+                };
+                function error() {
+                    alert("사용자의 위치를 찾을 수 없습니다!");
+                    document.getElementById("latitude").value = "37.566824";
+                    document.getElementById("longitude").value= "126.978522";
+                    /*var gpsForm = document.getElementById("gpsForm");*/
+
+                };
+                navigator.geolocation.getCurrentPosition(success, error);
+
+                $("#loginForm").submit();
+            }
+        </script>
 
 
         <!-- jQuery -->
