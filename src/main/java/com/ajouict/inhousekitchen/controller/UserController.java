@@ -3,6 +3,7 @@ package com.ajouict.inhousekitchen.controller;
 import com.ajouict.inhousekitchen.domain.User;
 import com.ajouict.inhousekitchen.service.UserService;
 import com.ajouict.inhousekitchen.storage.StorageService;
+import com.sun.deploy.net.HttpUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,6 +120,13 @@ public class UserController {
         session.removeAttribute(HttpSessionUtils.USER_SESSION_KEY);
         return "redirect:/";
     }
+
+    @GetMapping("/getSession")
+    @ResponseBody
+    public User getSessionedUser(HttpSession session){
+        return (User)HttpSessionUtils.getUserFromSession(session);
+    }
+
 
 
 
