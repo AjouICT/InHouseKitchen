@@ -10,6 +10,7 @@ import com.ajouict.inhousekitchen.storage.StorageService;
 import com.ajouict.inhousekitchen.util.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -42,13 +43,19 @@ public class ApiHostController {
         return hostService.register(loginUser, hostDto._toHost(), files)._toHostDto();
     }
 
-    @ResponseBody
+//    @GetMapping("/{id}")
+//    public String showHostInfo(@LoginUser User loginUser, @PathVariable Long id, Model model){
+//        if(loginUser == null){
+//            throw new UnAuthorizedException("로그인 해야 합니다.");
+//        }
+//        model.addAttribute("host", hostService.findById(id)._toHostDto());
+//        return "/host/host_detail";
+//    }
+
     @GetMapping("/{id}")
-    public Host showHostInfo(@LoginUser User loginUser, @PathVariable Long id){
-        if(loginUser == null){
-            throw new UnAuthorizedException("로그인 해야 합니다.");
-        }
-        return hostService.findById(id);
+    public String showHostInfo(@PathVariable Long id, Model model) {
+        model.addAttribute("host", hostService.findById(id)._toHostDto());
+        return "/host/host_detail";
     }
 
 }
