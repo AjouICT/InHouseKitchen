@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        {{> include/header}}
+    </head>
+
+    <body>
+        <!-- header -->
+        {{> include/header}}
+        <!--End header -->
+        <!-- Page Inner -->
+        <section class="lis-bg-light pb-5">
+            <div class="container pt-5">
+                <div class="row wow fadeInUp">
+                    <div class="col-12 col-sm-6">
+                        <div class="page-title">
+                            <h2>호스트로 등록하기</h2>
+                            <!--<p class="mb-0">Lorem ipsum dolor sit amet, ut latine</p>-->
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 text-left text-sm-right">
+                        <ol class="breadcrumb mb-0 pl-0 bg-transparent">
+                            <li class="breadcrumb-item d-inline-block float-none"><a href="#" class="lis-light">Home</a></li>
+                            <li class="breadcrumb-item d-inline-block float-none active">Add Listing</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Page Inner -->
+        <!-- Pricing -->
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9 mb-5 mb-lg-0">
+                        <form id="registerForm" method="post" action="/hosts" enctype="multipart/form-data">
+
+                            <div class="card lis-brd-light wow fadeInUp"
+                                 style="visibility: visible; animation-name: fadeInUp;">
+                                <div class="card-body p-0">
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i
+                                                    class="fa fa-align-left pr-2 lis-f-14"></i> Introduction </h6>
+
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group row">
+                                                <div class="col-12 col-md-10">
+                                                    <textarea
+                                                            class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                            name="introduction"
+                                                            placeholder="집에 방문할 guest들에게 본인을 소개해주세요."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <hr/>
+
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i
+                                                    class="fa fa-file-image-o pr-2 lis-f-14"></i> 메뉴 정보 입력 </h6>
+
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴
+                                                    이름</label>
+                                                <div class="col-12 col-md-10">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           name="menu_name" type="text" placeholder="메뉴 이름을 입력해주세요."
+                                                           value="" id="example-text-input">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴
+                                                    가격</label>
+                                                <div class="col-12 col-md-10">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="menu_price" placeholder="메뉴 가격을 입력해주세요."
+                                                           value="" id="example-text-input">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">메뉴
+                                                    설명</label>
+                                                <div class="col-12 col-md-10">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="menu_description"
+                                                           placeholder="guest에게 대접할 메뉴에 대해서 설명해주세요." value=""
+                                                           id="example-text-input">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-3 col-form-label">메뉴
+                                                    사진들 첨부 </label>
+                                                <div class="col-12 col-md-9">
+                                                    <input class="form-control border-0" type="file" name="files"
+                                                           id="example-text-input" multiple>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <hr/>
+
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i
+                                                    class="fa fa-info-circle pr-2 lis-f-14"></i> Contact information
+                                            </h6>
+
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <!--<div class="form-group row">-->
+                                            <!--<label for="example-text-input" class="col-12 col-md-3 col-form-label">Email</label>-->
+                                            <!--<div class="col-12 col-md-9">-->
+                                            <!--<input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Your email address" type="text" value="" id="example-text-input">-->
+                                            <!--</div>-->
+                                            <!--</div>-->
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-3 col-form-label">Phone
+                                                    number</label>
+                                                <div class="col-12 col-md-9">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="contact_info"
+                                                           placeholder="Your phone number" value=""
+                                                           id="example-text-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <hr/>
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i
+                                                    class="fa fa-info-circle pr-2 lis-f-14"></i> Contact information
+                                            </h6>
+
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-3 col-form-label">예약
+                                                    가능 날짜</label>
+                                                <div class="col-12 col-md-9">
+                                                    <script type="text/javascript"
+                                                            src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+                                                    <script type="text/javascript"
+                                                            src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+                                                    <script type="text/javascript"
+                                                            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+                                                    <link rel="stylesheet" type="text/css"
+                                                          href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+                                                    <input type="text" name="date_range"
+                                                           value="01/01/2018 - 01/15/2018"/>
+                                                    <script>
+                                                        var newJquery = $.noConflict(true);
+
+                                                        $(function () {
+                                                            newJquery('input[name="date_range"]').daterangepicker({
+                                                                opens: 'left'
+                                                            }, function (start, end, label) {
+                                                                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                                                            });
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr/>
+
+
+                                    <div class="row p-4">
+                                        <div class="col-12 col-sm-12 mb-3">
+                                            <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i>
+                                                Location </h6>
+
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Address</label>
+                                                <div class="col-12 col-md-10">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           placeholder="e.g. 2438 Progress Way, Donnelly, MN, 56235"
+                                                           type="text" value="" id="us2-address">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Decimal
+                                                    degrees</label>
+                                                <div class="col-12 col-md-5">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="location_latitude" placeholder="Latitude"
+                                                           value="" id="us2-lat">
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0"
+                                                           type="text" name="location_longitude" placeholder="Longitude"
+                                                           value="" id="us2-lon">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-12 col-sm-12">
+                                            <div id="us2" class="w-100"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-12"><button type="submit" class="btn btn-primary btn-default mt-3" name="registerbtn">호스트로 등록</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--End Pricing -->
+        <!-- Features -->
+        <section class="lis-bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 wow fadeInRight mb-4 mb-lg-0 text-center">
+                        <div class="px-3">
+                            <div class="h1 lis-dark"><i class="fa fa-money"></i></div>
+                            <h6 class="lis-f-20 lis-font-weight-500">Money Back Guarantee</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 wow fadeInRight mb-4 mb-lg-0 text-center">
+                        <div class="px-3">
+                            <div class="h1 lis-dark"><i class="fa fa-check-square-o"></i></div>
+                            <h6 class="lis-f-20 lis-font-weight-500">Simple Demo Import</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 wow fadeInRight text-center">
+                        <div class="px-3">
+                            <div class="h1 lis-dark"><i class="fa fa-users"></i></div>
+                            <h6 class="lis-f-20 lis-font-weight-500">Fast Support Team</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Features -->
+        <!-- Footer-->
+        {{> include/footer}}
+        <!--End  Footer-->
+        <!-- Top To Bottom-->
+        <a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50">
+            <div class="text-white mb-0 lis-line-height-1_7 h3"><i class="icofont icofont-long-arrow-up"></i></div>
+        </a>
+        <!-- End Top To Bottom-->
+        <!-- Login /Register Form-->
+        <div class="container">
+
+
+            <div id="modal" class="popupContainer" style="display: none;">
+                <header class="popupHeader">
+                    <span class="header_title">Login</span>
+                    <span class="modal_close"><i class="fa fa-times"></i></span>
+                </header>
+
+                <div class="popupBody">
+                    <!-- Social Login -->						
+
+                    <!-- Username & Password Login form -->
+                    <div class="user_login">
+                        <form>
+
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="username or email address" />
+                            <br />
+
+
+                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
+                            <br />
+
+                            <div class="checkbox">
+                                <input id="remember" type="checkbox" />
+                                <label for="remember">Remember me on this computer</label>
+                            </div>
+
+                            <div class="action_btns">
+
+                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Login</a>
+                            </div>
+                        </form>
+                        <br/>
+                        Sign in with your social network<br/>
+                        <ul class="list-inline my-0">
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+                        </ul>
+                        <hr/>
+                        Don't have an account <a href="#" class="register_form">Sign Up</a>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="user_register">
+                        <form>
+
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Username" />
+                            <br />
+
+
+                            <input type="email" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Email Address" />
+                            <br />
+
+
+                            <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Password" />
+                            <br />
+
+                            <div class="checkbox">
+                                <input id="send_updates" type="checkbox" />
+                                <label for="send_updates">Send me occasional email updates</label>
+                            </div>
+
+                            <div class="action_btns">
+                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Register</a>
+                            </div>
+                        </form>
+                        <br/>
+                        Register with your social network<br/>
+                        <ul class="list-inline my-0">
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+                        </ul>
+                        <hr/>
+                        Already have an account <a href="#" class="login_form">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Login /Register Form-->
+        <!-- jQuery -->
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&libraries=places"></script>
+        <script src="/dist/js/plugins.min.js"></script>
+        <script src="/dist/js/common.js"></script>
+        <script src="/dist/js/jquery.locationpicker.js"></script>
+        <script src="/dist/js/add-listing.js"></script>
+    </body>
+
+</html>

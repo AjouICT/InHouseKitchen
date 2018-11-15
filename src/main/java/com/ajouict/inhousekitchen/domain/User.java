@@ -1,17 +1,17 @@
 package com.ajouict.inhousekitchen.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@Column(name="mem_idx")
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable=false,unique=true)
+    @Column(nullable=false)
     private String userId;
     @Column(nullable=false)
     private String password;
@@ -20,23 +20,24 @@ public class User {
     private String nationality;
     private String phoneNum;
     private String email;
+
     @Lob
     private String intro;
     @Column(nullable=true)
     private double latitude;
     @Column(nullable=true)
     private double longitude;
-    private Boolean isHost=Boolean.FALSE;
     private String profilePhoto;
 
-    @OneToOne(mappedBy = "host")
+    @JsonIgnore
+    @OneToOne(mappedBy = "myself", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
     private Host host;
 
 
     public User() {
     }
 
-    public User(String userId, String password, String name, String nationality, String phoneNum, String email, String intro, double latitude, double longitude, Boolean isHost, String profilePhoto) {
+    public User(String userId, String password, String name, String nationality, String phoneNum, String email, String intro, String profilePhoto) {
         this.userId = userId;
         this.password = password;
         this.name = name;
@@ -44,14 +45,12 @@ public class User {
         this.phoneNum = phoneNum;
         this.email = email;
         this.intro = intro;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.isHost = isHost;
+
         this.profilePhoto = profilePhoto;
     }
 
-    public Long getId() {
-        return id;
+    public void registerHostInfo(Host host){
+        this.host = host;
     }
 
     public void setId(Long id) {
@@ -98,14 +97,6 @@ public class User {
         this.phoneNum = phoneNum;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getIntro() {
         return intro;
     }
@@ -130,24 +121,17 @@ public class User {
         this.longitude = longitude;
     }
 
-    public Boolean getHost() {
-        return isHost;
-    }
-
     public void setHost(Host host) {
         this.host = host;
     }
 
-    public void setHost(Boolean host) {
-        isHost = host;
-    }
 
     public String getProfilePhoto() {
         return profilePhoto;
     }
 
-    public void setProfilePhoto(String profilePhoto) {
-        this.profilePhoto = profilePhoto;
+    public Host getHost() {
+        return host;
     }
 
     public boolean matchId(Long newId){
@@ -167,21 +151,4 @@ public class User {
 
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userId='" + userId + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", nationality='" + nationality + '\'' +
-                ", phoneNum='" + phoneNum + '\'' +
-                ", email='" + email + '\'' +
-                ", intro='" + intro + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", isHost=" + isHost +
-                ", profilePhoto='" + profilePhoto + '\'' +
-                '}';
-    }
 }
