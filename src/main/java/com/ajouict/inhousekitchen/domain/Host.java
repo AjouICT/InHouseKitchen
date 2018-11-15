@@ -22,6 +22,7 @@ public class Host {
     @NotNull
     private String contact_info;
 
+    @Column(nullable = true)
     private int max_guest;
 
     @Embedded
@@ -33,6 +34,7 @@ public class Host {
     })
     private Location location;
 
+    @Column(nullable = true)
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name="second",
@@ -58,10 +60,13 @@ public class Host {
     @JoinColumn(name = "user_id")
     private User myself;
 
+    @Column(nullable = true)
     private double avg_score;
 
+    @Column(nullable = true)
     private int total_guest_number;
 
+    @Column(nullable = true)
     @ElementCollection
     @CollectionTable(
             name = "MENU_IMAGES",
