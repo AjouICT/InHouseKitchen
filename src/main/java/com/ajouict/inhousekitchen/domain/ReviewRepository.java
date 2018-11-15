@@ -10,6 +10,6 @@ import java.util.function.Predicate;
 @Repository
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     Review findByWriterId(String id);
-    Review findByid(Long id);
-
+    //Review findByid(Long id);
+    Review findReviewById(Long id);
 }

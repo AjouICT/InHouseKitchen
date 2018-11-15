@@ -3,6 +3,7 @@
 
 <head>
     {{> include/header2}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -211,18 +212,62 @@
                     </div>
                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
                         <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Reviews</h6>
-                        {{#reviews}}
+                        {{#reviewList}}
                         <div class="card lis-brd-light wow fadeInUp mb-2">
                             <div class="card-body p-4">
                                 <div class="media d-block d-sm-flex text-center text-sm-left">
                                     <a href="#"><img src="../{{writer.profilePhoto}}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60"></a>
                                     <div class="media-body align-self-center">
+                                        <!-- 별점 보이게 하는 곳 -->
                                         <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
+                                            <!--<input type = "hidden" value="{{score}}"score class="hiddenScore" id="score{{id}}">-->
+                                            {{score}}
+                                            <script>
+                                                var score = $("#score").val();
+                                                console.log(score);
+                                                if(score <= 1){
+                                                    document.write('<li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>');
+                                                }
+                                                else if (score <= 2){
+                                                    document.write('<li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>');
+                                                }
+                                                else if (score <= 3){
+                                                    document.write('<li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>');
+                                                }
+                                                else if (score <= 4){
+                                                    document.write('<li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star-o"></i></li>');
+                                                }
+                                                else if (score <= 5){
+                                                    document.write('<li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>\n' +
+                                                        '           <li class="list-inline-item"><i class="fa fa-star"></i></li>');
+                                                }
+                                            </script>
+                                            <!--
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                            -->
                                         </ul>
                                         <h6 class="mb-0"><a href="#" class="lis-dark">{{writer.name}}</a></h6>
                                         <p>{{createDate}}</p>
@@ -237,7 +282,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{/reviews}}
+                        {{/reviewList}}
                         <!-- 페이징 하는 곳 -->
                         <ul class="pagination list-inline mb-0 text-center text-uppercase lis-f-14 justify-content-center my-4">
                             <li class="p-1 page-item"><a class="page-link lis-brd-light lis-light rounded" href="#"><i class="fa fa-angle-left pr-1"></i> Prev</a></li>
@@ -250,40 +295,47 @@
                         <!-- 리뷰 작성, submit -->
                         <h6 class="lis-font-weight-500"><i class="fa fa-commenting pr-2 lis-f-14"></i>  Add Review</h6>
                         <div class="card lis-brd-light wow fadeInUp">
+                            <form class="review-write" name="review_form" method="post" action="/review/create/{{user.id}}/{{loginUser.userId}}">
                             <!-- 별점 입력 -->
                             <div class="card-body p-4">
                                 <p class="mb-2">Your rating for this listing</p>
-                                <div class="starrr" id=""star1>
-                                    <a href="#" class="fa-star fa"></a>
-                                    <a href="#" class="fa-star fa"></a>
-                                    <a href="#" class="fa-star fa"></a>
+                                <div class="starrr" id="star1">
+                                    <a href="#" class="fa-star-o fa"></a>
+                                    <a href="#" class="fa-star-o fa"></a>
+                                    <a href="#" class="fa-star-o fa"></a>
                                     <a href="#" class="fa-star-o fa"></a>
                                     <a href="#" class="fa-star-o fa"></a>
                                 </div>
+                                <div>&nbsp;
+                                     <span class='your-choice-was' style='display: none;'>Your rating was <span class='choice'></span>.</span>
+                                    <input type="hidden" name="score" value="">
+
+                                </div>
+
                                 <!-- value로 이름, 이메일 주소 불러와주기 -->
                                 {{#loginUser}}
-                                <form class="review-write" method="post" action="/review/create/{{user.id}}/{{loginUser.userId}}">
                                     <!--<input type="hidden" name="_method" value="PUT">-->
                                     <!-- 제목 -->
                                     <div class="col-12 col-sm-12">
                                         <div class="form-group lis-relative">
-                                            <input type="text" name="title" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Title of review">
-                                            <div class="lis-search"> <i class="fa fa-drivers-license-o lis-primary lis-left-0"></i> </div>
+                                             <input type="text" name="title" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Title of review">
+                                             <div class="lis-search"> <i class="fa fa-drivers-license-o lis-primary lis-left-0"></i> </div>
                                         </div>
                                     </div>
 
-                                    <!-- 리뷰 본문 -->
-                                    <div class="col-12 col-sm-12">
-                                        <div class="form-group lis-relative">
-                                            <textarea name="contents" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Review"></textarea>
-                                            <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
-                                        </div>
-                                    </div>
+                            <!-- 리뷰 본문 -->
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group lis-relative">
+                                    <textarea name="contents" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Review"></textarea>
+                                    <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
+                                </div>
+                            </div>
 
                                     <!-- 사진 업로드 -->
                                     <div class="col-12 col-sm-12">
                                         <h6 class="lis-font-weight-500">  Add a photo</h6>
-                                        <input type="file" class="d-block"> <small>Note: The image size should smaller than or equal to 20MB</small> </div>
+                                        <input type="file" class="d-block"> <small>Note: The image size should smaller than or equal to 20MB</small>
+                                    </div>
                                 <!-- 제출하기 -->
                                 <button type = "submit" class="btn btn-primary btn-default mt-3"> Submit Review</button>
                                 </form>
@@ -298,11 +350,52 @@
                 <div class="card lis-brd-light wow fadeInUp mb-4">
                     <div class="card-body p-4">
                         <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
-                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
-                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
-                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
-                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
-                            <li class="list-inline-item"><i class='fa fa-star-o'></i></li>
+                            <input type="hidden" class="hiddenAvgScore" value="{{avgScore}}">
+                            <script>
+                                var avgScore = $(".hiddenAvgScore").val();
+                                if (avgScore < 0.7){
+                                    document.write('<li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>');
+                                }
+                                else if( avgScore < 1.7){
+                                    document.write('<li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>');
+                                }
+                                else if(avgScore < 2.7){
+                                    document.write('<li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>');
+                                }
+                                else if (avgScore < 3.7){
+                                    document.write('<li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>');
+                                }
+                                else if (avgScore < 4.7){
+                                    document.write('<li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star-o\'></i></li>');
+                                }
+                                else {
+                                    document.write('<li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>\n' +
+                                        '           <li class="list-inline-item"><i class=\'fa fa-star\'></i></li>');
+                                }
+                            </script>
                             <li class="list-inline-item"> {{avgScore}}</li>
                         </ul> <small>{{avgScore}} average based on {{totalGuest}} ratings</small> </div>
                 </div>
@@ -518,12 +611,52 @@
 
 <!-- End Login /Register Form-->
 <!-- jQuery -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 <script src="../dist/js/plugins.min.js"></script>
 <script src="../dist/js/common.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&sensor=false&callback=initialize"></script>
 <script src="../dist/js/single-map.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../dist/js/starrr.js"></script>
+
+
+<script>
+
+    $('#star1').starrr({
+        change: function(e, value){
+            console.log("value : " + value);
+            document.review_form.score.value = value;
+            <!-- 값이 있는 경우 -->
+            if (value) {
+                $('.your-choice-was').show();
+                //$('.choice').text(value);
+                $('.choice').text(value);
+                <!-- 값이 없는 경우 -->
+            } else {
+                $('.your-choice-was').hide();
+            }
+        }
+    });
+
+    var $s2input = $('#star2_input');
+    $('#star2').starrr({
+        max: 10,
+        rating: $s2input.val(),
+        change: function(e, value){
+            $s2input.val(value).trigger('input');
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39205841-5', 'dobtco.github.io');
+    ga('send', 'pageview');
+</script>
 
 </body>
 

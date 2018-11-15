@@ -2,6 +2,8 @@ package com.ajouict.inhousekitchen.controller;
 
 import com.ajouict.inhousekitchen.domain.*;
 import com.ajouict.inhousekitchen.service.ReviewService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/review")
 public class ReviewController {
-
+    //private static final Logger log= LoggerFactory.getLogger(ReviewController.class);
     @Autowired
     private UserRepository userRepository;
 
@@ -26,14 +28,16 @@ public class ReviewController {
 
     @GetMapping("/{userId}")
     public String show(@PathVariable String userId, Model model, HttpSession session) {
-
+        System.out.println("여기");
         User temp = userRepository.findByUserId(userId);
         // 호스트
         Host user = searchRepository.findByHost(temp);
 
         User loginUser = HttpSessionUtils.getUserFromSession(session);
         
+        List<Review> reviewList = user.getReviews();
 
+        model.addAttribute("reviewList", reviewList);
         model.addAttribute("loginUser", loginUser);
         model.addAttribute("user", user);
 
@@ -47,23 +51,30 @@ public class ReviewController {
     }
 
     @PostMapping("/create/{hostId}/{userId}")
-    public String create(@PathVariable Long hostId, @PathVariable String userId, HttpSession session, String title, String contents){
-
-        System.out.println("호스트 아이디 : " + hostId);
-        System.out.println("유저 아이디 : " + userId);
-
+    public String create(@PathVariable Long hostId, @PathVariable String userId, HttpSession session, String title, String contents, String score){
+        // 작성자
         User writer = HttpSessionUtils.getUserFromSession(session);
-        Host host = searchRepository.findByid(hostId);
+        // 호스트
+        Host host = searchRepository.findHostById(hostId);
+        // 호스트를 유저로 변환
         User tempHost = userRepository.getOne(hostId);
 
-        System.out.println("login : " + writer);
-        System.out.println("host : " + host);
-
+        if(score == null){
+            return String.format("redirect:/review/%s", tempHost.getUserId());
+        }
+        // String의 별점을 int로 변환
+        int iScore = Integer.parseInt(score);
+        // 별점 적용
+        host.calculateScore(iScore, 1);
+        // 자기 자신에게는 리뷰를 달지 못하게 함
         if(host.IsSameHost(writer)){
            return String.format("redirect:/review/%s", tempHost.getUserId());
         }
+        // 이미 작성했을 경우 작성하지 못하게 함
 
-        Review review = new Review(writer, host, title, contents);
+
+        // 작성한 리뷰
+        Review review = new Review(writer, host, title, contents, iScore);
         reviewRepository.save(review);
 
         return String.format("redirect:/review/%s", tempHost.getUserId());
@@ -74,7 +85,7 @@ public class ReviewController {
         // 글쓴이
         User writer = HttpSessionUtils.getUserFromSession(session);
         // 리뷰
-        Review review = reviewRepository.findByid(reviewId);
+        Review review = reviewRepository.findReviewById(reviewId);
         User hostUser = review.getHost().getHost();
 
         if(!review.IsSameWriter(writer)) {
@@ -85,10 +96,15 @@ public class ReviewController {
     }
 
     @PutMapping("/{reviewId}")
-    public String update(@PathVariable Long reviewId, String title, String contents, HttpSession session){
-        Review review = reviewRepository.findByid(reviewId);
+    public String update(@PathVariable Long reviewId, String title, String contents, String score, HttpSession session){
+        Review review = reviewRepository.findReviewById(reviewId);
+        Host host = review.getHost();
 
-        review.update(review, title, contents);
+        int iScore = Integer.parseInt(score);
+
+        // 수정
+        host.calculateScore(iScore - review.getScore(), 2);
+        review.update(review, title, contents, iScore);
         reviewRepository.save(review);
 
         return String.format("redirect:/review/%s", review.getHost().getHost().getUserId());
@@ -96,7 +112,8 @@ public class ReviewController {
 
     @GetMapping("/delete/{reviewId}")
     public String delete(@PathVariable Long reviewId, HttpSession session){
-        Review review = reviewRepository.findByid(reviewId);
+        Review review = reviewRepository.findReviewById(reviewId);
+        Host host = review.getHost();
         User hostUser = review.getHost().getHost();
         User writer = HttpSessionUtils.getUserFromSession(session);
 
@@ -104,8 +121,12 @@ public class ReviewController {
         if(!review.IsSameWriter(writer)){
             return String.format("redirect:/review/%s", hostUser.getUserId());
         }
-
+        // 별점 적용
+        System.out.println("삭제 적용");
+        host.calculateScore(review.getScore(), 0);
         reviewRepository.delete(review);
+
+
 
         return String.format("redirect:/review/%s", hostUser.getUserId());
     }

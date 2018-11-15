@@ -39,6 +39,7 @@ public class Host {
     private int visitTripple;
     private float avgScore;
     private int totalGuest;
+    private int totalScore;
 
     @Column(nullable=false)
     private String menuName;
@@ -53,7 +54,7 @@ public class Host {
     @OneToMany(mappedBy = "host")
     private List<Review> reviews;
 
-    public Host(User host, String hostIntro, String hostContact, int maxGuest, LocalDateTime startDate, LocalDateTime endDate, double latitude, double longitude, int visitTwice, int visitTripple, float avgScore, int totalGuest, String menuName, String menuPrice, String menuIntro) {
+    public Host(User host, String hostIntro, String hostContact, int maxGuest, LocalDateTime startDate, LocalDateTime endDate, double latitude, double longitude, int visitTwice, int visitTripple, int totalGuest, int totalScore, String menuName, String menuPrice, String menuIntro) {
         this.host = host;
         this.hostIntro = hostIntro;
         this.hostContact = hostContact;
@@ -64,14 +65,49 @@ public class Host {
         this.longitude = longitude;
         this.visitTwice = visitTwice;
         this.visitTripple = visitTripple;
-        this.avgScore = avgScore;
+        this.totalScore = totalScore;
         this.totalGuest = totalGuest;
         this.menuName = menuName;
         this.menuPrice = menuPrice;
         this.menuIntro = menuIntro;
+        this.avgScore = 0; // 첫 호스트의 경우 0으로 초기화
     }
 
     public Host() {
+    }
+
+    public void calculateScore(int score, int flag){
+
+        // 추가
+        if (flag == 1){
+            this.totalScore += score; // 점수 증가
+            this.totalGuest += 1; // 사람 증가
+        }
+        // 수정
+        else if (flag == 2){
+            this.totalScore += score;
+        }
+        // 삭제
+        else{
+            System.out.println("삭제 전 인원 수 : " + this.totalGuest);
+            System.out.println("삭제 전 평점 수 : " + this.totalScore);
+            this.totalScore -= score;
+            this.totalGuest--;
+            System.out.println(" 인원 수 : " + this.totalGuest);
+            System.out.println(" 평점 수 : " + this.totalScore);
+        }
+        this.avgScore = (float)this.totalScore / this.totalGuest;
+        // 소수점 첫째자리까지만 저장
+        this.avgScore = (int)(this.avgScore * 10);
+        this.avgScore = this.avgScore / 10;
+    }
+
+    public int getTotalScore() {
+        return totalScore;
+    }
+
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
     }
 
     public List<Review> getReviews() {

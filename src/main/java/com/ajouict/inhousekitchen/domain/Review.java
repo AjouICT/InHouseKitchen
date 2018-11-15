@@ -10,25 +10,38 @@ import java.time.LocalDateTime;
 public class Review {
     @Id
     @GeneratedValue
-    public Long id;
+    public Long id; // 리뷰 아이디
 
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "fk_review_host"))
-    private Host host;
+    private Host host; // 리뷰 호스트 유저 정보
 
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "fk_review_writer"))
-    private User writer;
+    private User writer; // 리뷰를 쓴 사람 정보
 
     @Column
-    private String title;
+    private String title; // 제목
 
     @Lob
     @Column
-    private String contents;
+    private String contents; // 내용
 
     @Column
-    private LocalDateTime createDate;
+    private LocalDateTime createDate; // 작성한 날짜
+
+    @Column
+    private Integer score;
+
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
 
     public Host getHost() {
         return host;
@@ -80,28 +93,28 @@ public class Review {
 
     public Review() {}
 
-    public Review(User writer, Host host, String title, String contents){
+    public Review(User writer, Host host, String title, String contents, int score){
         this.writer = writer;
         this.host = host;
         this.title = title;
         this.contents = contents;
         this.createDate = LocalDateTime.now();
+        this.score = score;
     }
 
     public boolean IsSameWriter(User loginUser){
         if(loginUser == null){
             return false;
         }
-        System.out.println("writer : " + this.writer.getId());
-        System.out.println("login : " + loginUser.getId());
 
         if(this.writer.getId() != loginUser.getId()) return false;
 
         return true;
     }
 
-    public void update(Review review, String title, String contents){
+    public void update(Review review, String title, String contents, int score){
         review.title = title;
         review.contents = contents;
+        review.score = score;
     }
 }
