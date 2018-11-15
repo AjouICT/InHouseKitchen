@@ -2,30 +2,46 @@
 <html lang="en">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
-    /*if (!navigator.geolocation) {
-        alert("지오로케이션을 지원하지 않습니다!");
-        document.getElementById('latitude').value = "37.566824";
-        document.getElementById('longitude').value= "126.978522";
-        var gpsForm = document.getElementById("gpsForm");
-        gpsForm.submit();
-    }
-    function success(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
 
-        document.getElementById('latitude').value = latitude;
-        document.getElementById('longitude').value= longitude;
-        var gpsForm = document.getElementById("gpsForm");
-        gpsForm.submit();
-    };
-    function error() {
-        alert("사용자의 위치를 찾을 수 없습니다!");
-        document.getElementById('latitude').value = "37.566824";
-        document.getElementById('longitude').value= "126.978522";
-        var gpsForm = document.getElementById("gpsForm");
-        gpsForm.submit();
-    };
-    navigator.geolocation.getCurrentPosition(success, error);*/
+
+    function loginSubmit(){
+
+        alert("loginSubmit 함수 실행");
+
+        if (!navigator.geolocation) {
+            alert("지오로케이션을 지원하지 않습니다!");
+            document.getElementById('latitude').value = "37.566824";
+            document.getElementById('longitude').value= "126.978522";
+            /*var gpsForm = document.getElementById("gpsForm");*/
+        }
+        function success(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            alert("위치 확인 성공 : "+latitude+"&&"+longitude);
+
+            document.getElementById('latitude').value = latitude;
+            document.getElementById('longitude').value= longitude;
+
+            var hiddenLatitude=$("#latitude").val();
+            var hiddenLogitude=$("#longitude").val();
+
+            alert(hiddenLatitude);
+            alert(hiddenLogitude);
+
+
+        };
+        function error() {
+            alert("사용자의 위치를 찾을 수 없습니다!");
+            document.getElementById('latitude').value = "37.566824";
+            document.getElementById('longitude').value= "126.978522";
+            /*var gpsForm = document.getElementById("gpsForm");*/
+
+        };
+        navigator.geolocation.getCurrentPosition(success, error);
+
+        $("#loginForm").submit();
+    }
 </script>
     <head>
         {{> include/header}}
@@ -84,12 +100,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="form-group">
-                                            <select class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                                <option> All Categories</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                            </select>
+                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Date" />
                                             <div class="lis-search">
                                                 <i class="fa fa-tags lis-primary"></i>
                                             </div>
@@ -979,14 +990,14 @@
                             <input type="password" name="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
                             <br />
 
-                            <div class="checkbox">
-                                <input id="remember" type="checkbox" />
-                                <label for="remember">Remember me on this computer</label>
-                            </div>
+                            <input type = "hidden" id = "latitude" name = "latitude" />
+                            <input type = "hidden" id = "longitude" name = "longitude"  />
+                            <input type="hidden" name="testPara" value="testPara"/>
 
                             <div class="action_btns">
 
-                                <a href="#" onclick="document.getElementById('loginForm').submit();" class="btn btn-primary btn-default mt-3 w-100">Login</a>
+                                <!--<a href="#" onclick="document.getElementById('loginForm').submit();" class="btn btn-primary btn-default mt-3 w-100">Login</a>-->
+                                <a href="#" onclick="loginSubmit()" class="btn btn-primary btn-default mt-3 w-100">Login</a>
                             </div>
                         </form>
                         <br/>

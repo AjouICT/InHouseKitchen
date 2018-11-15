@@ -21,6 +21,10 @@ public class User {
     private String email;
     @Lob
     private String intro;
+    @Column(nullable=true)
+    private double latitude;
+    @Column(nullable=true)
+    private double longitude;
     private Boolean isHost=Boolean.FALSE;
     private String profilePhoto;
 
@@ -28,10 +32,10 @@ public class User {
     private Host host;
 
 
-   public User() {
+    public User() {
     }
 
-    public User(String userId, String password, String name, String nationality, String phoneNum, String email, String intro, Boolean isHost, String profilePhoto) {
+    public User(String userId, String password, String name, String nationality, String phoneNum, String email, String intro, double latitude, double longitude, Boolean isHost, String profilePhoto) {
         this.userId = userId;
         this.password = password;
         this.name = name;
@@ -39,47 +43,9 @@ public class User {
         this.phoneNum = phoneNum;
         this.email = email;
         this.intro = intro;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.isHost = isHost;
-        this.profilePhoto = profilePhoto;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
-    }
-
-    public void setHost(Boolean host) {
-        isHost = host;
-    }
-
-    public void setProfilePhoto(String profilePhoto) {
         this.profilePhoto = profilePhoto;
     }
 
@@ -87,40 +53,100 @@ public class User {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getUserId() {
         return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getPassword() {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getNationality() {
         return nationality;
     }
 
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
     public String getPhoneNum() {
         return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
     public String getEmail() {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getIntro() {
         return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public Boolean getHost() {
         return isHost;
     }
 
+    public void setHost(Host host) {
+        this.host = host;
+    }
+
+    public void setHost(Boolean host) {
+        isHost = host;
+    }
+
     public String getProfilePhoto() {
         return profilePhoto;
+    }
+
+    public void setProfilePhoto(String profilePhoto) {
+        this.profilePhoto = profilePhoto;
     }
 
     public boolean matchId(Long newId){
@@ -151,6 +177,8 @@ public class User {
                 ", phoneNum='" + phoneNum + '\'' +
                 ", email='" + email + '\'' +
                 ", intro='" + intro + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
                 ", isHost=" + isHost +
                 ", profilePhoto='" + profilePhoto + '\'' +
                 '}';

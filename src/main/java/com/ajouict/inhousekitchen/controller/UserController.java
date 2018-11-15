@@ -86,7 +86,13 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(String userId, String password, HttpSession session){
+    public String login(String userId, String password, String latitude, String longitude, String testPara, HttpSession session){
+        System.out.println("로그인시 현재 위도 : "+latitude);
+        System.out.println("로그인시 현재 경도 : "+longitude);
+        System.out.println("로그인시 현재 유저아이디 : "+userId);
+        System.out.println("로그인시 현재 비번 : "+password);
+        System.out.println("로그인시 현재 testPara : "+testPara);
+
         User user=userService.findById(userId);
         if(user==null){
             log.info("Login fail - no member exist");
