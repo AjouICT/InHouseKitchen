@@ -1,12 +1,15 @@
 package com.ajouict.inhousekitchen.domain;
 
-import com.ajouict.inhousekitchen.controller.HttpSessionUtils;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 public class Review {
     @Id
     @GeneratedValue
@@ -32,6 +35,8 @@ public class Review {
 
     @Column
     private Integer score;
+
+
 
 
     public Integer getScore() {
