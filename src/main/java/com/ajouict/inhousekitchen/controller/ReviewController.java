@@ -31,7 +31,7 @@ public class ReviewController {
         System.out.println("여기");
         User temp = userRepository.findByUserId(userId);
         // 호스트
-        Host user = searchRepository.findByHost(temp);
+        Host user = searchRepository.findByMyself(temp);
 
         User loginUser = HttpSessionUtils.getUserFromSession(session);
         
@@ -86,7 +86,7 @@ public class ReviewController {
         User writer = HttpSessionUtils.getUserFromSession(session);
         // 리뷰
         Review review = reviewRepository.findReviewById(reviewId);
-        User hostUser = review.getHost().getHost();
+        User hostUser = review.getHost().getMyself();
 
         if(!review.IsSameWriter(writer)) {
             return String.format("redirect:/review/%s", hostUser.getUserId());
@@ -107,14 +107,14 @@ public class ReviewController {
         review.update(review, title, contents, iScore);
         reviewRepository.save(review);
 
-        return String.format("redirect:/review/%s", review.getHost().getHost().getUserId());
+        return String.format("redirect:/review/%s", review.getHost().getMyself().getUserId());
     }
 
     @GetMapping("/delete/{reviewId}")
     public String delete(@PathVariable Long reviewId, HttpSession session){
         Review review = reviewRepository.findReviewById(reviewId);
         Host host = review.getHost();
-        User hostUser = review.getHost().getHost();
+        User hostUser = review.getHost().getMyself();
         User writer = HttpSessionUtils.getUserFromSession(session);
 
         // 작성자가 아닌 경우 리스트로 보냄

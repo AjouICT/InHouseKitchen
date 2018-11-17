@@ -12,34 +12,34 @@ import lombok.Setter;
 @Setter
 public class HostDto {
     private String introduction;
-    private String contact_info;
-    private String menu_name;
-    private String menu_price;
-    private String menu_description;
+    private String contactInfo;
+    private String menuName;
+    private String menuPrice;
+    private String menuDescription;
     @JsonProperty(value = "date_range")
-    private String date_range;
-    private String location_latitude;
-    private String location_longitude;
+    private String dateRange;
+    private String locationLatitude;
+    private String locationLongitude;
 
     @Builder
     public HostDto(String introduction, String contact_info, String menu_name, String menu_price, String menu_description, String date_range, String location_latitude, String location_longitude) {
         this.introduction = introduction;
-        this.contact_info = contact_info;
-        this.menu_name = menu_name;
-        this.menu_price = menu_price;
-        this.menu_description = menu_description;
-        this.date_range = date_range;
-        this.location_latitude = location_latitude;
-        this.location_longitude = location_longitude;
+        this.contactInfo = contact_info;
+        this.menuName = menu_name;
+        this.menuPrice = menu_price;
+        this.menuDescription = menu_description;
+        this.dateRange = date_range;
+        this.locationLatitude = location_latitude;
+        this.locationLongitude = location_longitude;
     }
 
     public Host _toHost(){
         return Host.builder()
                 .introduction(this.introduction)
-                .contact_info(this.contact_info)
-                .location(Location.builder().latitude(Double.parseDouble(this.location_latitude)).longitude(Double.parseDouble(this.location_longitude)).build())
-                .menusInfo(MenusInfo.builder().description(this.menu_description).name(this.menu_name).price(Double.parseDouble(this.menu_price)).build())
-                .availablePeriod(this.date_range)
+                .contactInfo(this.contactInfo)
+                .location(Location.builder().latitude(Double.parseDouble(this.locationLatitude)).longitude(Double.parseDouble(this.locationLongitude)).build())
+                .menusInfo(MenusInfo.builder().description(this.menuDescription).name(this.menuName).price(Double.parseDouble(this.menuPrice)).build())
+                .availablePeriod(this.dateRange)
                 .build();
     }
 }

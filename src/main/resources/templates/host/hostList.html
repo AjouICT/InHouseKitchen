@@ -221,7 +221,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-6 py-5 order-lg-1 order-2 left-sidebar z-index-99">
                         <div class="lis-relative">
-                            <h5 class="mb-2">What are you looking for?</h5><button id="showPin">지도보기</button>
+                            <h5 class="mb-2">What are you looking for?</h5>
                             <p>Search by Keywords, Location, Category or Filters</p>
                             <div class="py-2">
                                 <label class="custom-control custom-radio lis-dark lis-font-poppins">
@@ -396,13 +396,13 @@
                                         <div class="card-body pt-0">
                                             <div class="media d-block d-lg-flex lis-relative"> <img src="../dist/images/card-logo.png" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />
                                                 <div class="media-body align-self-start mt-2">
-                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">{{menuName}}</A></h6> </div>
+                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">{{menusInfo.name}}</A></h6> </div>
                                             </div>
                                             <ul class="list-unstyled my-4 lis-line-height-2">
-                                                <li><i class="fa fa-phone pr-2"></i> {{hostContact}}</li>
-                                                <li><i class="fa fa-map-o pr-2"></i> {{latitude}} , {{longitude}}</li>
-                                                <input type="hidden" value="{{latitude}}" id="latitude">
-                                                <input type="hidden" value="{{longitude}}" id="longitude">
+                                                <li><i class="fa fa-phone pr-2"></i> {{contactInfo}}</li>
+                                                <li><i class="fa fa-map-o pr-2"></i> {{location.latitude}} , {{location.longitude}}</li>
+                                                <input type="hidden" value="{{location.latitude}}" id="latitude">
+                                                <input type="hidden" value="{{location.longitude}}" id="longitude">
                                             </ul>
                                             <div class="clearfix">
                                                 <div class="float-none float-lg-left mb-3 mb-lg-0 mt-1">

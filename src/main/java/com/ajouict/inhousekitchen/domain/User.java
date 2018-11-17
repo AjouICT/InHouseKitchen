@@ -1,11 +1,15 @@
 package com.ajouict.inhousekitchen.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
+@Getter
+@Setter
 public class User {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,9 +27,9 @@ public class User {
 
     @Lob
     private String intro;
-    @Column(nullable=true)
+    @Column(nullable=false)
     private double latitude;
-    @Column(nullable=true)
+    @Column(nullable=false)
     private double longitude;
     private String profilePhoto;
 
