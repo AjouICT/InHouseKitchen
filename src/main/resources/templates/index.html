@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKEig7O8kFDEdTgvsweI3TmoBAuwfTYvQ&libraries=places"></script>
     <head>
         {{> include/header}}
     </head>
@@ -37,12 +37,13 @@
                                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fa fa-home pr-1"></i> Property</a>
                             </li>
                         </ul>
+                        <form action="/search/searchHost"  id="searchForm" >
                         <div class="tab-content bg-white p-5 rounded-bottom rounded-right" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
                                     <div class="col-12 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?" />
+                                            <input type="text" id="searchKeyword" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?" />
                                             <div class="lis-search">
                                                 <i class="fa fa-search lis-primary"></i>
                                             </div>
@@ -50,7 +51,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location" />
+                                            <input type="text" id="searchLocation" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="location" />
                                             <div class="lis-search">
                                                 <i class="fa fa-map-o lis-primary"></i>
                                             </div>
@@ -58,17 +59,20 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Date" />
+                                            <input type="text" id="searchDate" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Date" />
                                             <div class="lis-search">
                                                 <i class="fa fa-tags lis-primary"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-4">
-                                        <a href="/search/" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search pr-1"></i> Search</a>
+                                        <a href="#" id="searchButton" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search pr-1"></i> Search</a>
                                     </div>
+
                                 </div>
                             </div>
+                        </div>
+                        </form>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="row">
                                     <div class="col-12 col-md-12">
@@ -1051,6 +1055,13 @@
 
                 $("#loginForm").submit();
             }
+
+            $("#searchButton").click(function(){
+               $("#searchForm").submit();
+            });
+
+            var input = document.getElementById("searchLocation");
+            var autocomplete = new google.maps.places.Autocomplete(input);
         </script>
 
 

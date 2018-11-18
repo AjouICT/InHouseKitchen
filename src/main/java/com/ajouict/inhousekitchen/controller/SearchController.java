@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -37,6 +38,19 @@ public class SearchController {
         log.info(hostList.get(0).getMenusInfo().getName());
 
         return searchService.hostList();
+    }
+
+    @GetMapping("/searchHost")
+    public String searchHost(String searchKeyword, String searchLocation, String searchDate){
+        log.info("[/search/searchHost] searchKeyword : "+searchKeyword);
+        log.info("[/search/searchHost] searchLocation : "+searchLocation);
+        log.info("[/search/searchHost] searchDate : "+searchDate);
+        return "df";
+    }
+
+    @GetMapping("/auto")
+    public String autoComplete(){
+        return "/host/placeAutoComplete";
     }
 
 
