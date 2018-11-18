@@ -33,7 +33,7 @@ public class SearchController {
     @GetMapping("/getHostList")
     @ResponseBody
     public List<Host> getHostList(){
-        log.info("searc Controller 통과");
+        log.info("search Controller 통과");
         List<Host> hostList=searchService.hostList();
         log.info(hostList.get(0).getMenusInfo().getName());
 
