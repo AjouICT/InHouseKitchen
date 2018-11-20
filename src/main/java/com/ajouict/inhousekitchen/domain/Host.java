@@ -136,6 +136,7 @@ public class Host {
         return Objects.hash(id);
     }
 
+    // 리뷰 점수 계산함수
     public void calculateScore(int score, int flag){
 
         // 추가
@@ -149,20 +150,27 @@ public class Host {
         }
         // 삭제
         else{
-            System.out.println("삭제 전 인원 수 : " + this.totalGuestNumber);
-            System.out.println("삭제 전 평점 수 : " + this.totalScore);
             this.totalScore -= score;
             this.totalGuestNumber--;
-            System.out.println(" 인원 수 : " + this.totalGuestNumber);
-            System.out.println(" 평점 수 : " + this.totalScore);
         }
         this.avgScore = (float)this.totalScore / this.totalGuestNumber;
         // 소수점 첫째자리까지만 저장
         this.avgScore = (int)(this.avgScore * 10);
         this.avgScore = this.avgScore / 10;
     }
+    // 이미 리뷰를 작성한 적 있는 유저인지 확인하는 함수
+    public boolean AlreadyWriteReview(User writer){
+        for(Review r : reviews){
+            System.out.println("writer : " + writer.getUserId() + " r : " + r.getWriter().getUserId());
+            if(writer.getUserId() == r.getWriter().getUserId()){
+                return true;
+            }
+        }
+        return false;
+    }
 
-    public boolean IsSameHost(User loginUser){
+    // 자기 자신에게 리뷰를 다는지 확인하는 함수
+    public boolean WriterIsHost(User loginUser){
         if(loginUser == null){
             return false;
         }
