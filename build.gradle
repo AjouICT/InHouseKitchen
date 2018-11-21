@@ -34,6 +34,7 @@ dependencies {
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.5.0'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.5.0'
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.18'
+    compile group: 'com.google.code.geocoder-java', name: 'geocoder-java', version: '0.15'
     runtime('net.rakugakibox.spring.boot:logback-access-spring-boot-starter:2.7.1')
     testCompile('org.assertj:assertj-core:3.9.0')
     testCompile('io.rest-assured:rest-assured:3.0.3')

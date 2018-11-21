@@ -41,11 +41,19 @@ public class SearchController {
     }
 
     @GetMapping("/searchHost")
-    public String searchHost(String searchKeyword, String searchLocation, String searchDate){
+    public String searchHost(@RequestParam(name = "searchKeyword") String searchKeyword,
+                             @RequestParam(name="searchLocation") String searchLocation,
+                             @RequestParam(name="searchDate") String searchDate){
         log.info("[/search/searchHost] searchKeyword : "+searchKeyword);
         log.info("[/search/searchHost] searchLocation : "+searchLocation);
         log.info("[/search/searchHost] searchDate : "+searchDate);
-        return "df";
+
+        //지오코딩을 해서 API 콜을 해서 받아온 위도, 경도 값을 유저의 세션에 Set 해주어야 한다.
+        String latlng=searchService.geocoding(searchLocation);
+        log.info("주소 -> 위도 변경 값 : "+latlng);
+
+
+        return "redirect:/search";
     }
 
     @GetMapping("/auto")
