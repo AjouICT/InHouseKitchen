@@ -1,32 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript">
-    /*if (!navigator.geolocation) {
-        alert("지오로케이션을 지원하지 않습니다!");
-        document.getElementById('latitude').value = "37.566824";
-        document.getElementById('longitude').value= "126.978522";
-        var gpsForm = document.getElementById("gpsForm");
-        gpsForm.submit();
-    }
-    function success(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-
-        document.getElementById('latitude').value = latitude;
-        document.getElementById('longitude').value= longitude;
-        var gpsForm = document.getElementById("gpsForm");
-        gpsForm.submit();
-    };
-    function error() {
-        alert("사용자의 위치를 찾을 수 없습니다!");
-        document.getElementById('latitude').value = "37.566824";
-        document.getElementById('longitude').value= "126.978522";
-        var gpsForm = document.getElementById("gpsForm");
-        gpsForm.submit();
-    };
-    navigator.geolocation.getCurrentPosition(success, error);*/
-</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKEig7O8kFDEdTgvsweI3TmoBAuwfTYvQ&libraries=places"></script>
     <head>
         {{> include/header}}
     </head>
@@ -34,12 +9,11 @@
         <!-- header -->
         {{> include/navigation}}
         <!--End header -->
-
         <!-- Page Inner -->
         <section class="image-bg lis-grediant grediant-tb">
             <div class="background-image-maker"></div>
             <div class="holder-image">
-                <img src="dist/images/bg1.jpg" alt="" class="img-fluid d-none">
+                <img src="dist/images/bg10.jpg" alt="" class="img-fluid d-none">
             </div>
             <!--<form method="post" action="/search/userLocation" id="gpsForm">
                 <input type = "hidden" id = "latitude" name = "latitude" value = "">
@@ -49,8 +23,8 @@
                 <div class="row justify-content-center pt-5">
                     <div class="col-12 col-md-10 text-center wow fadeInUp">
                         <div class="heading pb-5">
-                            <h1 class="display-4">Find Nearby Spots</h1>
-                            <h4 class="font-weight-normal mb-0">Expolore top-rated attractions, activities and more</h4>
+                            <h1 class="display-4"><b1>인하우스키친</b1></h1>
+                            <h4 class="font-weight-normal mb-0"><b1>Explore diverse Korean home made food</b1></h4>
                         </div>
                         <ul class="nav nav-tabs flex-column flex-sm-row" id="myTab" role="tablist">
                             <li class="nav-item mr-md-1">
@@ -63,20 +37,13 @@
                                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fa fa-home pr-1"></i> Property</a>
                             </li>
                         </ul>
+                        <form action="/search/searchHost"  id="searchForm" >
                         <div class="tab-content bg-white p-5 rounded-bottom rounded-right" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
                                     <div class="col-12 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?" />
-                                            <div class="lis-search">
-                                                <i class="fa fa-search lis-primary"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location" />
+                                            <input type="text" name="searchLocation" id="searchLocation" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location" />
                                             <div class="lis-search">
                                                 <i class="fa fa-map-o lis-primary"></i>
                                             </div>
@@ -84,27 +51,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="form-group">
-                                            <select class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                                <option> All Categories</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                            </select>
-                                            <div class="lis-search">
-                                                <i class="fa fa-tags lis-primary"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <a href="/search/" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search pr-1"></i> Search</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="row">
-                                    <div class="col-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?" />
+                                            <input type="text" name="searchKeyword" id="searchKeyword" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Enter keyword" />
                                             <div class="lis-search">
                                                 <i class="fa fa-search lis-primary"></i>
                                             </div>
@@ -112,7 +59,33 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="form-group">
+                                            <input type="text" name="searchDate" id="searchDate" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Date" />
+                                            <div class="lis-search">
+                                                <i class="fa fa-calendar lis-primary"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <a href="#" id="searchButton" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search pr-1"></i> Search</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-12 col-md-12">
+                                        <div class="form-group">
                                             <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location" />
+                                            <div class="lis-search">
+                                                <i class="fa fa-search lis-primary"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Food Keywords" />
                                             <div class="lis-search">
                                                 <i class="fa fa-map-o lis-primary"></i>
                                             </div>
@@ -140,7 +113,7 @@
                                 <div class="row">
                                     <div class="col-12 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?" />
+                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Enter location" />
                                             <div class="lis-search">
                                                 <i class="fa fa-search lis-primary"></i>
                                             </div>
@@ -148,7 +121,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location" />
+                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Enter keyword" />
                                             <div class="lis-search">
                                                 <i class="fa fa-map-o lis-primary"></i>
                                             </div>
@@ -979,14 +952,13 @@
                             <input type="password" name="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " placeholder="password" />
                             <br />
 
-                            <div class="checkbox">
-                                <input id="remember" type="checkbox" />
-                                <label for="remember">Remember me on this computer</label>
-                            </div>
+                            <input type = "hidden" id = "latitude" name = "latitude" value="123456" />
+                            <input type = "hidden" id = "longitude" name = "longitude" value="78589" />
 
                             <div class="action_btns">
 
-                                <a href="#" onclick="document.getElementById('loginForm').submit();" class="btn btn-primary btn-default mt-3 w-100">Login</a>
+                                <!--<a href="#" onclick="document.getElementById('loginForm').submit();" class="btn btn-primary btn-default mt-3 w-100">Login</a>-->
+                                <a href="#" onclick="loginSubmit()" class="btn btn-primary btn-default mt-3 w-100">Login</a>
                             </div>
                         </form>
                         <br/>
@@ -1042,10 +1014,64 @@
             </div>
         </div>
         <!-- End Login /Register Form-->
+        <script type="text/javascript">
+            function getLocation() {
+                if (navigator.geolocation) { // GPS를 지원하면
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        document.getElementById('latitude').value = position.coords.latitude;
+                        document.getElementById('longitude').value= position.coords.longitude;
+                    }, function(error) {
+                        console.error(error);
+                    }, {
+                        enableHighAccuracy: false,
+                        maximumAge: 0,
+                        timeout: Infinity
+                    });
+                } else {
+                    alert('GPS를 지원하지 않습니다');
+                }
+            }
+            getLocation();
 
+            function loginSubmit(){
+
+                if (!navigator.geolocation) {
+                    alert("지오로케이션을 지원하지 않습니다!");
+                    document.getElementById('latitude').value = "37.566824";
+                    document.getElementById('longitude').value= "126.978522";
+                    /*var gpsForm = document.getElementById("gpsForm");*/
+                }
+                function success(position) {
+                    alert("환영합니다");
+                };
+                function error() {
+                    alert("사용자의 위치를 찾을 수 없습니다!");
+                    document.getElementById("latitude").value = "37.566824";
+                    document.getElementById("longitude").value= "126.978522";
+                    /*var gpsForm = document.getElementById("gpsForm");*/
+
+                };
+                navigator.geolocation.getCurrentPosition(success, error);
+
+                $("#loginForm").submit();
+            }
+
+            $("#searchButton").click(function(){
+               $("#searchForm").submit();
+            });
+
+            var input = document.getElementById("searchLocation");
+            var autocomplete = new google.maps.places.Autocomplete(input);
+
+            $( function() {
+                $( "#searchDate" ).datepicker();
+            } );
+        </script>
 
 
         <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="dist/js/plugins.min.js"></script>
         <script src="dist/js/common.js"></script>
     </body>

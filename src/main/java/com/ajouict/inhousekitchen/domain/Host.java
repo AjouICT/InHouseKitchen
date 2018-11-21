@@ -1,222 +1,172 @@
 package com.ajouict.inhousekitchen.domain;
 
+import com.ajouict.inhousekitchen.dto.HostDto;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
-import java.time.LocalDateTime;
+
+import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class Host {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "host_id"))
-    private User host;
+    @NotNull
+    private String introduction;
 
-    @Lob
-    private String hostIntro;
-    @Column(nullable=false)
-    private String hostContact;
+    @NotNull
+    private String contactInfo;
 
-    @Column(nullable=false)
+    @Column(nullable = true)
     private int maxGuest;
 
-    @Column(nullable=false)
-    private LocalDateTime startDate;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name="latitude",
+                    column=@Column(name="LOCATION_LATITUDE")),
+            @AttributeOverride(name="longitude",
+                    column=@Column(name="LOCATION_LONGITUDE"))
+    })
+    private Location location;
 
-    @Column(nullable=false)
-    private LocalDateTime endDate;
+    @Column(nullable = true)
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name="second",
+                    column=@Column(name="VISITRATE_SECOND")),
+            @AttributeOverride(name="third",
+                    column=@Column(name="VISITRATE_THIRD"))
+    })
+    private VisitRate visitRate;
 
-    @Column(nullable=false)
-    private double latitude;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name="name",
+                    column=@Column(name="MENU_NAME")),
+            @AttributeOverride(name="price",
+                    column=@Column(name="MENU_PRICE")),
+            @AttributeOverride(name="description",
+                    column=@Column(name="MENU_DESCRIPTION")
+            )
+    })
+    private MenusInfo menusInfo;
 
-    @Column(nullable=false)
-    private double longitude;
-    //private String hostPic; 이것은 유저 객체에 이미 프로필이 있기 때문에 생략
-    private int visitTwice;
-    private int visitTripple;
-    private float avgScore;
-    private int totalGuest;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User myself;
 
-    @Column(nullable=false)
-    private String menuName;
+    @Column(nullable = true)
+    private double avgScore;
 
-    @Column(nullable=false)
-    private String menuPrice;
+    @Column(nullable = true)
+    private int totalGuestNumber=0;
 
-    @Lob
-    @Column(nullable=false)
-    private String menuIntro;
+    private int totalScore=0;
 
-    public Host(User host, String hostIntro, String hostContact, int maxGuest, LocalDateTime startDate, LocalDateTime endDate, double latitude, double longitude, int visitTwice, int visitTripple, float avgScore, int totalGuest, String menuName, String menuPrice, String menuIntro) {
-        this.host = host;
-        this.hostIntro = hostIntro;
-        this.hostContact = hostContact;
-        this.maxGuest = maxGuest;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.visitTwice = visitTwice;
-        this.visitTripple = visitTripple;
-        this.avgScore = avgScore;
-        this.totalGuest = totalGuest;
-        this.menuName = menuName;
-        this.menuPrice = menuPrice;
-        this.menuIntro = menuIntro;
+
+    @Column(nullable = true)
+    @ElementCollection
+    @CollectionTable(
+            name = "MENU_IMAGES",
+            joinColumns = @JoinColumn(name = "HOST_ID")
+    )
+    private Set<MenuImage> menuImages = new HashSet<>();
+
+    @OneToMany(mappedBy = "host")
+    private List<Review> reviews;
+
+
+
+    private String availablePeriod;
+
+    public Host(){}
+
+    @Builder
+    public Host(String introduction, @NotNull String contactInfo,  Location location, MenusInfo menusInfo, String availablePeriod) {
+        this.introduction = introduction;
+        this.contactInfo = contactInfo;
+        this.location = location;
+        this.menusInfo = menusInfo;
+        this.availablePeriod = availablePeriod;
     }
 
-    public Host() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public User getHost() {
+    public static Host registerUserInfo(User myself, Host host){
+        host.myself = myself;
+        myself.registerHostInfo(host);
         return host;
     }
 
-    public void setHost(User host) {
-        this.host = host;
+    public Set<MenuImage> recordMenuImageInfo(MenuImage menuImage){
+        this.menuImages.add(menuImage);
+        return menuImages;
     }
 
-    public String getHostIntro() {
-        return hostIntro;
-    }
-
-    public void setHostIntro(String hostIntro) {
-        this.hostIntro = hostIntro;
-    }
-
-    public String getHostContact() {
-        return hostContact;
-    }
-
-    public void setHostContact(String hostContact) {
-        this.hostContact = hostContact;
-    }
-
-    public int getMaxGuest() {
-        return maxGuest;
-    }
-
-    public void setMaxGuest(int maxGuest) {
-        this.maxGuest = maxGuest;
-    }
-
-    public LocalDateTime getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDateTime startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDateTime getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDateTime endDate) {
-        this.endDate = endDate;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public int getVisitTwice() {
-        return visitTwice;
-    }
-
-    public void setVisitTwice(int visitTwice) {
-        this.visitTwice = visitTwice;
-    }
-
-    public int getVisitTripple() {
-        return visitTripple;
-    }
-
-    public void setVisitTripple(int visitTripple) {
-        this.visitTripple = visitTripple;
-    }
-
-    public float getAvgScore() {
-        return avgScore;
-    }
-
-    public void setAvgScore(float avgScore) {
-        this.avgScore = avgScore;
-    }
-
-    public int getTotalGuest() {
-        return totalGuest;
-    }
-
-    public void setTotalGuest(int totalGuest) {
-        this.totalGuest = totalGuest;
-    }
-
-    public String getMenuName() {
-        return menuName;
-    }
-
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
-    }
-
-    public String getMenuPrice() {
-        return menuPrice;
-    }
-
-    public void setMenuPrice(String menuPrice) {
-        this.menuPrice = menuPrice;
-    }
-
-    public String getMenuIntro() {
-        return menuIntro;
-    }
-
-    public void setMenuIntro(String menuIntro) {
-        this.menuIntro = menuIntro;
+    public HostDto _toHostDto() {
+        return HostDto.builder()
+                .introduction(this.introduction)
+                .contact_info(this.contactInfo)
+                .menu_name(this.menusInfo.getName())
+                .menu_price(Double.toString(this.menusInfo.getPrice()))
+                .menu_description(this.menusInfo.getDescription())
+                .date_range(this.availablePeriod)
+                .location_latitude(Double.toString(this.location.getLatitude()))
+                .location_longitude(Double.toString(this.location.getLongitude())).build();
     }
 
     @Override
-    public String toString() {
-        return "Host{" +
-                "id=" + id +
-                ", host=" + host +
-                ", hostIntro='" + hostIntro + '\'' +
-                ", hostContact='" + hostContact + '\'' +
-                ", maxGuest=" + maxGuest +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", visitTwice=" + visitTwice +
-                ", visitTripple=" + visitTripple +
-                ", avgScore=" + avgScore +
-                ", totalGuest=" + totalGuest +
-                ", menuName='" + menuName + '\'' +
-                ", menuPrice='" + menuPrice + '\'' +
-                ", menuIntro='" + menuIntro + '\'' +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Host host = (Host) o;
+        return Objects.equals(id, host.id);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public void calculateScore(int score, int flag){
+
+        // 추가
+        if (flag == 1){
+            this.totalScore += score; // 점수 증가
+            this.totalGuestNumber += 1; // 사람 증가
+        }
+        // 수정
+        else if (flag == 2){
+            this.totalScore += score;
+        }
+        // 삭제
+        else{
+            System.out.println("삭제 전 인원 수 : " + this.totalGuestNumber);
+            System.out.println("삭제 전 평점 수 : " + this.totalScore);
+            this.totalScore -= score;
+            this.totalGuestNumber--;
+            System.out.println(" 인원 수 : " + this.totalGuestNumber);
+            System.out.println(" 평점 수 : " + this.totalScore);
+        }
+        this.avgScore = (float)this.totalScore / this.totalGuestNumber;
+        // 소수점 첫째자리까지만 저장
+        this.avgScore = (int)(this.avgScore * 10);
+        this.avgScore = this.avgScore / 10;
+    }
+
+    public boolean IsSameHost(User loginUser){
+        if(loginUser == null){
+            return false;
+        }
+        return this.id.equals(loginUser.getId());
+    }
+
 }

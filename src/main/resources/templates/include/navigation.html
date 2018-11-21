@@ -1,6 +1,6 @@
 <div id="header-fix" class="header fixed-top transperant">
     <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
-        <a class="navbar-brand mr-4 mr-md-5" href="index.html"><img src="dist/images/logo-v1.png" alt=""></a>
+        <a class="navbar-brand mr-4 mr-md-5" href="index.html"><img src="../dist/images/logo-v1.png" alt=""></a>
 
         <div id="dl-menu" class="dl-menuwrapper d-block d-lg-none float-right">
             <button>Open Menu</button>
@@ -79,7 +79,6 @@
                     </ul>
                 </li>
 
-
                 <li><a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a></li>
 
                 <li> <a href="add-listing.html" ><i class="fa fa-plus pr-1"></i> Add Listing</a></li>
@@ -156,6 +155,8 @@
                     </ul>
                 </li>
             </ul>
+            <li><a class="btn-review-main" href="/review/list">Review</a></li>
+
             <ul class="list-unstyled my-2 my-lg-0">
                 {{^sessionedUser}}
                 <li class="text-white"><i class="fa fa-sign-in pr-2"></i> <a href="#modal" class="text-white login_form">Sign In | Register</a></li>
@@ -165,7 +166,9 @@
                 <li class="text-white"><i class="fa fa-sign-in pr-2"></i> <a href="/users/logout" class="text-white login_form">logout</a></li>
                 {{/sessionedUser}}
             </ul>
-            <a href="add-listing.html" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a>
+            {{#sessionedUser}}
+            <a href="/hosts/registerForm" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a>
+            {{/sessionedUser}}
         </div>
     </nav>
 </div>

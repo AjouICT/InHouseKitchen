@@ -3,6 +3,7 @@ package com.ajouict.inhousekitchen.controller;
 import com.ajouict.inhousekitchen.domain.User;
 import com.ajouict.inhousekitchen.service.UserService;
 import com.ajouict.inhousekitchen.storage.StorageService;
+import com.sun.deploy.net.HttpUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +87,12 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(String userId, String password, HttpSession session){
+    public String login(String userId, String password, String latitude, String longitude, HttpSession session){
+        log.info("[/users/login] User latitude : "+latitude);
+        log.info("[/users/login] User longitude : "+longitude);
+        log.info("[/users/login] User Id: "+userId);
+        log.info("[/users/login] User password : "+password);
+
         User user=userService.findById(userId);
         if(user==null){
             log.info("Login fail - no member exist");
@@ -99,16 +105,27 @@ public class UserController {
         }
 
         log.info("Login Success");
+        user.setLatitude(Double.parseDouble(latitude));
+        user.setLongitude(Double.parseDouble(longitude));
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY,user);
 
         return "redirect:/";
     }
+
+
 
     @GetMapping("/logout")
     public String logout(HttpSession session){
         session.removeAttribute(HttpSessionUtils.USER_SESSION_KEY);
         return "redirect:/";
     }
+
+    @GetMapping("/getSession")
+    @ResponseBody
+    public User getSessionedUser(HttpSession session){
+        return (User)HttpSessionUtils.getUserFromSession(session);
+    }
+
 
 
 

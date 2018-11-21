@@ -12,12 +12,41 @@
         <!--main Css-->
         <link href="../dist/css/main.min.css" rel="stylesheet">
     </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            var hostList;
+
+            $("#showPin").click(
+               function(){
+                   $.ajax({
+                       type:"get",
+                       url:"/search/getHostList",
+                       success:function(hList){
+                           hostList=hList;
+                           alert(hList[0].latitude);
+                       }
+
+                   });
+               }
+            );
+
+
+
+
+
+
+        });
+
+    </script>
 
     <body>
         <!-- header -->
-        <div id="header-fix" class="header fixed-top">
+        <div id="header-fix" class="header fixed-top transperant">
             <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
                 <a class="navbar-brand mr-4 mr-md-5" href="index.html"><img src="../dist/images/logo-v1.png" alt=""></a>
+
                 <div id="dl-menu" class="dl-menuwrapper d-block d-lg-none float-right">
                     <button>Open Menu</button>
                     <ul class="dl-menu">
@@ -34,9 +63,9 @@
                             <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore</a>
                             <ul class="dl-submenu">
                                 <li class="dl-back"><a href="#">back</a></li>
-                                <li><a href="listing-explore-place-profile.html">Explore Place</a></li>
+                                <li><a href="host_detail.html">Explore Place</a></li>
                                 <li><a href="listing-explore-event-profile.html">Explore Event</a></li>
-                                <li><a href="listing-explore-property-profile.html">Explore Property</a></li>
+                                <li><a href="host_detail.html">Explore Property</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -96,7 +125,7 @@
                         </li>
 
 
-                        <li> <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a></li>
+                        <li><a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a></li>
 
                         <li> <a href="add-listing.html" ><i class="fa fa-plus pr-1"></i> Add Listing</a></li>
 
@@ -105,22 +134,26 @@
                     </ul>
                 </div>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+
+                <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Home <i class="fa fa-angle-down"></i></a>
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Home <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.html">Home 1</a></li>
                                 <li><a href="index-2.html">Home 2</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore <i class="fa fa-angle-down"></i></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Explore <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="listing-explore-place-profile.html">Explore Place</a></li>
+                                <li><a href="host_detail.html">Explore Place</a></li>
                                 <li><a href="listing-explore-event-profile.html">Explore Event</a></li>
-                                <li><a href="listing-explore-property-profile.html">Explore Property</a></li>
+                                <li><a href="host_detail.html">Explore Property</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Listing <i class="fa fa-angle-down"></i></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Listing <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing By Categories</a>
                                     <ul class="dropdown-menu">
@@ -144,7 +177,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
                                     <ul class="dropdown-menu">
@@ -168,10 +202,16 @@
                         </li>
                     </ul>
                     <ul class="list-unstyled my-2 my-lg-0">
-                        <li>
-                             <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Sign In | Register</a>
-                        </li>
-                    </ul> <a href="add-listing.html" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a> </div>
+                        {{^sessionedUser}}
+                        <li class="text-white"><i class="fa fa-sign-in pr-2"></i> <a href="#modal" class="text-white login_form">Sign In | Register</a></li>
+                        {{/sessionedUser}}
+                        {{#sessionedUser}}
+                        <b>{{name}}</b>님 환영합니다.
+                        <li class="text-white"><i class="fa fa-sign-in pr-2"></i> <a href="/users/logout" class="text-white login_form">logout</a></li>
+                        {{/sessionedUser}}
+                    </ul>
+                    <a href="add-listing.html" class="btn btn-outline-light btn-sm ml-0 ml-lg-4 mt-3 mt-lg-0"><i class="fa fa-plus pr-1"></i> Add Listing</a>
+                </div>
             </nav>
         </div>
         <!--End header -->
@@ -356,13 +396,13 @@
                                         <div class="card-body pt-0">
                                             <div class="media d-block d-lg-flex lis-relative"> <img src="../dist/images/card-logo.png" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />
                                                 <div class="media-body align-self-start mt-2">
-                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">{{menuName}}</A></h6> </div>
+                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">{{menusInfo.name}}</A></h6> </div>
                                             </div>
                                             <ul class="list-unstyled my-4 lis-line-height-2">
-                                                <li><i class="fa fa-phone pr-2"></i> {{hostContact}}</li>
-                                                <li><i class="fa fa-map-o pr-2"></i> {{latitude}} , {{longitude}}</li>
-                                                <input type="hidden" value="{{latitude}}" id="latitude">
-                                                <input type="hidden" value="{{longitude}}" id="longitude">
+                                                <li><i class="fa fa-phone pr-2"></i> {{contactInfo}}</li>
+                                                <li><i class="fa fa-map-o pr-2"></i> {{location.latitude}} , {{location.longitude}}</li>
+                                                <input type="hidden" value="{{location.latitude}}" id="latitude">
+                                                <input type="hidden" value="{{location.longitude}}" id="longitude">
                                             </ul>
                                             <div class="clearfix">
                                                 <div class="float-none float-lg-left mb-3 mb-lg-0 mt-1">
