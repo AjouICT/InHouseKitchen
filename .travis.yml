@@ -23,6 +23,11 @@ notifications:
     recipients:
       - wwwkang8@gmail.com
 
+before_deploy:
+  - zip -r inhousekitchen *
+  - mkdir -p deploy
+  - mv inhousekitchen.zip deploy/inhousekitchen.zip
+
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
@@ -31,6 +36,7 @@ deploy:
     region: ap-northeast-2
     skip_cleanup: true
     acl: public_read
+    local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
     on:
       repo: https://github.com/AjouICT/InHouseKitchen.git #Github 주소
