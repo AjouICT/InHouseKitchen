@@ -34,7 +34,6 @@ deploy:
     local_dir: deploy
     wait-until-deployed: true
     on:
-      tags: true
       repo: AjouICT/InHouseKitchen #Github 주소
       branch: master
 
@@ -49,7 +48,6 @@ deploy:
     region: ap-northeast-2
     wait-until-deployed: true
     on:
-      tags: true
       repo: AjouICT/InHouseKitchen
       branch: master
 
