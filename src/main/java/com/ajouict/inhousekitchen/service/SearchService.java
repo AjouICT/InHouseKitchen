@@ -21,7 +21,7 @@ public class SearchService {
     }
 
     public String geocoding(String location1){
-        String location="Ajou University";
+        //String location="Ajou University";
         Geocoder geocoder = new Geocoder();
         //setAddress : 변환하려는 주소(아주대학교 팔달관)
         //setLangua : 인코딩 설정
