@@ -6,12 +6,12 @@ import com.ajouict.inhousekitchen.domain.MenuImage;
 import com.ajouict.inhousekitchen.domain.User;
 import com.ajouict.inhousekitchen.exception.NoSuchHostException;
 import com.ajouict.inhousekitchen.storage.StorageService;
+import com.ajouict.inhousekitchen.util.UUIDGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
-import java.util.Set;
 
 @Service
 public class HostService {
@@ -28,8 +28,10 @@ public class HostService {
     }
 
     private void saveMenuImageAndInfo(Host host, MultipartFile file) {
-        storageService.store(file);
-        host.recordMenuImageInfo(new MenuImage(file.getOriginalFilename()));
+        String uniqueFileName = UUIDGenerator.generateUniqueFileName(file.getOriginalFilename());
+
+        storageService.store(file, uniqueFileName);
+        host.recordMenuImageInfo(new MenuImage(file.getOriginalFilename(), uniqueFileName));
     }
 
     public Host findById(Long id) {

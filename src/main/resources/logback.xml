@@ -7,7 +7,7 @@
 		</layout>
 	</appender>
 	
-	<logger name="drinkit" level="DEBUG" />
+	<logger name="inhousekitchen" level="DEBUG" />
 	
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />

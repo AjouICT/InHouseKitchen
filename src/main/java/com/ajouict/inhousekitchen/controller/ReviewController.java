@@ -1,16 +1,12 @@
 package com.ajouict.inhousekitchen.controller;
 
 import com.ajouict.inhousekitchen.domain.*;
-import com.ajouict.inhousekitchen.service.ReviewService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -28,7 +24,6 @@ public class ReviewController {
 
     @GetMapping("/{userId}")
     public String show(@PathVariable String userId, Model model, HttpSession session) {
-        System.out.println("여기");
         User temp = userRepository.findByUserId(userId);
         // 호스트
         Host user = searchRepository.findByMyself(temp);
@@ -62,7 +57,7 @@ public class ReviewController {
         User tempHost = userRepository.getOne(hostId);
 
         // 이미 작성한 적이 있는 writer인 경우 작성하지 못하도록 함
-        if(host.AlreadyWriteReview(writer)){
+        if(host.hasAlreadyWrittenReview(writer)){
             System.out.println("이미 작성한 적 있는 호스트입니다.");
             return String.format("redirect:/review/%s", tempHost.getUserId());
         }
