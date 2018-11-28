@@ -85,8 +85,6 @@ public class Host {
     @OneToMany(mappedBy = "host")
     private List<Review> reviews;
 
-
-
     private String availablePeriod;
 
     public Host(){}
@@ -159,10 +157,10 @@ public class Host {
         this.avgScore = this.avgScore / 10;
     }
     // 이미 리뷰를 작성한 적 있는 유저인지 확인하는 함수
-    public boolean AlreadyWriteReview(User writer){
+    public boolean hasAlreadyWrittenReview(User writer){
         for(Review r : reviews){
             System.out.println("writer : " + writer.getUserId() + " r : " + r.getWriter().getUserId());
-            if(writer.getUserId() == r.getWriter().getUserId()){
+            if(writer.getUserId().equals(r.getWriter().getUserId())){
                 return true;
             }
         }

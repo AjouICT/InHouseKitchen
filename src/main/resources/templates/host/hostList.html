@@ -13,33 +13,33 @@
         <link href="../dist/css/main.min.css" rel="stylesheet">
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
+    <!--<script type="text/javascript">-->
+        <!--$(document).ready(function(){-->
 
-            var hostList;
+            <!--var hostList;-->
 
-            $("#showPin").click(
-               function(){
-                   $.ajax({
-                       type:"get",
-                       url:"/search/getHostList",
-                       success:function(hList){
-                           hostList=hList;
-                           alert(hList[0].latitude);
-                       }
+            <!--$("#showPin").click(-->
+               <!--function(){-->
+                   <!--$.ajax({-->
+                       <!--type:"get",-->
+                       <!--url:"/search/getHostList",-->
+                       <!--success:function(hList){-->
+                           <!--hostList=hList;-->
+                           <!--alert(hList[0].latitude);-->
+                       <!--}-->
 
-                   });
-               }
-            );
-
-
+                   <!--});-->
+               <!--}-->
+            <!--);-->
 
 
 
 
-        });
 
-    </script>
+
+        <!--});-->
+
+    <!--</script>-->
 
     <body>
         <!-- header -->
@@ -326,68 +326,39 @@
                             </div>
                             <div class="row mt-5">
                                 <div class="col-12 col-xl-6 mb-xl-0 mb-5">
-                                    <div class="card lis-brd-light text-center text-lg-left">
-                                        <a href="#">
-                                            <div class="lis-grediant  lis-relative grediant-tb-light2 modImage lis-radius rounded-top"> <img src="../dist/images/img5.jpg" alt="" class="img-fluid rounded-top w-100" /> </div>
-                                            <div class="lis-absolute lis-right-20 lis-top-20">
-                                                <div class="lis-post-meta border border-white text-white rounded lis-f-14">Open</div>
-                                            </div>
-                                        </a>
-                                        <div class="card-body pt-0">
-                                            <div class="media d-block d-lg-flex lis-relative"> <img src="../dist/images/card-logo5.png" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />
-                                                <div class="media-body align-self-start mt-2">
-                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">Vintage Italian Beer Bar & Restaurant</A></h6> </div>
-                                            </div>
-                                            <ul class="list-unstyled my-4 lis-line-height-2">
-                                                <li><i class="fa fa-phone pr-2"></i> +88 25 5894 2589</li>
-                                                <li><i class="fa fa-map-o pr-2"></i> First Street, New York, USA</li>
-                                            </ul>
-                                            <div class="clearfix">
-                                                <div class="float-none float-lg-left mb-3 mb-lg-0 mt-1">
-                                                    <A href="#" class="text-white"><i class="icofont icofont-beer px-2 lis-bg2 py-2 lis-rounded-circle-50 lis-f-14"></i></A>
-                                                    <A href="#" class="text-white"><i class="icofont icofont-fast-food px-2 lis-bg4 py-2 lis-rounded-circle-50 lis-f-14"></i></A>
-                                                    <A href="#" class="lis-id-info lis-light p-2 lis-rounded-circle-50 lis-f-14">1 More...</A> </div>
-                                                <div class="float-none float-lg-right mt-1">
-                                                    <A href="#" class="lis-light lis-f-14"><i class="fa fa-envelope-o lis-id-info  lis-rounded-circle-50 text-center"></i></A>
-                                                    <A href="#" class="lis-light lis-f-14"><i class="fa fa-heart-o lis-id-info  lis-rounded-circle-50 text-center"></i></A>
-                                                    <A href="#" class="lis-green-light text-white p-2 lis-rounded-circle-50 lis-f-14"><i class="fa fa-star"></i> 3.0</A> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-xl-6">
-                                    <div class="card lis-brd-light text-center text-lg-left">
-                                        <a href="#">
-                                            <div class="lis-grediant  lis-relative grediant-tb-light2 modImage lis-radius rounded-top"> <img src="../dist/images/img1.jpg" alt="" class="img-fluid rounded-top w-100" /> </div>
-                                            <div class="lis-absolute lis-right-20 lis-top-20">
-                                                <div class="lis-post-meta border border-white text-white rounded lis-f-14">Open</div>
-                                            </div>
-                                        </a>
-                                        <div class="card-body pt-0">
-                                            <div class="media d-block d-lg-flex lis-relative"> <img src="../dist/images/card-logo.png" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />
-                                                <div class="media-body align-self-start mt-2">
-                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">Chico Express Car Taxi and Limo Service</A></h6> </div>
-                                            </div>
-                                            <ul class="list-unstyled my-4 lis-line-height-2">
-                                                <li><i class="fa fa-phone pr-2"></i> +88 25 5894 2589</li>
-                                                <li><i class="fa fa-map-o pr-2"></i> First Street, New York, USA</li>
-                                            </ul>
-                                            <div class="clearfix">
-                                                <div class="float-none float-lg-left mb-3 mb-lg-0 mt-1">
-                                                    <A href="#" class="text-white"><i class="icofont icofont-travelling px-2 lis-bg5 py-2 lis-rounded-circle-50 lis-f-14"></i></A>
-                                                    <A href="#" class="lis-id-info lis-light p-2 lis-rounded-circle-50 lis-f-14">1 More...</A> </div>
-                                                <div class="float-none float-lg-right mt-1">
-                                                    <A href="#" class="lis-light lis-f-14"><i class="fa fa-envelope-o lis-id-info  lis-rounded-circle-50 text-center"></i></A>
-                                                    <A href="#" class="lis-light lis-f-14"><i class="fa fa-heart-o lis-id-info  lis-rounded-circle-50 text-center"></i></A>
-                                                    <A href="#" class="lis-green-light text-white p-2 lis-rounded-circle-50 lis-f-14"><i class="fa fa-star"></i> 4.0</A> </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!--<div class="card lis-brd-light text-center text-lg-left">-->
+                                        <!--<a href="#">-->
+                                            <!--<div class="lis-grediant  lis-relative grediant-tb-light2 modImage lis-radius rounded-top"> <img src="../dist/images/img5.jpg" alt="" class="img-fluid rounded-top w-100" /> </div>-->
+                                            <!--<div class="lis-absolute lis-right-20 lis-top-20">-->
+                                                <!--<div class="lis-post-meta border border-white text-white rounded lis-f-14">Open</div>-->
+                                            <!--</div>-->
+                                        <!--</a>-->
+                                        <!--<div class="card-body pt-0">-->
+                                            <!--<div class="media d-block d-lg-flex lis-relative"> <img src="../dist/images/card-logo5.png" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />-->
+                                                <!--<div class="media-body align-self-start mt-2">-->
+                                                    <!--<h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">Vintage Italian Beer Bar & Restaurant</A></h6> </div>-->
+                                            <!--</div>-->
+                                            <!--<ul class="list-unstyled my-4 lis-line-height-2">-->
+                                                <!--<li><i class="fa fa-phone pr-2"></i> +88 25 5894 2589</li>-->
+                                                <!--<li><i class="fa fa-map-o pr-2"></i> First Street, New York, USA</li>-->
+                                            <!--</ul>-->
+                                            <!--<div class="clearfix">-->
+                                                <!--<div class="float-none float-lg-left mb-3 mb-lg-0 mt-1">-->
+                                                    <!--<A href="#" class="text-white"><i class="icofont icofont-beer px-2 lis-bg2 py-2 lis-rounded-circle-50 lis-f-14"></i></A>-->
+                                                    <!--<A href="#" class="text-white"><i class="icofont icofont-fast-food px-2 lis-bg4 py-2 lis-rounded-circle-50 lis-f-14"></i></A>-->
+                                                    <!--<A href="#" class="lis-id-info lis-light p-2 lis-rounded-circle-50 lis-f-14">1 More...</A> </div>-->
+                                                <!--<div class="float-none float-lg-right mt-1">-->
+                                                    <!--<A href="#" class="lis-light lis-f-14"><i class="fa fa-envelope-o lis-id-info  lis-rounded-circle-50 text-center"></i></A>-->
+                                                    <!--<A href="#" class="lis-light lis-f-14"><i class="fa fa-heart-o lis-id-info  lis-rounded-circle-50 text-center"></i></A>-->
+                                                    <!--<A href="#" class="lis-green-light text-white p-2 lis-rounded-circle-50 lis-f-14"><i class="fa fa-star"></i> 3.0</A> </div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
                                 </div>
                                 {{#hostList}}
                                 <div class="col-12 col-xl-6">
                                     <div class="card lis-brd-light text-center text-lg-left">
-                                        <a href="#">
+                                        <a href="/hosts/{{id}}">
                                             <div class="lis-grediant  lis-relative grediant-tb-light2 modImage lis-radius rounded-top"> <img src="../dist/images/img1.jpg" alt="" class="img-fluid rounded-top w-100" /> </div>
                                             <div class="lis-absolute lis-right-20 lis-top-20">
                                                 <div class="lis-post-meta border border-white text-white rounded lis-f-14">Open</div>
@@ -396,7 +367,7 @@
                                         <div class="card-body pt-0">
                                             <div class="media d-block d-lg-flex lis-relative"> <img src="../dist/images/card-logo.png" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />
                                                 <div class="media-body align-self-start mt-2">
-                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">{{menusInfo.name}}</A></h6> </div>
+                                                    <h6 class="mb-0 lis-font-weight-600"><A href="/hosts/{{id}}" class="lis-dark">{{menusInfo.name}}</A></h6> </div>
                                             </div>
                                             <ul class="list-unstyled my-4 lis-line-height-2">
                                                 <li><i class="fa fa-phone pr-2"></i> {{contactInfo}}</li>
@@ -411,7 +382,7 @@
                                                 <div class="float-none float-lg-right mt-1">
                                                     <A href="#" class="lis-light lis-f-14"><i class="fa fa-envelope-o lis-id-info  lis-rounded-circle-50 text-center"></i></A>
                                                     <A href="#" class="lis-light lis-f-14"><i class="fa fa-heart-o lis-id-info  lis-rounded-circle-50 text-center"></i></A>
-                                                    <A href="#" class="lis-green-light text-white p-2 lis-rounded-circle-50 lis-f-14"><i class="fa fa-star"></i> 4.0</A> </div>
+                                                    <A href="#" class="lis-green-light text-white p-2 lis-rounded-circle-50 lis-f-14"><i class="fa fa-star"></i>3.0</A> </div>
                                             </div>
                                         </div>
                                     </div>
