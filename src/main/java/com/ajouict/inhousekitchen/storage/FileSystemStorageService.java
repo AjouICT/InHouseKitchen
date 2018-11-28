@@ -2,6 +2,7 @@ package com.ajouict.inhousekitchen.storage;
 
 import com.ajouict.inhousekitchen.controller.HttpSessionUtils;
 import com.ajouict.inhousekitchen.domain.User;
+import com.ajouict.inhousekitchen.util.UUIDGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -21,6 +22,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 @Service
@@ -50,11 +52,23 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
+    public void store(MultipartFile file, String uniqueFileName) {
+        try {
+            if (file.isEmpty()) {
+                throw new StorageException("Failed to store empty file " + file.getOriginalFilename());
+            }
+            Files.copy(file.getInputStream(), this.rootLocation.resolve(uniqueFileName));
+        } catch (IOException e) {
+            throw new StorageException("Failed to store file " + file.getOriginalFilename(), e);
+        }
+    }
+
+    @Override
     public Stream<Path> loadAll() {
         try {
             return Files.walk(this.rootLocation, 1)
                     .filter(path -> !path.equals(this.rootLocation))
-                    .map(path -> this.rootLocation.relativize(path));
+                    .map(this.rootLocation::relativize);
         } catch (IOException e) {
             throw new StorageException("Failed to read stored files", e);
         }

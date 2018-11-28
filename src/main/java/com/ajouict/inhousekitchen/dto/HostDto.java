@@ -7,16 +7,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-
 @Getter
 @Setter
 public class HostDto {
     private String introduction;
     private String contactInfo;
+
     private String menuName;
+
     private String menuPrice;
+
     private String menuDescription;
-    @JsonProperty(value = "date_range")
     private String dateRange;
     private String locationLatitude;
     private String locationLongitude;

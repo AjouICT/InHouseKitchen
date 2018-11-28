@@ -41,7 +41,9 @@ dependencies {
     runtime('org.springframework.boot:spring-boot-devtools')
     runtime('com.h2database:h2')
     compileOnly('org.projectlombok:lombok')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'com.google.guava:guava:27.0-jre'
 }
 
 dependencyManagement {
