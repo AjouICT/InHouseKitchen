@@ -41,9 +41,10 @@ public class Booking {
     @Column
     private int bookingGuest;
 
-    public Booking(Host host, User user, String bookingDate, String bookingTime, String bookingMessage, int bookingGuest) {
+    public Booking(Host host, User user, int totalPrice, String bookingDate, String bookingTime, String bookingMessage, int bookingGuest) {
         this.host = host;
         this.user = user;
+        this.totalPrice = totalPrice;
         this.bookingDate = bookingDate;
         this.bookingTime = bookingTime;
         this.bookingMessage = bookingMessage;
