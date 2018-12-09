@@ -31,6 +31,3 @@ INSERT INTO host (id, available_period, avg_score, contact_info, introduction, l
 INSERT INTO host (id, available_period, avg_score, contact_info, introduction, location_latitude, location_longitude, max_guest, menu_description, menu_name, menu_price, total_score, total_guest_number, visitrate_second, visitrate_third, user_id) VALUES (13, '2018년 1월 26일부터 2018년 5월 30일' ,0,'01056584700','안녕하세요 고든램지가 감탄한 요리입니다', 37.284009, 127.045945, 5, '고든램지가 말하길, 레알루 맛있다','비빔밥 전문점', 5000, 0,0,2.0,3.0,13);
 INSERT INTO host (id, available_period, avg_score, contact_info, introduction, location_latitude, location_longitude, max_guest, menu_description, menu_name, menu_price, total_score, total_guest_number, visitrate_second, visitrate_third, user_id) VALUES (14, '2018년 1월 28일부터 2018년 6월 30일', 0,'01056584700','안녕하세요 고든램지가 감탄한 요리입니다', 37.283053, 127.047672, 5, '고든램지가 말하길, 레알루 맛있다','불고기', 5000, 0,0,2.0,3.0,14);
 INSERT INTO host (id, available_period, avg_score, contact_info, introduction, location_latitude, location_longitude, max_guest, menu_description, menu_name, menu_price, total_score, total_guest_number, visitrate_second, visitrate_third, user_id) VALUES (15, '2018년 1월 29일부터 2018년 7월 30일', 0,'01056584700','안녕하세요 고든램지가 감탄한 요리입니다', 37.284299, 127.043295, 5, '고든램지가 말하길, 레알루 맛있다','최불암 떡볶이', 5000, 0,0,2.0,3.0,15);
-
-
-
