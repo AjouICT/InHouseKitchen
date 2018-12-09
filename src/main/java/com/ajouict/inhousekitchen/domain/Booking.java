@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -28,10 +29,26 @@ public class Booking {
     private int totalPrice;
 
     @Column
-    private Date bookingDate;
+    private String bookingDate;
+
+    @Column
+    private String bookingTime;
+
+    @Column(nullable = true)
+    @Lob
+    private String bookingMessage;
 
     @Column
     private int bookingGuest;
+
+    public Booking(Host host, User user, String bookingDate, String bookingTime, String bookingMessage, int bookingGuest) {
+        this.host = host;
+        this.user = user;
+        this.bookingDate = bookingDate;
+        this.bookingTime = bookingTime;
+        this.bookingMessage = bookingMessage;
+        this.bookingGuest = bookingGuest;
+    }
 
     @Override
     public String toString() {
@@ -40,7 +57,9 @@ public class Booking {
                 ", host=" + host +
                 ", user=" + user +
                 ", totalPrice=" + totalPrice +
-                ", bookingDate=" + bookingDate +
+                ", bookingDate='" + bookingDate + '\'' +
+                ", bookingTime='" + bookingTime + '\'' +
+                ", bookingMessage='" + bookingMessage + '\'' +
                 ", bookingGuest=" + bookingGuest +
                 '}';
     }

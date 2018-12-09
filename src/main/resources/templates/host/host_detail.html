@@ -413,15 +413,17 @@
                                     </div>
                                 </div>
                             </div>
+                            {{#host}}
                             <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking">
                                 <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Book a Table 2</h6>
                                 <div class="card lis-brd-light wow fadeInUp mb-2">
+                                    <form method="post" action="/booking/{{id}}">
                                     <div class="card-body p-4">
                                         <div class="row">
                                             <div class="col-12 col-sm-6">
                                                 <div class="form-group">
                                                     <select class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                                        <option> Occation</option>
+                                                        <option>Occation</option>
                                                         <option>Birthday</option>
                                                         <option>Event</option>
                                                     </select>
@@ -430,33 +432,35 @@
                                             </div>
                                             <div class="col-12 col-sm-6">
                                                 <div class="form-group lis-relative">
-                                                    <input type="date" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                                    <input type="date" name="bookingDate" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
                                                     <div class="lis-search"> <i class="fa fa-calendar lis-primary lis-left-0"></i> </div>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-6">
                                                 <div class="form-group">
-                                                    <input type="time" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                                    <input type="time" name="bookingTime" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
                                                     <div class="lis-search"> <i class="fa fa-clock-o lis-primary"></i> </div>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Memeber">
+                                                    <input type="text" name="bookingGuest" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Memeber">
                                                     <div class="lis-search"> <i class="fa fa-users lis-primary"></i> </div>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="form-group lis-relative">
-                                                    <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Message"></textarea>
+                                                    <textarea name="bookingMessage" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Message"></textarea>
                                                     <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-lg-4"> <a href="#" class="btn btn-primary btn-default"><i class="fa fa-search pr-1"></i> Book Now</a> </div>
+                                            <div class="col-12 col-lg-4"><input type="submit" value="Book Now"></div>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
+                            {{/host}}
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
@@ -518,17 +522,18 @@
                             </div>
                         </div>
                         <h6 class="lis-font-weight-500"><i class="fa fa-user-secret pr-2 lis-f-14"></i>  Author</h6>
+                        {{#host}}
                         <div class="card lis-brd-light wow fadeInUp mb-4">
                             <div class="card-body p-4">
                                 <div class="media d-md-flex">
                                     <a href="#"><img src="dist/images/author4.jpg" class="img-fluid d-flex mr-4 rounded-circle" alt="" width="70" /></a>
                                     <div class='media-body align-self-center'>
-                                        <h6 class="mb-0"><a href="#" class="lis-dark">Jack Amiel</a></h6>
-                                        <p class='mb-0'>Member since January, 2013</p>
+                                        <h6 class="mb-0"><a href="#" class="lis-dark">{{myself.name}}</a></h6>
+                                        <p class='mb-0'>{{introduction}}</p>
                                     </div>
                                 </div>
                                 <ul class="list-unstyled my-4 lis-line-height-2">
-                                    <li><i class="fa fa-phone pr-2"></i> +88 25 5894 2589</li>
+                                    <li><i class="fa fa-phone pr-2"></i>{{contactInfo}}</li>
                                     <li><i class="fa fa-map-o pr-2"></i> First Street, New York, USA</li>
                                 </ul>
                                 <ul class="list-inline my-0">
@@ -540,6 +545,7 @@
                                 </ul>
                             </div>
                         </div>
+                        {{/host}}
                         <h6 class="lis-font-weight-500"><i class="fa fa-envelope pr-2 lis-f-14"></i>  Send Message</h6>
                         <div class="card lis-brd-light wow fadeInUp">
                             <div class="card-body p-4">
