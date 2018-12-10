@@ -8,10 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Getter
@@ -86,6 +83,9 @@ public class Host {
     private List<Review> reviews;
 
     private String availablePeriod;
+
+    @OneToMany(mappedBy = "host")
+    private List<Visit> visits = new ArrayList<>();
 
     public Host(){}
 

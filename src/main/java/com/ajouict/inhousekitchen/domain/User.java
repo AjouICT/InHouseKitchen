@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -37,6 +39,9 @@ public class User {
     @OneToOne(mappedBy = "myself", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
     private Host host;
 
+    @OneToMany(mappedBy = "user")
+    private List<Visit> visits = new ArrayList<>();
+
 
     public User() {
     }
@@ -49,7 +54,6 @@ public class User {
         this.phoneNum = phoneNum;
         this.email = email;
         this.intro = intro;
-
         this.profilePhoto = profilePhoto;
     }
 
