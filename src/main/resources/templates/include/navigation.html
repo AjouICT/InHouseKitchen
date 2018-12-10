@@ -155,7 +155,10 @@
                     </ul>
                 </li>
             </ul>
+            {{#sessionedUser}}
             <li><a class="btn-review-main" href="/review/list">Review</a></li>
+            <li><a class="btn-review-main" href="/booking/list/{{id}}"><b>My Booking</b></a></li>
+            {{/sessionedUser}}
 
             <ul class="list-unstyled my-2 my-lg-0">
                 {{^sessionedUser}}
