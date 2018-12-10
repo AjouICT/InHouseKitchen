@@ -229,3 +229,112 @@ INSERT INTO host (id, available_period, avg_score, contact_info, introduction, l
 INSERT INTO host (id, available_period, avg_score, contact_info, introduction, location_latitude, location_longitude, max_guest, menu_description, menu_name, menu_price, total_score, total_guest_number, visitrate_second, visitrate_third, user_id) VALUES (100, '2018년 1월 27일부터 2018년 7월 5일', 0,'01056584700','맛있는 토스트집', 37.284432, 127.043213, 5, '아삭아삭해요','아삭토스트', 5000, 0,0,2.0,3.0,100);
 
 
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (1, '진짜 맛있는 음식입니다.', '2018-08-12 12:35:00', 5.0, '존맛탱 음식', 1, 1);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (2, '곱창이 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '곱창 맛집', 2, 2);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (3, '맛있는 음식입니다.', '2018-08-12 12:35:00',4.5, '꾸르꾸르 꿀맛', 3, 3);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (4, '육질이 좋습니다.', '2018-08-12 12:35:00', 4.0, '삼겹살이 진짜입니다.', 4, 4);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (5, '먹을만한 음식입니다.', '2018-08-12 12:35:00', 3.5, '한식이야기', 5, 5);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (6, '소문대로 맛집입니다.', '2018-08-12 12:35:00', 5.0, '데이트 코스 강추', 6, 6);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (7, '맛있는 음식입니다.', '2018-08-12 12:35:00', 4.0, '맛있는 곳이네요', 7, 7);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (8, '이맛이야 맛있어!', '2018-08-12 12:35:00', 5.0, '찌게는 이곳입니다.', 8, 8);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (9, '먹을만 합니다.', '2018-08-12 12:35:00', 3.0, '먹을만 하네요', 9, 9);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (10, '일식은 이곳입니다.', '2018-08-12 12:35:00', 5.0, '소호 추천합니다.', 10, 10);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (11, '삼격살에 소주 환상이네요.', '2018-08-12 12:35:00', 5.0, '강통집 삼겹살맛집', 11, 11);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (12, '곱창전골이 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '곱창전골 맛집', 12, 12);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (13, '좋은 음식입니다.', '2018-08-12 12:35:00',4.5, '건강한 맛집', 13, 13);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (14, '스테이크는 이곳이 좋습니다.', '2018-08-12 12:35:00', 4.0, '이집 스테이크 진짜입니다.', 14, 14);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (15, '먹을하네요 호불호 없는 음식입니다.', '2018-08-12 12:35:00', 3.5, '호불호 없습니다', 15, 15);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (16, '소문대로 파스타 맛집입니다.', '2018-08-12 12:35:00', 5.0, '데이트 음식으로 강추', 16, 16);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (17, '괜찮은 음식입니다.', '2018-08-12 12:35:00', 4.0, '괜찮은 곳이네요', 17, 17);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (18, '이맛이야 쫀득한 이 맛!', '2018-08-12 12:35:00', 5.0, '낙지는 이곳입니다.', 18, 18);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (19, '그냥저냥 먹을만은 합니다.', '2018-08-12 12:35:00', 3.0, '갈곳없을때 가세요', 19, 19);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (20, '일식 덮밥은 이곳이다.', '2018-08-12 12:35:00', 5.0, '멘야코코로 추천합니다.', 20, 20);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (21, '진짜가 나타났다.', '2018-08-12 12:35:00', 5.0, '핵꿀맛 음식', 21, 21);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (22, '막창이 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '막창 맛집', 22, 22);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (23, '행복하게 만들어주는 음식입니다.', '2018-08-12 12:35:00',4.5, '행복의 맛집', 23, 23);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (24, '돼지고기 참 좋습니다.', '2018-08-12 12:35:00', 4.0, '돼지 한마리 이곳입니다.', 24, 24);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (25, '한식먹으러 오세요.', '2018-08-12 12:35:00', 3.5, '미스터쉐프 추천!', 25, 25);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (26, '분위기 좋은 집입니다.', '2018-08-12 12:35:00', 5.0, '데이트는 여기서', 26, 26);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (27, '평범하고 호불호없는 음식입니다.', '2018-08-12 12:35:00', 4.0, '무난합니다', 27, 27);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (28, '밥충이들 다 모여!', '2018-08-12 12:35:00', 5.0, '밥이랑 친하게 지낼 수 있는 곳!', 28, 28);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (29, '술안주로도 좋겠습니다.', '2018-08-12 12:35:00', 3.0, '술안주는 좋을 것 같아요', 29, 29);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (30, '라멘은 이곳입니다.', '2018-08-12 12:35:00', 5.0, '일식집 추천합니다.', 30, 30);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (31, '짱 맛있는 음식입니다.', '2018-08-12 12:35:00', 5.0, '짱맛 음식', 31, 31);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (32, '대창이 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '대창 맛집', 32, 32);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (33, '꿀맛 음식입니다.', '2018-08-12 12:35:00',4.5, '꿀맛', 33, 33);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (34, '고기가 좋습니다.', '2018-08-12 12:35:00', 4.0, '돼지고기 진짜입니다.', 34, 34);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (35, '먹을만하네요.', '2018-08-12 12:35:00', 3.5, '시골집', 35, 35);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (36, '맛도좋고 분위기도 좋고.', '2018-08-12 12:35:00', 5.0, '데이트는 여기서', 36, 36);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (37, '언제든지 가기 좋아요.', '2018-08-12 12:35:00', 4.0, '맛있는 곳', 37, 37);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (38, '부대찌게 먹으러 오세요', '2018-08-12 12:35:00', 5.0, '부대찌게는 이곳입니다.', 38, 38);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (39, '무난무난', '2018-08-12 12:35:00', 3.0, '그냥 먹을만 하네요', 39, 39);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (40, '돈까스는 이곳입니다.', '2018-08-12 12:35:00', 5.0, '돈까스 추천합니다.', 40, 40);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (41, '참 맛있는 음식입니다.', '2018-08-12 12:35:00', 5.0, '참이맛 음식', 41, 41);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (42, '곱창 막창이 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '곱창막창 맛집', 42, 42);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (43, '꿀맛탱 음식입니다.', '2018-08-12 12:35:00',4.5, '꿀맛탱 꿀맛', 43, 43);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (44, '고기랑 찌개 조합이 좋습니다.', '2018-08-12 12:35:00', 4.0, '고기 찌개 이건 진짜입니다.', 44, 44);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (45, '제육이 맛있네요.', '2018-08-12 12:35:00', 3.5, '한식 맛집', 45, 45);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (46, '소문대의 그곳 맛집입니다.', '2018-08-12 12:35:00', 5.0, '강추', 46, 46);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (47, '맛있네요', '2018-08-12 12:35:00', 4.0, '맛잇', 47, 47);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (48, '이맛입니다!', '2018-08-12 12:35:00', 5.0, '이곳 진짜 입니다.', 48, 48);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (49, '그냥 그래요', '2018-08-12 12:35:00', 3.0, '먹을만', 49, 49);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (50, '카래돈까스 먹으러 오세요.', '2018-08-12 12:35:00', 5.0, '고씨네 추천합니다.', 50, 50);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (51, '계속 먹고싶은 음식입니다.', '2018-08-12 12:35:00', 5.0, '자꾸 생각나는 음식', 1, 1);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (52, '곱창볶음이 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '곱창볶음 맛집', 2, 2);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (53, '맛있는 생각나는 음식입니다.', '2018-08-12 12:35:00',4.5, '또먹고싶어요.', 3, 3);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (54, '육질이 진짜 좋습니다.', '2018-08-12 12:35:00', 4.0, '소고기 진짜입니다.', 4, 4);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (55, '배트남 음식입니다.', '2018-08-12 12:35:00', 3.5, '배트남음식은 이곳', 5, 5);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (56, '소문대로 분위기 좋은 맛집입니다.', '2018-08-12 12:35:00', 5.0, '데이트하세요', 6, 6);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (57, '음식들이 좋아요.', '2018-08-12 12:35:00', 4.0, '좋은 식당이네요', 7, 7);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (58, '쫀득쫀득', '2018-08-12 12:35:00', 5.0, '아이 라이크 잇!', 8, 8);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (59, '먹을거 없을때 갑니다', '2018-08-12 12:35:00', 3.0, '나쁘지 않아요', 9, 9);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (60, '일식은 사랑입니다.', '2018-08-12 12:35:00', 5.0, '일식은 늘 추천합니다.', 10, 10);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (61, '정겨운 맛있는 음식입니다.', '2018-08-12 12:35:00', 5.0, '정겨운 음식', 21, 21);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (62, '황소곱창이 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '황소 곱창 맛집', 22, 22);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (63, '건강해지는 음식입니다.', '2018-08-12 12:35:00',4.5, '건강한 이맛', 23, 23);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (64, '고기의 질이 좋습니다.', '2018-08-12 12:35:00', 4.0, '삼겹살이 날라다닙니다.', 24, 24);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (65, '쏘쏘한 음식입니다.', '2018-08-12 12:35:00', 3.5, '평범한 맛이에여', 25, 25);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (66, '짜장면 존맛.', '2018-08-12 12:35:00', 5.0, '중국음식 강추', 26, 26);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (67, '평범한 음식입니다.', '2018-08-12 12:35:00', 4.0, '평범한 곳이네요', 27, 27);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (68, '어머니의 김치찌게 그 맛!', '2018-08-12 12:35:00', 5.0, '김치찌게는 이곳입니다.', 28, 28);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (69, '흠... 네..', '2018-08-12 12:35:00', 1.0, '별로에요', 29, 29);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (70, '술안주가 그냥 이곳입니다.', '2018-08-12 12:35:00', 5.0, '소주 먹고싶을떄 추천합니다.', 30, 30);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (71, '또가려고요~', '2018-08-12 12:35:00', 5.0, '또 가고 싶은 음식', 11, 11);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (72, '육회 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '육회 맛집', 12, 12);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (73, '핵맛있어요', '2018-08-12 12:35:00',4.5, '핵맛 꿀맛 존맛', 13, 13);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (74, '육질이 기가 막혀요.', '2018-08-12 12:35:00', 4.0, '오겹살이 진짜입니다.', 14, 14);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (75, '떡복이 맛있어요', '2018-08-12 12:35:00', 3.5, '분식이야기', 15, 15);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (76, '소문의 그곳입니다.', '2018-08-12 12:35:00', 5.0, '여자친구랑 오는거 강추', 16, 16);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (77, '나쁘지 않네요', '2018-08-12 12:35:00', 4.0, '낫배드', 17, 17);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (78, '이건 사랑이야!', '2018-08-12 12:35:00', 5.0, '음식은 이곳입니다.', 18, 18);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (79, '그냥 먹을만해요', '2018-08-12 12:35:00', 3.0, '그냥 저냥', 19, 19);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (80, '초밥은 이곳이다.', '2018-08-12 12:35:00', 5.0, '초밥 추천합니다.', 20, 20);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (81, '먹어도 먹어도 맛있어여.', '2018-08-12 12:35:00', 5.0, '진짜 맛있는 음식', 31, 31);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (82, '마약곱창이 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '마약곱창 맛집', 32, 32);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (83, '진짜 맛있는 음식입니다.', '2018-08-12 12:35:00',4.5, '진짜 꾸르꾸르 꿀맛', 33, 33);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (84, '육질도 좋고 김치볶음도 좋습니다.', '2018-08-12 12:35:00', 4.0, '삼겹살에 김치볶음 진짜입니다.', 34, 34);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (85, '또 먹을만한 음식입니다.', '2018-08-12 12:35:00', 3.5, '역전우동 괜찮네요', 35, 35);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (86, '봉골래 파스타 맛집입니다.', '2018-08-12 12:35:00', 5.0, '파스타 맛집', 36, 36);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (87, '좋은 음식입니다.', '2018-08-12 12:35:00', 4.0, '맛있어요', 37, 37);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (88, '알탕 진짜 맛있어요!', '2018-08-12 12:35:00', 5.0, '알탕은 이곳입니다.', 38, 38);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (89, '괜찮은 정도입니다.', '2018-08-12 12:35:00', 3.0, '어쩌다 먹을만한 맛입니다.', 39, 39);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (90, '피자는 이곳입니다.', '2018-08-12 12:35:00', 5.0, '피자 추천합니다.', 40, 40);
+
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (91, '너무 맛있는 음식입니다.', '2018-08-12 12:35:00', 5.0, '너무 존맛탱 음식', 41, 41);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (92, '곱창막창대창 참 맛있네요.', '2018-08-12 12:35:00', 4.0, '곱창막창대창 맛집', 42, 42);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (93, '맛있맛있', '2018-08-12 12:35:00',4.5, '너무 맛있어여.', 43, 43);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (94, '고기의 육질이 진짜입니다.', '2018-08-12 12:35:00', 4.0, '이곳은 진리의 삼겹살.', 44, 44);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (95, '언제먹어도 평타는 쳐요.', '2018-08-12 12:35:00', 3.5, '순대국 괜찮네요', 45, 45);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (96, '모든 파스타가 소문대로 맛있어요', '2018-08-12 12:35:00', 5.0, '데이트는 역시 파스타', 46, 46);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (97, '언제 먹어도 괜찮은 곳 입니다.', '2018-08-12 12:35:00', 4.0, '역시나가 역시인 곳이네요', 47, 47);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (98, '모든 찌개가 그냥 다 맛있어요', '2018-08-12 12:35:00', 5.0, '한국의 찌게는 이곳입니다.', 48, 48);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (99, '걍.. 그래요', '2018-08-12 12:35:00', 3.0, '먹을만2', 49, 49);
+INSERT INTO review (id, content, create_date, score, title, host_id, writer_id) VALUES (100, '카레는 이곳입니다.', '2018-08-12 12:35:00', 5.0, '고씨네는 추천입니다.', 50, 50);
