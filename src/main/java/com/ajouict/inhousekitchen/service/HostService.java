@@ -15,11 +15,15 @@ import java.util.Arrays;
 
 @Service
 public class HostService {
+
     @Autowired
     private HostRepository hostRepository;
 
     @Autowired
     private StorageService storageService;
+
+    @Autowired
+    private VisitService visitService;
 
     public Host register(User loginUser, Host host, MultipartFile[] files) {
         Host savedHost = Host.registerUserInfo(loginUser, host);
@@ -36,6 +40,10 @@ public class HostService {
 
     public Host findById(Long id) {
         return hostRepository.findById(id).orElseThrow(() -> new NoSuchHostException("id에 해당하는 호스트가 존재하지 않습니다."));
+    }
+
+    public Long calculateVisitTwiceRatePerHost(){
+        return null;
     }
 
 }

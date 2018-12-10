@@ -20,5 +20,12 @@ public class Visit {
 
 	public Visit(){}
 
+	public Visit(User user, Host host) {
+		this.user = user;
+		this.host = host;
+	}
 
+	public void plus(){
+		this.count++;
+	}
 }
