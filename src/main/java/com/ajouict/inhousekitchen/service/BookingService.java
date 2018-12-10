@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class BookingService {
@@ -28,5 +29,10 @@ public class BookingService {
         Booking booking=new Booking(host, user, totalPrice, bookingDate, bookingTime, bookingMessage, parsedBookingGuest);
         bookingRepository.save(booking);
 }
+
+    public List<Booking> getBookingList(Long userId){
+        System.out.println("Booking Controller 통과 : "+userId)   ;
+        return bookingRepository.findBookingsById(userId);
+    }
 
 }

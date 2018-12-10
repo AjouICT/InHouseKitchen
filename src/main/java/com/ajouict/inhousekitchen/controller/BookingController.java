@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
@@ -41,9 +42,10 @@ public class BookingController {
     }
 
     @GetMapping("/list/{id}")
-    public List<Booking> getBookingList(@PathVariable Long id){
-        return bookingService.getBookingList(id);
+    public ModelAndView getBookingList(@PathVariable Long id){
+        List<Booking> bookingList=bookingService.getBookingList(id);
+        ModelAndView mv=new ModelAndView("booking/bookingList", "bookingList", bookingList);
+        return mv;
     }
-
 
 }
