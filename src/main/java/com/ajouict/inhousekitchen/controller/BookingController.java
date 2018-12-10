@@ -5,6 +5,7 @@ import com.ajouict.inhousekitchen.domain.Host;
 import com.ajouict.inhousekitchen.service.BookingService;
 import com.ajouict.inhousekitchen.service.HostService;
 import com.ajouict.inhousekitchen.service.SearchService;
+import com.ajouict.inhousekitchen.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class BookingController {
     @Autowired
     SearchService searchService;
 
+    @Autowired
+    UserService userService;
+
     @PostMapping("/{id}")
     public String createBooking(@PathVariable Long id, @RequestParam(name="bookingDate") String bookingDate,
                           @RequestParam(name="bookingTime") String bookingTime,
@@ -42,7 +46,7 @@ public class BookingController {
     }
 
     @GetMapping("/list/{id}")
-    public ModelAndView getBookingList(@PathVariable Long id){
+    public ModelAndView getBookingList(@PathVariable String id){
         List<Booking> bookingList=bookingService.getBookingList(id);
         ModelAndView mv=new ModelAndView("booking/bookingList", "bookingList", bookingList);
         return mv;

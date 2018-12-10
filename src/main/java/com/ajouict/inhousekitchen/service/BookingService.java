@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -18,6 +16,9 @@ public class BookingService {
 
     @Autowired
     SearchRepository searchRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     public void createBooking(Long hostId, String bookingDate, String bookingTime, String bookingGuest, String bookingMessage, HttpSession session){
         User user=(User) session.getAttribute(HttpSessionUtils.USER_SESSION_KEY);
@@ -30,9 +31,12 @@ public class BookingService {
         bookingRepository.save(booking);
 }
 
-    public List<Booking> getBookingList(Long userId){
-        System.out.println("Booking Controller 통과 : "+userId)   ;
-        return bookingRepository.findBookingsById(userId);
+    public List<Booking> getBookingList(String userId){
+        System.out.println("Booking Service 통과 : "+userId);
+        User user=userRepository.findByUserId(userId);
+        System.out.println(user.getEmail()+user.getIntro());
+        System.out.println(bookingRepository.findBookingByUser(user));
+        return bookingRepository.findBookingByUser(user);
     }
 
 }
