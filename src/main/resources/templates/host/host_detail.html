@@ -421,6 +421,7 @@
                                     <div class="card-body p-4">
                                         <div class="row">
                                             <div class="col-12 col-sm-6">
+
                                                 <div class="form-group">
                                                     <select class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
                                                         <option>Occation</option>
@@ -493,33 +494,14 @@
                                 <!--</div>-->
                             </div>
                         </div>
-                        <h6 class="lis-font-weight-500"><i class="fa fa-tags pr-2 lis-f-14"></i> Categories</h6>
+                        <h6 class="lis-font-weight-500"><i class="fa fa-tags pr-2 lis-f-14"></i> 재 방문율 </h6>
                         <div class="card lis-brd-light wow fadeInUp mb-4">
+                            {{#host}}
                             <div class="card-body p-4">
-                                <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
-                                    <li class="list-inline-item">
-                                        <A href="#">
-                                            <div class="lis-bg4 lis-icon lis-rounded-circle-50 text-center">
-                                                <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-fast-food"></i></div>
-                                            </div>
-                                        </A>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <A href="#">
-                                            <div class="lis-bg1 lis-icon lis-rounded-circle-50 text-center">
-                                                <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-hotel-alt"></i></div>
-                                            </div>
-                                        </A>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <A href="#">
-                                            <div class="lis-bg2 lis-icon lis-rounded-circle-50 text-center">
-                                                <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-beer"></i></div>
-                                            </div>
-                                        </A>
-                                    </li>
-                                </ul>
+                                <div>2번 이상 방문한 비율 : {{aboveTwoTimesVisitedRate}}</div>
+                               <div>3번 이상 방문한 비율 : {{aboveThreeTimesVisitedRate}}</div>
                             </div>
+                            {{/host}}
                         </div>
                         <h6 class="lis-font-weight-500"><i class="fa fa-user-secret pr-2 lis-f-14"></i>  Author</h6>
                         {{#host}}

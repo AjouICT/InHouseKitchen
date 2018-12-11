@@ -1,5 +1,9 @@
 package com.ajouict.inhousekitchen.controller;
 
+import com.ajouict.inhousekitchen.domain.User;
+import com.ajouict.inhousekitchen.service.BookingService;
+import com.ajouict.inhousekitchen.service.VisitService;
+import com.ajouict.inhousekitchen.util.LoginUser;
 import com.ajouict.inhousekitchen.domain.Booking;
 import com.ajouict.inhousekitchen.domain.Host;
 import com.ajouict.inhousekitchen.service.BookingService;
@@ -27,6 +31,7 @@ public class BookingController {
     BookingService bookingService;
 
     @Autowired
+    private VisitService visitService;
     SearchService searchService;
 
     @Autowired
@@ -34,13 +39,13 @@ public class BookingController {
 
     @PostMapping("/{id}")
     public String createBooking(@PathVariable Long id, @RequestParam(name="bookingDate") String bookingDate,
-                          @RequestParam(name="bookingTime") String bookingTime,
-                          @RequestParam(name="bookingGuest") String bookingGuest,
-                          @RequestParam(name="bookingMessage") String bookingMessage,
-                                HttpSession session){
-
+                                @RequestParam(name="bookingTime") String bookingTime,
+                                @RequestParam(name="bookingGuest") String bookingGuest,
+                                @RequestParam(name="bookingMessage") String bookingMessage,
+                                HttpSession session, @LoginUser User user){
 
         bookingService.createBooking(id ,bookingDate, bookingTime, bookingGuest, bookingMessage, session);
+        visitService.record(id, user);
 
         return "booking/bookingSuccess";
     }
