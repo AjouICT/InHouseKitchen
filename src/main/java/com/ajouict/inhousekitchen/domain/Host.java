@@ -36,7 +36,6 @@ public class Host {
     })
     private Location location;
 
-    @Column(nullable = true)
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name="second",
@@ -90,23 +89,28 @@ public class Host {
     public Host(){}
 
     @Builder
-    public Host(String introduction, @NotNull String contactInfo,  Location location, MenusInfo menusInfo, String availablePeriod) {
+    public Host(String introduction, @NotNull String contactInfo,  Location location, MenusInfo menusInfo, String availablePeriod, VisitRate visitRate) {
         this.introduction = introduction;
         this.contactInfo = contactInfo;
         this.location = location;
         this.menusInfo = menusInfo;
         this.availablePeriod = availablePeriod;
+        this.visitRate = visitRate;
     }
 
-    public static Host registerUserInfo(User myself, Host host){
+    public static Host registerUserInfo(User myself, Host host) {
         host.myself = myself;
         myself.registerHostInfo(host);
         return host;
     }
 
-    public Set<MenuImage> recordMenuImageInfo(MenuImage menuImage){
+    public Set<MenuImage> recordMenuImageInfo(MenuImage menuImage) {
         this.menuImages.add(menuImage);
         return menuImages;
+    }
+
+    public void recordVisitRate(VisitRate visitRate) {
+        this.visitRate = visitRate;
     }
 
     public HostDto _toHostDto() {
@@ -118,7 +122,10 @@ public class Host {
                 .menu_description(this.menusInfo.getDescription())
                 .date_range(this.availablePeriod)
                 .location_latitude(Double.toString(this.location.getLatitude()))
-                .location_longitude(Double.toString(this.location.getLongitude())).build();
+                .location_longitude(Double.toString(this.location.getLongitude()))
+                .aboveTwoTimesVisitedRate(visitRate.getSecond())
+                .aboveThreeTimesVisitedRate(visitRate.getThird())
+                .build();
     }
 
     @Override

@@ -1,14 +1,12 @@
 package com.ajouict.inhousekitchen.service;
 
-import com.ajouict.inhousekitchen.domain.Host;
-import com.ajouict.inhousekitchen.domain.HostRepository;
-import com.ajouict.inhousekitchen.domain.MenuImage;
-import com.ajouict.inhousekitchen.domain.User;
+import com.ajouict.inhousekitchen.domain.*;
 import com.ajouict.inhousekitchen.exception.NoSuchHostException;
 import com.ajouict.inhousekitchen.storage.StorageService;
 import com.ajouict.inhousekitchen.util.UUIDGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
@@ -38,12 +36,16 @@ public class HostService {
         host.recordMenuImageInfo(new MenuImage(file.getOriginalFilename(), uniqueFileName));
     }
 
-    public Host findById(Long id) {
-        return hostRepository.findById(id).orElseThrow(() -> new NoSuchHostException("id에 해당하는 호스트가 존재하지 않습니다."));
+    private Host findById(Long id) {
+        return hostRepository.findById(id).orElseThrow(() -> new NoSuchHostException("id에 해당하는 host 가 존재하지 않습니다."));
     }
 
-    public Long calculateVisitTwiceRatePerHost(){
-        return null;
+    @Transactional
+    public Host calculateRateOfVisitorsAboveTwoTimesVisitedAndFindHost(Long id) {
+        Host host = findById(id);
+        host.recordVisitRate(new VisitRate(visitService.calculateRateOfVisitorsAboveTwoTimesVisited(id),
+                visitService.calculateRateOfVisitorsAboveThreeTimesVisited(id)));
+        return hostRepository.save(host);
     }
 
 }

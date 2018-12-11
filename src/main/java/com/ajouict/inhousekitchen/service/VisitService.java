@@ -20,15 +20,23 @@ public class VisitService {
 		return visitRepository.save(new Visit(user, host));
 	}
 
-	public Long bringTotalVisitors(Long hostId) {
+	public double calculateRateOfVisitorsAboveTwoTimesVisited(Long hostId){
+		return bringVisitorsAboveTwoTimesVisited(hostId) / (double)(bringTotalVisitors(hostId));
+	}
+
+	public double calculateRateOfVisitorsAboveThreeTimesVisited(Long hostId){
+		return bringVisitorsAboveThreeTimesVisited(hostId) / (double)(bringTotalVisitors(hostId));
+	}
+
+	private Long bringTotalVisitors(Long hostId) {
 		return visitRepository.countRowPerHost(hostId);
 	}
 
-	public Long bringVisitorsAboveTwoTimesVisited(Long hostId) {
+	private Long bringVisitorsAboveTwoTimesVisited(Long hostId) {
 		return visitRepository.countRowWhichHasAboveTwoCountPerHost(hostId);
 	}
 
-	public Long bringVisitorsAboveThreeTimesVisited(Long hostId) {
+	private Long bringVisitorsAboveThreeTimesVisited(Long hostId) {
 		return visitRepository.countRowWhichHasAboveThreeCountPerHost(hostId);
 	}
 }

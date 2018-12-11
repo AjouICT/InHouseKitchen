@@ -42,7 +42,8 @@ public class ApiHostController {
     }
 
     @PostMapping("")
-    public String registerAsAHost(@LoginUser User loginUser, @ModelAttribute HostDto hostDto, @RequestParam("files") MultipartFile[] files, Model model){
+    public String registerAsAHost(@LoginUser User loginUser, @ModelAttribute HostDto hostDto, @RequestParam("files") MultipartFile[] files, Model model) {
+        log.info("여기");
         if(loginUser == null){
             throw new UnAuthorizedException("로그인 해야 합니다.");
         }
@@ -57,7 +58,7 @@ public class ApiHostController {
 
     @GetMapping("/{id}")
     public String showHostInfo(@PathVariable Long id, Model model) {
-        model.addAttribute("host", hostService.findById(id)._toHostDto());
+        model.addAttribute("host", hostService.calculateRateOfVisitorsAboveTwoTimesVisitedAndFindHost(id)._toHostDto());
         return "/host/host_detail";
     }
 

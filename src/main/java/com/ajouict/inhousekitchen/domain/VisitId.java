@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public class VisitId implements Serializable {
 
-	private Long member;
+	private Long user;
 	private Long host;
 
 	public VisitId(){}
 
-	public VisitId(Long member, Long host){
-		this.member = member;
+	public VisitId(Long user, Long host){
+		this.user = user;
 		this.host = host;
 	}
 }
