@@ -28,7 +28,7 @@ public class Review {
 
     @Lob
     @Column
-    private String contents; // 내용
+    private String content; // 내용
 
     @Column
     private LocalDateTime createDate; // 작성한 날짜
@@ -72,8 +72,8 @@ public class Review {
         this.title = title;
     }
 
-    public void setContents(String contents) {
-        this.contents = contents;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public void setCreateDate(LocalDateTime createDate) {
@@ -88,8 +88,8 @@ public class Review {
         return title;
     }
 
-    public String getContents() {
-        return contents;
+    public String getContent() {
+        return content;
     }
 
     public LocalDateTime getCreateDate() {
@@ -98,11 +98,11 @@ public class Review {
 
     public Review() {}
 
-    public Review(User writer, Host host, String title, String contents, int score){
+    public Review(User writer, Host host, String title, String content, int score){
         this.writer = writer;
         this.host = host;
         this.title = title;
-        this.contents = contents;
+        this.content = content;
         this.createDate = LocalDateTime.now();
         this.score = score;
     }
@@ -117,9 +117,9 @@ public class Review {
         return true;
     }
 
-    public void update(Review review, String title, String contents, int score){
+    public void update(Review review, String title, String content, int score){
         review.title = title;
-        review.contents = contents;
+        review.content = content;
         review.score = score;
     }
 }
